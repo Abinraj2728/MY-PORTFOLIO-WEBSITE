@@ -41,7 +41,7 @@ section{padding:6rem 0;position:relative}
 .page-hero p{font-size:1.05rem;color:var(--text-soft);max-width:620px;margin:0 auto;font-weight:300;animation:fadeUp .9s ease .4s both}
 .back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:2rem;transition:color .3s,gap .3s}
 .back-link:hover{color:var(--accent);gap:.8rem}
-.detail-section{padding:4rem 0;scroll-margin-top:80px}
+.detail-section{padding:5rem 0;scroll-margin-top:80px}
 .detail-section+.detail-section{border-top:1px solid var(--border)}
 .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
 .detail-content h2{font-family:var(--serif);font-size:1.9rem;font-weight:500;margin-bottom:1.2rem;color:var(--text)}
@@ -100,11 +100,73 @@ footer a:hover{opacity:.7}
       <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to home</a>
       <div class="page-eyebrow">Completed Certifications</div>
       <h1>Past <em>Certifications</em></h1>
-      <p>Four completed certifications validating my programming foundation, deep learning skills, Java proficiency, and AWS cloud knowledge.</p>
+      <p>Four completed certifications — AWS Cloud, C Programming, AI Capstone with Deep Learning, and Java.</p>
     </div>
   </section>
 
-  <!-- ============ CERT 1: C PROGRAMMING ============ -->
+  <!-- ============ AWS ============ -->
+  <section class="detail-section" id="aws">
+    <div class="container">
+      <div class="detail-grid">
+        <div class="detail-content reveal">
+          <div class="cert-badge aws"><i class="fas fa-cloud"></i> Certified · May 2026</div>
+          <h2>AWS Cloud Practitioner Essentials</h2>
+          <p><strong>Provider:</strong> AWS Training &amp; Certification · <strong>Completed:</strong> 11 May 2026 · <strong>Signed by:</strong> Michelle Vaz, Director of AWS Training &amp; Certification</p>
+          <p>Completed as part of the <strong>IoT and Cloud Computing</strong> course at Riga Nordic University, under the scenario <em>"Telecom CDR Analytics Platform"</em>. Covers all 13 AWS Cloud Practitioner Essentials modules, with a full applied report analysing a real-world telecom migration to AWS.</p>
+
+          <h3>Course Modules (13 total)</h3>
+          <div class="module-list">
+            <div class="module"><span class="num-badge">01</span><h4>Intro to AWS</h4><p>Cloud concepts, EC2, pricing</p></div>
+            <div class="module"><span class="num-badge">02</span><h4>Compute</h4><p>EC2, Lambda, containers</p></div>
+            <div class="module"><span class="num-badge">03</span><h4>Global Infrastructure</h4><p>Regions, AZs, CloudFront</p></div>
+            <div class="module"><span class="num-badge">04</span><h4>Networking</h4><p>VPC, subnets, gateways</p></div>
+            <div class="module"><span class="num-badge">05</span><h4>Storage &amp; Databases</h4><p>S3, EBS, RDS, DynamoDB</p></div>
+            <div class="module"><span class="num-badge">06</span><h4>Security</h4><p>IAM, MFA, Shared Responsibility</p></div>
+            <div class="module"><span class="num-badge">07</span><h4>Databases (Adv)</h4><p>Aurora, Redshift, Neptune</p></div>
+            <div class="module"><span class="num-badge">08</span><h4>AI/ML &amp; Analytics</h4><p>SageMaker, Kinesis</p></div>
+            <div class="module"><span class="num-badge">09</span><h4>Security (Adv)</h4><p>KMS, Shield, WAF, GuardDuty</p></div>
+            <div class="module"><span class="num-badge">10</span><h4>Monitoring</h4><p>CloudWatch, CloudTrail, Config</p></div>
+            <div class="module"><span class="num-badge">11</span><h4>Pricing &amp; Support</h4><p>Free Tier, Cost Explorer</p></div>
+            <div class="module"><span class="num-badge">12</span><h4>Migrating to AWS</h4><p>CAF, 7 Rs, DMS, Snow Family</p></div>
+            <div class="module"><span class="num-badge">13</span><h4>Well-Architected</h4><p>Six pillars, WA Tool</p></div>
+          </div>
+
+          <h3>Applied Assignment — Telecom CDR Analytics Platform</h3>
+          <p>Designed a cloud-native AWS architecture for a regional telecom operator processing <strong>50 million CDRs/day</strong>:</p>
+          <ul>
+            <li><strong>Ingestion:</strong> AWS Direct Connect, S3 WORM Object Lock</li>
+            <li><strong>Streaming:</strong> Kinesis Data Streams + Lambda enrichment</li>
+            <li><strong>Data Lake:</strong> S3 Parquet, partitioned by date</li>
+            <li><strong>Warehouse:</strong> Redshift (Reserved) + Redshift Spectrum</li>
+            <li><strong>Ad-hoc Queries:</strong> Athena on S3 with AWS Glue</li>
+            <li><strong>Visualization:</strong> Amazon QuickSight</li>
+            <li><strong>Security:</strong> KMS, GuardDuty, Macie, CloudTrail (GDPR Art. 33)</li>
+          </ul>
+
+          <h3>Key Skills Gained</h3>
+          <ul>
+            <li>Cloud architecture design using AWS best practices</li>
+            <li>Cost optimisation with Reserved vs On-Demand pricing</li>
+            <li>Shared Responsibility Model for sensitive data</li>
+            <li>Well-Architected Framework review</li>
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <div class="image-frame">
+            <img src="images/aws-certificate.png" alt="AWS Cloud Practitioner Essentials Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <div class="placeholder" style="display:none;">
+              <i class="fab fa-aws"></i>
+              Add <code>images/aws-certificate.png</code> to your repo
+            </div>
+            <div class="caption">AWS Cloud Practitioner Essentials · May 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ C PROGRAMMING ============ -->
   <section class="detail-section" id="c-programming">
     <div class="container">
       <div class="detail-grid">
@@ -114,32 +176,13 @@ footer a:hover{opacity:.7}
           <p><strong>Provider:</strong> Alison · <strong>Completed:</strong> 07 May 2025</p>
           <p>A comprehensive free online course offering a thorough introduction to the C programming language. Covers data management, program flow, variables, arrays, pointers, and functions across 16 focused modules with assessments.</p>
 
-          <h3>Course Overview</h3>
+          <h3>Curriculum Highlights</h3>
           <ul>
-            <li>Free online course with structured learning path</li>
-            <li>Key concepts: data management, program flow, variables, arrays, pointers, functions</li>
-            <li>Structure: 16 focused modules with assessments</li>
+            <li><strong>Modules 1–4:</strong> Number Systems, Programming Basics, Program Flow, Hello World</li>
+            <li><strong>Modules 5–8:</strong> First Assessment, Numbers, Variables, Arrays</li>
+            <li><strong>Modules 9–12:</strong> Strings, Pointers, Constants, Combined Use</li>
+            <li><strong>Modules 13–16:</strong> Statements &amp; Logic, Logical Operators, GOTO &amp; Loops, Final Assessment</li>
           </ul>
-
-          <h3>Curriculum — Modules 1–16</h3>
-          <div class="module-list">
-            <div class="module"><span class="num-badge">01</span><h4>Number Systems</h4><p>Binary, decimal, hexadecimal</p></div>
-            <div class="module"><span class="num-badge">02</span><h4>Programming Basics</h4><p>Code structure, syntax, directives</p></div>
-            <div class="module"><span class="num-badge">03</span><h4>Program Flow</h4><p>Functions, routines, return values</p></div>
-            <div class="module"><span class="num-badge">04</span><h4>Your First Program</h4><p>Write and compile "Hello World"</p></div>
-            <div class="module"><span class="num-badge">05</span><h4>First Assessment</h4><p>Check understanding of basics</p></div>
-            <div class="module"><span class="num-badge">06</span><h4>Numbers</h4><p>Integers, floating-point, ASCII</p></div>
-            <div class="module"><span class="num-badge">07</span><h4>Variables</h4><p>Declare, initialize, manipulate</p></div>
-            <div class="module"><span class="num-badge">08</span><h4>Arrays</h4><p>Store and access using indexes</p></div>
-            <div class="module"><span class="num-badge">09</span><h4>Strings</h4><p>Character sequences</p></div>
-            <div class="module"><span class="num-badge">10</span><h4>Pointers</h4><p>Memory addresses and arithmetic</p></div>
-            <div class="module"><span class="num-badge">11</span><h4>Constants</h4><p>Using #define and const</p></div>
-            <div class="module"><span class="num-badge">12</span><h4>Combined Use</h4><p>Pointers, constants, strings</p></div>
-            <div class="module"><span class="num-badge">13</span><h4>Statements & Logic</h4><p>Control flow fundamentals</p></div>
-            <div class="module"><span class="num-badge">14</span><h4>Logical Operators</h4><p>AND, OR, NOT operators</p></div>
-            <div class="module"><span class="num-badge">15</span><h4>GOTO & Loops</h4><p>Goto statement and while loops</p></div>
-            <div class="module"><span class="num-badge">16</span><h4>Final Assessment</h4><p>Comprehensive knowledge test</p></div>
-          </div>
 
           <h3>Key Concepts Covered</h3>
           <ul>
@@ -155,16 +198,16 @@ footer a:hover{opacity:.7}
             <li>Build C programs — small to medium scale coding skills</li>
             <li>Foundation for languages — advance to C++ and Java</li>
             <li>Embedded systems — OS development and hardware interaction</li>
-            <li><strong>Tools used:</strong> GCC compiler, editors, console interface</li>
+            <li><strong>Tools:</strong> GCC compiler, editors, console interface</li>
           </ul>
         </div>
 
         <div class="reveal">
           <div class="image-frame">
-            <img src="images/c-certificate.jpg" alt="Diploma in C Programming Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <img src="images/c-certificate.png" alt="Diploma in C Programming Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
             <div class="placeholder" style="display:none;">
               <i class="fas fa-certificate"></i>
-              Add <code>images/c-certificate.jpg</code> to your repo
+              Add <code>images/c-certificate.png</code> to your repo
             </div>
             <div class="caption">Diploma in C Programming · Alison · 2025</div>
           </div>
@@ -173,33 +216,25 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- ============ CERT 2: AI CAPSTONE ============ -->
+  <!-- ============ AI CAPSTONE ============ -->
   <section class="detail-section" id="ai-capstone">
     <div class="container">
       <div class="detail-grid">
         <div class="detail-content reveal">
-          <div class="cert-badge"><i class="fas fa-check-circle"></i> Certified · May 2025</div>
+          <div class="cert-badge"><i class="fas fa-check-circle"></i> Certified · April 2025</div>
           <h2>AI Capstone Project with Deep Learning</h2>
           <p><strong>Provider:</strong> IBM via Coursera · <strong>Completed:</strong> 17 April 2025</p>
           <p>Part of the IBM AI Engineering Professional Certificate. Provides hands-on experience with the full deep learning workflow, culminating in an end-to-end image classification project. Supports both PyTorch and Keras/TensorFlow using Jupyter Notebooks.</p>
-
-          <h3>Course Highlights</h3>
-          <ul>
-            <li>Hands-on deep learning workflow</li>
-            <li>Image classification task — apply knowledge in practical context</li>
-            <li>Supports PyTorch & Keras/TensorFlow</li>
-            <li>Development via Jupyter Notebooks</li>
-          </ul>
 
           <h3>Modules Covered</h3>
           <div class="module-list">
             <div class="module"><span class="num-badge">Module 1</span><h4>Loading Data</h4><p>Download and organize training, validation, test sets</p></div>
             <div class="module"><span class="num-badge">Module 2</span><h4>Data Preparation</h4><p>Normalization, augmentation, data loaders</p></div>
-            <div class="module"><span class="num-badge">Module 3</span><h4>Building & Training</h4><p>Transfer learning with ResNet50</p></div>
+            <div class="module"><span class="num-badge">Module 3</span><h4>Building &amp; Training</h4><p>Transfer learning with ResNet50</p></div>
             <div class="module"><span class="num-badge">Module 4</span><h4>Final Project</h4><p>ResNet18 / ResNet50 / VGG16 comparison</p></div>
           </div>
 
-          <h3>Project Results & Insights</h3>
+          <h3>Project Results &amp; Insights</h3>
           <ul>
             <li><strong>Performance:</strong> High accuracy on test data</li>
             <li><strong>Visualization:</strong> Confusion matrices and accuracy/loss plots</li>
@@ -213,13 +248,6 @@ footer a:hover{opacity:.7}
             <li>Debugging skills — model tuning and optimization</li>
           </ul>
 
-          <h3>Career Impact</h3>
-          <ul>
-            <li>Official recognition: IBM AI Engineering Professional Certificate</li>
-            <li>Project completion: successful deep learning capstone</li>
-            <li>Enhances AI and data science credibility</li>
-          </ul>
-
           <p style="margin-top:1.5rem;font-size:.85rem;color:var(--text-muted);">
             <strong>Verify at:</strong> <a href="https://coursera.org/verify/2YWJK7NIKSY3" target="_blank" style="color:var(--accent);">coursera.org/verify/2YWJK7NIKSY3</a>
           </p>
@@ -227,10 +255,10 @@ footer a:hover{opacity:.7}
 
         <div class="reveal">
           <div class="image-frame">
-            <img src="images/ai-certificate.jpg" alt="AI Capstone Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <img src="images/ai-certificate.png" alt="AI Capstone Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
             <div class="placeholder" style="display:none;">
               <i class="fas fa-brain"></i>
-              Add <code>images/ai-certificate.jpg</code> to your repo
+              Add <code>images/ai-certificate.png</code> to your repo
             </div>
             <div class="caption">AI Capstone · IBM/Coursera · April 2025</div>
           </div>
@@ -239,71 +267,7 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- ============ CERT 3: AWS CLOUD PRACTITIONER ============ -->
-  <section class="detail-section" id="aws">
-    <div class="container">
-      <div class="detail-grid">
-        <div class="detail-content reveal">
-          <div class="cert-badge aws"><i class="fas fa-cloud"></i> Certified · May 2026</div>
-          <h2>AWS Cloud Practitioner Essentials</h2>
-          <p><strong>Provider:</strong> AWS Training & Certification · <strong>Completed:</strong> 11 May 2026</p>
-          <p>Completed as part of the <strong>IoT and Cloud Computing</strong> course at Riga Nordic University, under the scenario <em>"Telecom CDR Analytics Platform"</em>. Covers all 13 AWS Cloud Practitioner Essentials modules, with a full applied report analysing a real-world telecom migration to AWS.</p>
-
-          <h3>Course Modules (13 total)</h3>
-          <div class="module-list">
-            <div class="module"><span class="num-badge">01</span><h4>Intro to AWS</h4><p>Cloud concepts, EC2, pricing models</p></div>
-            <div class="module"><span class="num-badge">02</span><h4>Compute in the Cloud</h4><p>EC2 families, Lambda, containers</p></div>
-            <div class="module"><span class="num-badge">03</span><h4>Global Infrastructure</h4><p>Regions, AZs, CloudFront, edge</p></div>
-            <div class="module"><span class="num-badge">04</span><h4>Networking</h4><p>VPC, subnets, gateways, security groups</p></div>
-            <div class="module"><span class="num-badge">05</span><h4>Storage & Databases</h4><p>S3, EBS, EFS, RDS, DynamoDB</p></div>
-            <div class="module"><span class="num-badge">06</span><h4>Security</h4><p>Shared Responsibility, IAM, MFA</p></div>
-            <div class="module"><span class="num-badge">07</span><h4>Databases (Advanced)</h4><p>Aurora, Redshift, DocumentDB, Neptune</p></div>
-            <div class="module"><span class="num-badge">08</span><h4>AI/ML & Analytics</h4><p>SageMaker, Rekognition, Kinesis</p></div>
-            <div class="module"><span class="num-badge">09</span><h4>Security (Advanced)</h4><p>KMS, Shield, WAF, GuardDuty</p></div>
-            <div class="module"><span class="num-badge">10</span><h4>Monitoring & Governance</h4><p>CloudWatch, CloudTrail, Config</p></div>
-            <div class="module"><span class="num-badge">11</span><h4>Pricing & Support</h4><p>Free Tier, Cost Explorer, Support Plans</p></div>
-            <div class="module"><span class="num-badge">12</span><h4>Migrating to AWS</h4><p>CAF, 7 Rs, DMS, Snow Family</p></div>
-            <div class="module"><span class="num-badge">13</span><h4>Well-Architected</h4><p>Six pillars, Well-Architected Tool</p></div>
-          </div>
-
-          <h3>Applied Assignment — Telecom CDR Analytics Platform</h3>
-          <p>As part of the IoT and Cloud Computing course, I completed a full written report designing a cloud-native AWS architecture for a regional telecom operator processing <strong>50 million Call Detail Records (CDRs) per day</strong>.</p>
-          <ul>
-            <li><strong>Ingestion:</strong> AWS Direct Connect, Amazon S3 with WORM Object Lock</li>
-            <li><strong>Streaming:</strong> Amazon Kinesis Data Streams + AWS Lambda enrichment</li>
-            <li><strong>Data Lake:</strong> Amazon S3 with Parquet format, partitioned by date</li>
-            <li><strong>Warehouse:</strong> Amazon Redshift (Reserved Nodes) + Redshift Spectrum</li>
-            <li><strong>Ad-hoc Queries:</strong> Amazon Athena on S3 with AWS Glue Catalog</li>
-            <li><strong>Visualization:</strong> Amazon QuickSight dashboards</li>
-            <li><strong>Security:</strong> KMS encryption, GuardDuty, Macie, CloudTrail (GDPR Art. 33)</li>
-            <li><strong>Well-Architected alignment:</strong> Security, Reliability, Performance, Cost</li>
-          </ul>
-
-          <h3>Key Skills Gained</h3>
-          <ul>
-            <li>Cloud architecture design using AWS best practices</li>
-            <li>Cost optimisation with Reserved vs On-Demand pricing</li>
-            <li>Shared Responsibility Model applied to sensitive data (CDRs)</li>
-            <li>Well-Architected Framework review of production workloads</li>
-            <li>Real-world IoT/Telecom scenario analysis and design</li>
-          </ul>
-        </div>
-
-        <div class="reveal">
-          <div class="image-frame">
-            <img src="images/aws-certificate.jpg" alt="AWS Cloud Practitioner Essentials Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-            <div class="placeholder" style="display:none;">
-              <i class="fab fa-aws"></i>
-              Add <code>images/aws-certificate.jpg</code> to your repo
-            </div>
-            <div class="caption">AWS Cloud Practitioner Essentials · May 2026</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CERT 4: JAVA ============ -->
+  <!-- ============ JAVA ============ -->
   <section class="detail-section" id="java">
     <div class="container">
       <div class="detail-grid">
@@ -332,10 +296,10 @@ footer a:hover{opacity:.7}
 
         <div class="reveal">
           <div class="image-frame">
-            <img src="images/java-certificate.jpg" alt="Java Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <img src="images/java-certificate.png" alt="Java Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
             <div class="placeholder" style="display:none;">
               <i class="fab fa-java"></i>
-              Add <code>images/java-certificate.jpg</code> to your repo
+              Add <code>images/java-certificate.png</code> to your repo
             </div>
             <div class="caption">Java Certificate · 2025</div>
           </div>
