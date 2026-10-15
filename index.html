@@ -8,14 +8,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#f5f3ee;--bg-alt:#efece4;--card-bg:#fff;--text:#1a1a1a;--text-soft:#52504a;--text-muted:#8a877e;--accent:#8b6f47;--accent-soft:#c9a97a;--border:#e2ddd2;--border-strong:#cfc7b7;--shadow-md:0 10px 30px -10px rgba(60,50,30,.12);--shadow-lg:0 24px 60px -20px rgba(60,50,30,.18);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',-apple-system,sans-serif}
+:root{--bg:#f5f3ee;--bg-alt:#efece4;--card-bg:#fff;--text:#1a1a1a;--text-soft:#52504a;--text-muted:#8a877e;--accent:#8b6f47;--accent-soft:#c9a97a;--border:#e2ddd2;--border-strong:#cfc7b7;--shadow-md:0 10px 30px -10px rgba(60,50,30,.12);--shadow-lg:0 24px 60px -20px rgba(60,50,30,.18);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',sans-serif}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
 ::selection{background:var(--accent);color:#fff}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05);opacity:.9}}
 @keyframes drawLine{from{width:0}to{width:60px}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05);opacity:.9}}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .container{max-width:1100px;margin:0 auto;padding:0 2rem}
@@ -23,7 +23,7 @@ section{padding:6rem 0;position:relative}
 .top-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(245,243,238,.85);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
 .top-bar.scrolled{border-bottom-color:var(--border)}
 .top-bar-inner{max-width:1100px;margin:0 auto;padding:.9rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
-.brand{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--text);text-decoration:none;transition:color .3s;white-space:nowrap}
+.brand{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--text);text-decoration:none;white-space:nowrap}
 .brand:hover{color:var(--accent)}
 .brand span{color:var(--accent)}
 .nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center}
@@ -100,6 +100,7 @@ footer a:hover{opacity:.7}
         <li><a href="odin.html">Odin</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="new-certification.html">New Certs</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -107,7 +108,6 @@ footer a:hover{opacity:.7}
 </header>
 
 <main>
-  <!-- HERO -->
   <section class="page-hero">
     <div class="container page-hero-inner">
       <div class="hero-inner">
@@ -132,7 +132,6 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="container">
       <div class="section-head reveal"><span class="num">01</span><h2>About</h2></div>
@@ -142,7 +141,6 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- CURRENTLY LEARNING -->
   <section id="learning" style="background:var(--bg-alt);">
     <div class="container">
       <div class="section-head reveal"><span class="num">02</span><h2>Currently Learning</h2><span class="badge progress">In Progress</span></div>
@@ -159,7 +157,6 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- PROJECTS PREVIEW -->
   <section id="projects">
     <div class="container">
       <div class="section-head reveal"><span class="num">03</span><h2>Past Projects</h2><span class="badge">View all →</span></div>
@@ -176,24 +173,30 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- CERTIFICATIONS PREVIEW -->
   <section id="certs" style="background:var(--bg-alt);">
     <div class="container">
       <div class="section-head reveal"><span class="num">04</span><h2>Past Certifications</h2><span class="badge">View all →</span></div>
       <div class="grid">
         <a href="certifications.html" class="card reveal">
           <div class="card-icon"><i class="fas fa-certificate"></i></div>
-          <h3>3 Completed Certifications</h3>
-          <p>C Programming (Alison) · AI Capstone with Deep Learning (IBM/Coursera) · Java Certificate.</p>
-          <div class="tags"><span class="tag">C</span><span class="tag">AI/ML</span><span class="tag">Java</span></div>
-          <div class="card-foot"><span><i class="far fa-calendar-alt"></i> 2025</span><span><i class="fas fa-check-circle" style="color:#6b8e4e;"></i> Verified</span></div>
+          <h3>4 Completed Certifications</h3>
+          <p>AWS Cloud Practitioner · C Programming (Alison) · AI Capstone with Deep Learning (IBM/Coursera) · Java Certificate.</p>
+          <div class="tags"><span class="tag">AWS</span><span class="tag">C</span><span class="tag">AI/ML</span><span class="tag">Java</span></div>
+          <div class="card-foot"><span><i class="far fa-calendar-alt"></i> 2025–2026</span><span><i class="fas fa-check-circle" style="color:#6b8e4e;"></i> Verified</span></div>
+          <i class="fas fa-arrow-right card-arrow"></i>
+        </a>
+        <a href="new-certification.html" class="card reveal">
+          <div class="card-icon"><i class="fas fa-plus-circle"></i></div>
+          <h3>New Certifications — In Progress</h3>
+          <p>Currently completing 11 additional certifications as part of my Information Systems degree. Watch this space.</p>
+          <div class="tags"><span class="tag">In Progress</span><span class="tag">2026</span></div>
+          <div class="card-foot"><span><i class="far fa-calendar-alt"></i> 2026</span><span class="status"><i class="fas fa-circle" style="font-size:.5rem;"></i> Active</span></div>
           <i class="fas fa-arrow-right card-arrow"></i>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <div class="section-head reveal"><span class="num">05</span><h2>Contact</h2></div>
@@ -231,7 +234,6 @@ footer a:hover{opacity:.7}
 const scrollProgress = document.getElementById('scrollProgress');
 const topBar = document.getElementById('topBar');
 const scrollTopBtn = document.getElementById('scrollTop');
-
 window.addEventListener('scroll', () => {
   const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
   scrollProgress.style.width = scrolled + '%';
@@ -239,11 +241,8 @@ window.addEventListener('scroll', () => {
   else { topBar.classList.remove('scrolled'); scrollTopBtn.classList.remove('visible'); }
 });
 scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
