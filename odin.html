@@ -36,4 +36,152 @@ section{padding:6rem 0;position:relative}
 .page-hero-inner{position:relative;z-index:1}
 .page-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem}
 .page-eyebrow::before{content:'';display:inline-block;width:0;height:1px;background:var(--accent);animation:drawLine 1.2s ease .4s forwards}
-.page-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:500;line-height:1.1;color:var(--text);margin-bottom:1rem;animation:fadeUp .9s ease
+.page-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:500;line-height:1.1;color:var(--text);margin-bottom:1rem;animation:fadeUp .9s ease .2s both}
+.page-hero h1 em{font-style:italic;color:var(--accent);font-weight:400}
+.page-hero p{font-size:1.05rem;color:var(--text-soft);max-width:620px;margin:0 auto;font-weight:300;animation:fadeUp .9s ease .4s both}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:2rem;transition:color .3s,gap .3s}
+.back-link:hover{color:var(--accent);gap:.8rem}
+.detail-section{padding:5rem 0;scroll-margin-top:80px}
+.detail-section+.detail-section{border-top:1px solid var(--border)}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.detail-content h2{font-family:var(--serif);font-size:1.9rem;font-weight:500;margin-bottom:1.2rem;color:var(--text)}
+.detail-content h3{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin:2rem 0 .8rem;color:var(--text)}
+.detail-content p{color:var(--text-soft);margin-bottom:1rem;font-size:.98rem;line-height:1.75}
+.detail-content ul{list-style:none;margin-bottom:1.5rem}
+.detail-content ul li{color:var(--text-soft);padding-left:1.6rem;position:relative;margin-bottom:.6rem;font-size:.95rem;line-height:1.7}
+.detail-content ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:500}
+.status-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;background:rgba(201,169,122,.12);color:var(--accent-dark);border:1px solid rgba(201,169,122,.4);border-radius:100px;margin-bottom:1.2rem}
+[data-theme="dark"] .status-badge{color:var(--accent-soft)}
+.module-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-top:1.5rem}
+.module{padding:1.2rem 1.4rem;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;transition:all .4s ease}
+.module:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.module .num-badge{display:inline-block;font-family:var(--serif);font-size:.8rem;font-weight:600;letter-spacing:.1em;color:var(--accent);margin-bottom:.5rem}
+.module h4{font-size:.98rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+.module p{font-size:.85rem;color:var(--text-muted);line-height:1.6;margin:0}
+footer{border-top:1px solid var(--border);padding:2.5rem 0;text-align:center;font-size:.85rem;color:var(--text-muted)}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{opacity:.7}
+.scroll-top{position:fixed;right:1.5rem;bottom:1.5rem;width:46px;height:46px;background:var(--text);color:var(--bg);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.95rem;opacity:0;pointer-events:none;transform:translateY(20px);transition:all .4s cubic-bezier(.22,1,.36,1);z-index:999;box-shadow:var(--shadow-md)}
+.scroll-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.scroll-top:hover{transform:translateY(-4px) scale(1.05)}
+@media(max-width:860px){.nav-links{display:none}.detail-grid{grid-template-columns:1fr;gap:2rem}section{padding:4rem 0}.page-hero{padding:7rem 0 3rem}}
+@media(max-width:480px){.container{padding:0 1.2rem}.top-bar-inner{padding:.8rem 1.2rem}.brand{font-size:1.2rem}}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="top-bar" id="topBar">
+  <div class="top-bar-inner">
+    <a href="index.html" class="brand">Abinraj <span>·</span> C</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="odin.html" class="active">Odin</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="new-certification.html">New Certs</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to home</a>
+      <div class="page-eyebrow">In Progress · 2025–2026</div>
+      <h1>The Odin <em>Project</em></h1>
+      <p>A comprehensive open-source full-stack web development curriculum. Currently working through the JavaScript track and building real projects.</p>
+    </div>
+  </section>
+
+  <section class="detail-section">
+    <div class="container">
+      <div class="detail-grid">
+        <div class="detail-content reveal">
+          <div class="status-badge"><i class="fas fa-circle" style="font-size:.5rem;"></i> Currently In Progress</div>
+          <h2>What is The Odin Project?</h2>
+          <p>The Odin Project is a free, open-source curriculum that teaches full-stack web development. Unlike video courses, it focuses on project-based learning — you build real applications as you learn.</p>
+          <p>I chose The Odin Project because it emphasizes practical skills over tutorials. Every concept comes with a project that forces you to apply what you've learned.</p>
+
+          <h3>Curriculum Tracks</h3>
+          <ul>
+            <li><strong>Foundations:</strong> HTML, CSS, JavaScript basics, Git, and developer tools</li>
+            <li><strong>Full Stack JavaScript:</strong> Advanced JS, React, Node.js, Express, MongoDB</li>
+            <li><strong>Full Stack Ruby on Rails:</strong> Alternative track (not taken)</li>
+          </ul>
+
+          <h3>Skills Being Developed</h3>
+          <ul>
+            <li>Semantic HTML &amp; modern CSS (Flexbox, Grid)</li>
+            <li>JavaScript (ES6+), DOM manipulation, async/await</li>
+            <li>Git &amp; GitHub workflows</li>
+            <li>React, Node.js, Express, databases</li>
+            <li>Testing, debugging, and clean code practices</li>
+          </ul>
+
+          <h3>Why It Matters</h3>
+          <ul>
+            <li>Portfolio-ready projects — every lesson produces a real app</li>
+            <li>Industry-relevant — teaches what actual developers use</li>
+            <li>Community-driven — active Discord and open-source</li>
+            <li>Free forever — no paywalls</li>
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <div class="module-list" style="margin-top:0;">
+            <div class="module"><span class="num-badge">FOUNDATIONS</span><h4>HTML &amp; CSS</h4><p>Semantic markup, layouts, responsive design</p></div>
+            <div class="module"><span class="num-badge">FOUNDATIONS</span><h4>JavaScript Basics</h4><p>Variables, functions, arrays, objects, loops</p></div>
+            <div class="module"><span class="num-badge">FOUNDATIONS</span><h4>Git &amp; Dev Tools</h4><p>Version control, command line, debugging</p></div>
+            <div class="module"><span class="num-badge">FULL-STACK JS</span><h4>Advanced JS</h4><p>Closures, promises, async/await, modules</p></div>
+            <div class="module"><span class="num-badge">FULL-STACK JS</span><h4>React</h4><p>Components, hooks, state management</p></div>
+            <div class="module"><span class="num-badge">FULL-STACK JS</span><h4>Node.js &amp; Express</h4><p>Backend APIs, routing, middleware</p></div>
+            <div class="module"><span class="num-badge">FULL-STACK JS</span><h4>Databases</h4><p>MongoDB, PostgreSQL, ORMs</p></div>
+            <div class="module"><span class="num-badge">PORTFOLIO</span><h4>Capstone Projects</h4><p>Building complete, deployable web apps</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-section" style="text-align:center;">
+    <div class="container">
+      <p style="font-family:var(--serif);font-size:1.3rem;color:var(--text-soft);font-style:italic;margin-bottom:1.5rem;">
+        "The best way to learn to code is to build things."
+      </p>
+      <a href="https://www.theodinproject.com/" target="_blank" class="btn btn-primary" style="display:inline-flex;">
+        <i class="fas fa-external-link-alt"></i>
+        <span>Visit The Odin Project</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 Abinraj Chovullakandy · Riga, Latvia · <a href="https://github.com/Abinraj2728/Abinraj2728" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/in/abinraj-chovullakandy-3a50091b7" target="_blank">LinkedIn</a></p>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+const scrollProgress = document.getElementById('scrollProgress');
+const topBar = document.getElementById('topBar');
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  scrollProgress.style.width = scrolled + '%';
+  if (window.scrollY > 50) { topBar.classList.add('scrolled'); scrollTopBtn.classList.add('visible'); }
+  else { topBar.classList.remove('scrolled'); scrollTopBtn.classList.remove('visible'); }
+});
+scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
