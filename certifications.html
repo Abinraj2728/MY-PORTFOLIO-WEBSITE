@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Past Certifications · Abinraj Chovullakandy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f3ee;--bg-alt:#efece4;--card-bg:#fff;--text:#1a1a1a;--text-soft:#52504a;--text-muted:#8a877e;--accent:#8b6f47;--accent-soft:#c9a97a;--border:#e2ddd2;--border-strong:#cfc7b7;--shadow-md:0 10px 30px -10px rgba(60,50,30,.12);--shadow-lg:0 24px 60px -20px rgba(60,50,30,.18);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+::selection{background:var(--accent);color:#fff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes drawLine{from{width:0}to{width:60px}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem}
+section{padding:6rem 0;position:relative}
+.top-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(245,243,238,.85);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+.top-bar.scrolled{border-bottom-color:var(--border)}
+.top-bar-inner{max-width:1100px;margin:0 auto;padding:.9rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
+.brand{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--text);text-decoration:none;white-space:nowrap}
+.brand:hover{color:var(--accent)}
+.brand span{color:var(--accent)}
+.nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center}
+.nav-links a{color:var(--text-soft);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;position:relative;padding:.3rem 0;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width .35s cubic-bezier(.22,1,.36,1)}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-soft));width:0%;z-index:1001;transition:width .1s linear}
+.page-hero{padding:10rem 0 4rem;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-30%;right:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,122,.12),transparent 70%);animation:float 8s ease-in-out infinite;pointer-events:none}
+.page-hero-inner{position:relative;z-index:1}
+.page-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem}
+.page-eyebrow::before{content:'';display:inline-block;width:0;height:1px;background:var(--accent);animation:drawLine 1.2s ease .4s forwards}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:500;line-height:1.1;color:var(--text);margin-bottom:1rem;animation:fadeUp .9s ease .2s both}
+.page-hero h1 em{font-style:italic;color:var(--accent);font-weight:400}
+.page-hero p{font-size:1.05rem;color:var(--text-soft);max-width:620px;margin:0 auto;font-weight:300;animation:fadeUp .9s ease .4s both}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:2rem;transition:color .3s,gap .3s}
+.back-link:hover{color:var(--accent);gap:.8rem}
+.section-head{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:3rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.section-head .num{font-family:var(--serif);font-size:.95rem;font-weight:500;color:var(--accent);letter-spacing:.1em}
+.section-head h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:500;color:var(--text);flex:1}
+.section-head .badge{font-size:.72rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border-strong);padding:.35rem .9rem;border-radius:100px;white-space:nowrap}
+.detail-section{padding:4rem 0;scroll-margin-top:80px}
+.detail-section+.detail-section{border-top:1px solid var(--border)}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.detail-content h2{font-family:var(--serif);font-size:1.9rem;font-weight:500;margin-bottom:1.2rem;color:var(--text)}
+.detail-content h3{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin:2rem 0 .8rem;color:var(--text)}
+.detail-content p{color:var(--text-soft);margin-bottom:1rem;font-size:.98rem;line-height:1.75}
+.detail-content ul{list-style:none;margin-bottom:1.5rem}
+.detail-content ul li{color:var(--text-soft);padding-left:1.6rem;position:relative;margin-bottom:.6rem;font-size:.95rem;line-height:1.7}
+.detail-content ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:500}
+.cert-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;background:rgba(107,142,78,.1);color:#4a6b32;border:1px solid rgba(107,142,78,.3);border-radius:100px;margin-bottom:1.2rem}
+.image-frame{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:.8rem;box-shadow:var(--shadow-md);position:sticky;top:100px}
+.cert-preview{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:1.5rem;text-align:center;box-shadow:var(--shadow-md);position:sticky;top:100px}
+.cert-preview img{width:100%;max-width:500px;border-radius:4px;border:1px solid var(--border);display:block;margin:0 auto;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.cert-preview:hover img{transform:scale(1.02)}
+.cert-preview .caption{font-size:.82rem;color:var(--text-muted);margin-top:1rem;font-style:italic}
+.module-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-top:1.5rem}
+.module{padding:1.2rem 1.4rem;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;transition:all .4s ease}
+.module:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.module .num-badge{display:inline-block;font-family:var(--serif);font-size:.8rem;font-weight:600;letter-spacing:.1em;color:var(--accent);margin-bottom:.5rem}
+.module h4{font-size:.98rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+.module p{font-size:.85rem;color:var(--text-muted);line-height:1.6;margin:0}
+footer{border-top:1px solid var(--border);padding:2.5rem 0;text-align:center;font-size:.85rem;color:var(--text-muted)}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{opacity:.7}
+.scroll-top{position:fixed;right:1.5rem;bottom:1.5rem;width:46px;height:46px;background:var(--text);color:var(--bg);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.95rem;opacity:0;pointer-events:none;transform:translateY(20px);transition:all .4s cubic-bezier(.22,1,.36,1);z-index:999;box-shadow:var(--shadow-md)}
+.scroll-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.scroll-top:hover{transform:translateY(-4px) scale(1.05)}
+@media(max-width:860px){.nav-links{display:none}.detail-grid{grid-template-columns:1fr;gap:2rem}.cert-preview{position:static}section{padding:4rem 0}.section-head{flex-wrap:wrap}.page-hero{padding:7rem 0 3rem}}
+@media(max-width:480px){.container{padding:0 1.2rem}.top-bar-inner{padding:.8rem 1.2rem}.brand{font-size:1.2rem}}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="top-bar" id="topBar">
+  <div class="top-bar-inner">
+    <a href="index.html" class="brand">Abinraj <span>·</span> C</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="odin.html">Odin</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certifications.html" class="active">Certifications</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to home</a>
+      <div class="page-eyebrow">Completed in 2025</div>
+      <h1>Past <em>Certifications</em></h1>
+      <p>Three completed certifications validating my programming foundation, deep learning skills, and Java proficiency.</p>
+    </div>
+  </section>
+
+  <!-- CERT 1: C PROGRAMMING -->
+  <section class="detail-section" id="c-programming">
+    <div class="container">
+      <div class="detail-grid">
+        <div class="detail-content reveal">
+          <div class="cert-badge"><i class="fas fa-check-circle"></i> Certified · May 2025</div>
+          <h2>Diploma in C Programming</h2>
+          <p><strong>Provider:</strong> Alison · <strong>Completed:</strong> 07 May 2025</p>
+          <p>A comprehensive free online course offering a thorough introduction to the C programming language. Covers data management, program flow, variables, arrays, pointers, and functions across 16 focused modules with assessments.</p>
+
+          <h3>Course Overview</h3>
+          <ul>
+            <li>Free online course with structured learning path</li>
+            <li>Key concepts: data management, program flow, variables, arrays, pointers, functions</li>
+            <li>Structure: 16 focused modules with assessments</li>
+          </ul>
+
+          <h3>Curriculum — Modules 1–16</h3>
+          <div class="module-list">
+            <div class="module"><span class="num-badge">01</span><h4>Number Systems</h4><p>Binary, decimal, hexadecimal relevance</p></div>
+            <div class="module"><span class="num-badge">02</span><h4>Programming Basics</h4><p>Code structure, syntax, directives, execution</p></div>
+            <div class="module"><span class="num-badge">03</span><h4>Program Flow</h4><p>Functions, routines, return values, logic</p></div>
+            <div class="module"><span class="num-badge">04</span><h4>Your First Program</h4><p>Write and compile "Hello World"</p></div>
+            <div class="module"><span class="num-badge">05</span><h4>First Assessment</h4><p>Check understanding of basics</p></div>
+            <div class="module"><span class="num-badge">06</span><h4>Numbers</h4><p>Integers, floating-point, ASCII</p></div>
+            <div class="module"><span class="num-badge">07</span><h4>Variables</h4><p>Declare, initialize, manipulate</p></div>
+            <div class="module"><span class="num-badge">08</span><h4>Arrays</h4><p>Store and access using indexes</p></div>
+            <div class="module"><span class="num-badge">09</span><h4>Strings</h4><p>Character sequences and manipulation</p></div>
+            <div class="module"><span class="num-badge">10</span><h4>Pointers</h4><p>Memory addresses and arithmetic</p></div>
+            <div class="module"><span class="num-badge">11</span><h4>Constants</h4><p>Using #define and const</p></div>
+            <div class="module"><span class="num-badge">12</span><h4>Combined Use</h4><p>Pointers, constants, and strings together</p></div>
+            <div class="module"><span class="num-badge">13</span><h4>Statements & Logic</h4><p>Control flow fundamentals</p></div>
+            <div class="module"><span class="num-badge">14</span><h4>Logical Operators</h4><p>AND, OR, NOT operators</p></div>
+            <div class="module"><span class="num-badge">15</span><h4>GOTO & Loops</h4><p>Goto statement and while loops</p></div>
+            <div class="module"><span class="num-badge">16</span><h4>Final Assessment</h4><p>Comprehensive knowledge test</p></div>
+          </div>
+
+          <h3>Key Concepts Covered</h3>
+          <ul>
+            <li><strong>Number Systems:</strong> Binary and hexadecimal in code</li>
+            <li><strong>Program Structure:</strong> Syntax, functions, arguments</li>
+            <li><strong>Data Types:</strong> Integers, floats, characters</li>
+            <li><strong>Memory:</strong> Pointers and management</li>
+            <li><strong>Control Flow:</strong> Logic statements and loops</li>
+          </ul>
+
+          <h3>Practical Applications</h3>
+          <ul>
+            <li>Build C programs — small to medium scale coding skills</li>
+            <li>Foundation for languages — advance to C++ and Java</li>
+            <li>Embedded systems — OS development and hardware interaction</li>
+            <li><strong>Tools used:</strong> GCC compiler, editors, console interface</li>
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <div class="cert-preview">
+            <img src="images/c-certificate.jpg" alt="Diploma in C Programming Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <div style="display:none;padding:2rem;background:var(--bg-alt);border-radius:4px;color:var(--text-muted);font-size:.9rem;">
+              <i class="fas fa-certificate" style="font-size:2rem;color:var(--accent);display:block;margin-bottom:1rem;"></i>
+              Certificate image<br><small>(Add images/c-certificate.jpg to your repo)</small>
+            </div>
+            <div class="caption">Diploma in C Programming · Alison · 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERT 2: AI CAPSTONE -->
+  <section class="detail-section" id="ai-capstone">
+    <div class="container">
+      <div class="detail-grid">
+        <div class="detail-content reveal">
+          <div class="cert-badge"><i class="fas fa-check-circle"></i> Certified · May 2025</div>
+          <h2>AI Capstone Project with Deep Learning</h2>
+          <p><strong>Provider:</strong> IBM via Coursera · <strong>Completed:</strong> 07 May 2025</p>
+          <p>Part of the IBM AI Engineering Professional Certificate. Provides hands-on experience with the full deep learning workflow, culminating in an end-to-end image classification project. Supports both PyTorch and Keras/TensorFlow using Jupyter Notebooks.</p>
+
+          <h3>Course Highlights</h3>
+          <ul>
+            <li>Hands-on deep learning workflow</li>
+            <li>Image classification task — apply knowledge in practical context</li>
+            <li>Supports PyTorch & Keras/TensorFlow</li>
+            <li>Development via Jupyter Notebooks</li>
+          </ul>
+
+          <h3>Modules Covered</h3>
+          <div class="module-list">
+            <div class="module"><span class="num-badge">Module 1</span><h4>Loading Data</h4><p>Download and organize training, validation, test sets using PyTorch and Keras</p></div>
+            <div class="module"><span class="num-badge">Module 2</span><h4>Data Preparation</h4><p>Normalization, augmentation, data loaders & generators</p></div>
+            <div class="module"><span class="num-badge">Module 3</span><h4>Building & Training Models</h4><p>Transfer learning with ResNet50, linear classifiers, hyperparameter tuning</p></div>
+            <div class="module"><span class="num-badge">Module 4</span><h4>Final Project & Evaluation</h4><p>ResNet18 / ResNet50 / VGG16 comparison, confusion matrices, peer review</p></div>
+          </div>
+
+          <h3>Project Results & Insights</h3>
+          <ul>
+            <li><strong>Performance:</strong> High accuracy on test data</li>
+            <li><strong>Visualization:</strong> Confusion matrices and accuracy/loss plots</li>
+            <li><strong>Challenges:</strong> Overfitting, class imbalance, optimization tuning</li>
+          </ul>
+
+          <h3>Key Learnings</h3>
+          <ul>
+            <li>End-to-end workflow: loading, preprocessing, training, evaluation</li>
+            <li>Transfer learning with ResNet and VGG models</li>
+            <li>Debugging skills — model tuning and optimization</li>
+          </ul>
+
+          <h3>Career Impact</h3>
+          <ul>
+            <li>Official recognition: IBM AI Engineering Professional Certificate</li>
+            <li>Project completion: successful deep learning capstone</li>
+            <li>Enhances AI and data science credibility</li>
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <div class="cert-preview">
+            <img src="images/ai-certificate.jpg" alt="AI Capstone Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <div style="display:none;padding:2rem;background:var(--bg-alt);border-radius:4px;color:var(--text-muted);font-size:.9rem;">
+              <i class="fas fa-brain" style="font-size:2rem;color:var(--accent);display:block;margin-bottom:1rem;"></i>
+              Certificate image<br><small>(Add images/ai-certificate.jpg to your repo)</small>
+            </div>
+            <div class="caption">AI Capstone · IBM/Coursera · 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERT 3: JAVA -->
+  <section class="detail-section" id="java">
+    <div class="container">
+      <div class="detail-grid">
+        <div class="detail-content reveal">
+          <div class="cert-badge"><i class="fas fa-check-circle"></i> Certified · 2025</div>
+          <h2>Java Certificate</h2>
+          <p><strong>Completed:</strong> 2025</p>
+          <p>Java programming certification covering object-oriented programming concepts, syntax, and application development fundamentals. A strong complement to my C and AI coursework, forming the foundation for full-stack software development.</p>
+
+          <h3>Skills Covered</h3>
+          <ul>
+            <li>Object-oriented programming (OOP) principles</li>
+            <li>Java syntax and program structure</li>
+            <li>Classes, objects, inheritance, and polymorphism</li>
+            <li>Exception handling and file I/O</li>
+            <li>Application development fundamentals</li>
+          </ul>
+
+          <h3>Why It Matters</h3>
+          <ul>
+            <li>Strong foundation for enterprise software development</li>
+            <li>Directly applicable to Android development and backend systems</li>
+            <li>Combines with my C and AI skills for a well-rounded programming profile</li>
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <div class="cert-preview">
+            <img src="images/java-certificate.jpg" alt="Java Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <div style="display:none;padding:2rem;background:var(--bg-alt);border-radius:4px;color:var(--text-muted);font-size:.9rem;">
+              <i class="fab fa-java" style="font-size:2rem;color:var(--accent);display:block;margin-bottom:1rem;"></i>
+              Certificate image<br><small>(Add images/java-certificate.jpg to your repo)</small>
+            </div>
+            <div class="caption">Java Certificate · 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Abinraj Chovullakandy · Riga, Latvia · <a href="https://github.com/Abinraj2728/Abinraj2728" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/in/abinraj-chovullakandy-3a50091b7" target="_blank">LinkedIn</a></p>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+const scrollProgress = document.getElementById('scrollProgress');
+const topBar = document.getElementById('topBar');
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  scrollProgress.style.width = scrolled + '%';
+  if (window.scrollY > 50) { topBar.classList.add('scrolled'); scrollTopBtn.classList.add('visible'); }
+  else { topBar.classList.remove('scrolled'); scrollTopBtn.classList.remove('visible'); }
+});
+scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
