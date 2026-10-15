@@ -41,10 +41,6 @@ section{padding:6rem 0;position:relative}
 .page-hero p{font-size:1.05rem;color:var(--text-soft);max-width:620px;margin:0 auto;font-weight:300;animation:fadeUp .9s ease .4s both}
 .back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:2rem;transition:color .3s,gap .3s}
 .back-link:hover{color:var(--accent);gap:.8rem}
-.section-head{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:3rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);flex-wrap:wrap}
-.section-head .num{font-family:var(--serif);font-size:.95rem;font-weight:500;color:var(--accent);letter-spacing:.1em}
-.section-head h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:500;color:var(--text);flex:1}
-.section-head .badge{font-size:.72rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border-strong);padding:.35rem .9rem;border-radius:100px;white-space:nowrap}
 .detail-section{padding:4rem 0;scroll-margin-top:80px}
 .detail-section+.detail-section{border-top:1px solid var(--border)}
 .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
@@ -55,24 +51,25 @@ section{padding:6rem 0;position:relative}
 .detail-content ul li{color:var(--text-soft);padding-left:1.6rem;position:relative;margin-bottom:.6rem;font-size:.95rem;line-height:1.7}
 .detail-content ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:500}
 .cert-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;background:rgba(107,142,78,.1);color:#4a6b32;border:1px solid rgba(107,142,78,.3);border-radius:100px;margin-bottom:1.2rem}
+.cert-badge.aws{background:rgba(255,153,0,.1);color:#a05e00;border-color:rgba(255,153,0,.35)}
 .image-frame{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:.8rem;box-shadow:var(--shadow-md);position:sticky;top:100px}
-.cert-preview{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:1.5rem;text-align:center;box-shadow:var(--shadow-md);position:sticky;top:100px}
-.cert-preview img{width:100%;max-width:500px;border-radius:4px;border:1px solid var(--border);display:block;margin:0 auto;transition:transform .5s cubic-bezier(.22,1,.36,1)}
-.cert-preview:hover img{transform:scale(1.02)}
-.cert-preview .caption{font-size:.82rem;color:var(--text-muted);margin-top:1rem;font-style:italic}
-.module-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-top:1.5rem}
-.module{padding:1.2rem 1.4rem;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;transition:all .4s ease}
+.image-frame img{width:100%;border-radius:4px;display:block}
+.image-frame .placeholder{padding:3rem 2rem;text-align:center;background:var(--bg-alt);border-radius:4px;color:var(--text-muted);font-size:.9rem}
+.image-frame .placeholder i{font-size:2.5rem;color:var(--accent);display:block;margin-bottom:1rem}
+.image-frame .caption{font-size:.82rem;color:var(--text-muted);text-align:center;margin-top:.8rem;font-style:italic}
+.module-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-top:1.5rem}
+.module{padding:1.1rem 1.3rem;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;transition:all .4s ease}
 .module:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.module .num-badge{display:inline-block;font-family:var(--serif);font-size:.8rem;font-weight:600;letter-spacing:.1em;color:var(--accent);margin-bottom:.5rem}
-.module h4{font-size:.98rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
-.module p{font-size:.85rem;color:var(--text-muted);line-height:1.6;margin:0}
+.module .num-badge{display:inline-block;font-family:var(--serif);font-size:.8rem;font-weight:600;letter-spacing:.1em;color:var(--accent);margin-bottom:.4rem}
+.module h4{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:.25rem}
+.module p{font-size:.83rem;color:var(--text-muted);line-height:1.55;margin:0}
 footer{border-top:1px solid var(--border);padding:2.5rem 0;text-align:center;font-size:.85rem;color:var(--text-muted)}
 footer a{color:var(--accent);text-decoration:none}
 footer a:hover{opacity:.7}
 .scroll-top{position:fixed;right:1.5rem;bottom:1.5rem;width:46px;height:46px;background:var(--text);color:var(--bg);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.95rem;opacity:0;pointer-events:none;transform:translateY(20px);transition:all .4s cubic-bezier(.22,1,.36,1);z-index:999;box-shadow:var(--shadow-md)}
 .scroll-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
 .scroll-top:hover{transform:translateY(-4px) scale(1.05)}
-@media(max-width:860px){.nav-links{display:none}.detail-grid{grid-template-columns:1fr;gap:2rem}.cert-preview{position:static}section{padding:4rem 0}.section-head{flex-wrap:wrap}.page-hero{padding:7rem 0 3rem}}
+@media(max-width:860px){.nav-links{display:none}.detail-grid{grid-template-columns:1fr;gap:2rem}.image-frame{position:static}section{padding:4rem 0}.page-hero{padding:7rem 0 3rem}}
 @media(max-width:480px){.container{padding:0 1.2rem}.top-bar-inner{padding:.8rem 1.2rem}.brand{font-size:1.2rem}}
 </style>
 </head>
@@ -101,13 +98,13 @@ footer a:hover{opacity:.7}
   <section class="page-hero">
     <div class="container page-hero-inner">
       <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to home</a>
-      <div class="page-eyebrow">Completed in 2025</div>
+      <div class="page-eyebrow">Completed Certifications</div>
       <h1>Past <em>Certifications</em></h1>
-      <p>Three completed certifications validating my programming foundation, deep learning skills, and Java proficiency.</p>
+      <p>Four completed certifications validating my programming foundation, deep learning skills, Java proficiency, and AWS cloud knowledge.</p>
     </div>
   </section>
 
-  <!-- CERT 1: C PROGRAMMING -->
+  <!-- ============ CERT 1: C PROGRAMMING ============ -->
   <section class="detail-section" id="c-programming">
     <div class="container">
       <div class="detail-grid">
@@ -126,18 +123,18 @@ footer a:hover{opacity:.7}
 
           <h3>Curriculum — Modules 1–16</h3>
           <div class="module-list">
-            <div class="module"><span class="num-badge">01</span><h4>Number Systems</h4><p>Binary, decimal, hexadecimal relevance</p></div>
-            <div class="module"><span class="num-badge">02</span><h4>Programming Basics</h4><p>Code structure, syntax, directives, execution</p></div>
-            <div class="module"><span class="num-badge">03</span><h4>Program Flow</h4><p>Functions, routines, return values, logic</p></div>
+            <div class="module"><span class="num-badge">01</span><h4>Number Systems</h4><p>Binary, decimal, hexadecimal</p></div>
+            <div class="module"><span class="num-badge">02</span><h4>Programming Basics</h4><p>Code structure, syntax, directives</p></div>
+            <div class="module"><span class="num-badge">03</span><h4>Program Flow</h4><p>Functions, routines, return values</p></div>
             <div class="module"><span class="num-badge">04</span><h4>Your First Program</h4><p>Write and compile "Hello World"</p></div>
             <div class="module"><span class="num-badge">05</span><h4>First Assessment</h4><p>Check understanding of basics</p></div>
             <div class="module"><span class="num-badge">06</span><h4>Numbers</h4><p>Integers, floating-point, ASCII</p></div>
             <div class="module"><span class="num-badge">07</span><h4>Variables</h4><p>Declare, initialize, manipulate</p></div>
             <div class="module"><span class="num-badge">08</span><h4>Arrays</h4><p>Store and access using indexes</p></div>
-            <div class="module"><span class="num-badge">09</span><h4>Strings</h4><p>Character sequences and manipulation</p></div>
+            <div class="module"><span class="num-badge">09</span><h4>Strings</h4><p>Character sequences</p></div>
             <div class="module"><span class="num-badge">10</span><h4>Pointers</h4><p>Memory addresses and arithmetic</p></div>
             <div class="module"><span class="num-badge">11</span><h4>Constants</h4><p>Using #define and const</p></div>
-            <div class="module"><span class="num-badge">12</span><h4>Combined Use</h4><p>Pointers, constants, and strings together</p></div>
+            <div class="module"><span class="num-badge">12</span><h4>Combined Use</h4><p>Pointers, constants, strings</p></div>
             <div class="module"><span class="num-badge">13</span><h4>Statements & Logic</h4><p>Control flow fundamentals</p></div>
             <div class="module"><span class="num-badge">14</span><h4>Logical Operators</h4><p>AND, OR, NOT operators</p></div>
             <div class="module"><span class="num-badge">15</span><h4>GOTO & Loops</h4><p>Goto statement and while loops</p></div>
@@ -163,11 +160,11 @@ footer a:hover{opacity:.7}
         </div>
 
         <div class="reveal">
-          <div class="cert-preview">
+          <div class="image-frame">
             <img src="images/c-certificate.jpg" alt="Diploma in C Programming Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-            <div style="display:none;padding:2rem;background:var(--bg-alt);border-radius:4px;color:var(--text-muted);font-size:.9rem;">
-              <i class="fas fa-certificate" style="font-size:2rem;color:var(--accent);display:block;margin-bottom:1rem;"></i>
-              Certificate image<br><small>(Add images/c-certificate.jpg to your repo)</small>
+            <div class="placeholder" style="display:none;">
+              <i class="fas fa-certificate"></i>
+              Add <code>images/c-certificate.jpg</code> to your repo
             </div>
             <div class="caption">Diploma in C Programming · Alison · 2025</div>
           </div>
@@ -176,14 +173,14 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- CERT 2: AI CAPSTONE -->
+  <!-- ============ CERT 2: AI CAPSTONE ============ -->
   <section class="detail-section" id="ai-capstone">
     <div class="container">
       <div class="detail-grid">
         <div class="detail-content reveal">
           <div class="cert-badge"><i class="fas fa-check-circle"></i> Certified · May 2025</div>
           <h2>AI Capstone Project with Deep Learning</h2>
-          <p><strong>Provider:</strong> IBM via Coursera · <strong>Completed:</strong> 07 May 2025</p>
+          <p><strong>Provider:</strong> IBM via Coursera · <strong>Completed:</strong> 17 April 2025</p>
           <p>Part of the IBM AI Engineering Professional Certificate. Provides hands-on experience with the full deep learning workflow, culminating in an end-to-end image classification project. Supports both PyTorch and Keras/TensorFlow using Jupyter Notebooks.</p>
 
           <h3>Course Highlights</h3>
@@ -196,10 +193,10 @@ footer a:hover{opacity:.7}
 
           <h3>Modules Covered</h3>
           <div class="module-list">
-            <div class="module"><span class="num-badge">Module 1</span><h4>Loading Data</h4><p>Download and organize training, validation, test sets using PyTorch and Keras</p></div>
-            <div class="module"><span class="num-badge">Module 2</span><h4>Data Preparation</h4><p>Normalization, augmentation, data loaders & generators</p></div>
-            <div class="module"><span class="num-badge">Module 3</span><h4>Building & Training Models</h4><p>Transfer learning with ResNet50, linear classifiers, hyperparameter tuning</p></div>
-            <div class="module"><span class="num-badge">Module 4</span><h4>Final Project & Evaluation</h4><p>ResNet18 / ResNet50 / VGG16 comparison, confusion matrices, peer review</p></div>
+            <div class="module"><span class="num-badge">Module 1</span><h4>Loading Data</h4><p>Download and organize training, validation, test sets</p></div>
+            <div class="module"><span class="num-badge">Module 2</span><h4>Data Preparation</h4><p>Normalization, augmentation, data loaders</p></div>
+            <div class="module"><span class="num-badge">Module 3</span><h4>Building & Training</h4><p>Transfer learning with ResNet50</p></div>
+            <div class="module"><span class="num-badge">Module 4</span><h4>Final Project</h4><p>ResNet18 / ResNet50 / VGG16 comparison</p></div>
           </div>
 
           <h3>Project Results & Insights</h3>
@@ -222,23 +219,91 @@ footer a:hover{opacity:.7}
             <li>Project completion: successful deep learning capstone</li>
             <li>Enhances AI and data science credibility</li>
           </ul>
+
+          <p style="margin-top:1.5rem;font-size:.85rem;color:var(--text-muted);">
+            <strong>Verify at:</strong> <a href="https://coursera.org/verify/2YWJK7NIKSY3" target="_blank" style="color:var(--accent);">coursera.org/verify/2YWJK7NIKSY3</a>
+          </p>
         </div>
 
         <div class="reveal">
-          <div class="cert-preview">
+          <div class="image-frame">
             <img src="images/ai-certificate.jpg" alt="AI Capstone Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-            <div style="display:none;padding:2rem;background:var(--bg-alt);border-radius:4px;color:var(--text-muted);font-size:.9rem;">
-              <i class="fas fa-brain" style="font-size:2rem;color:var(--accent);display:block;margin-bottom:1rem;"></i>
-              Certificate image<br><small>(Add images/ai-certificate.jpg to your repo)</small>
+            <div class="placeholder" style="display:none;">
+              <i class="fas fa-brain"></i>
+              Add <code>images/ai-certificate.jpg</code> to your repo
             </div>
-            <div class="caption">AI Capstone · IBM/Coursera · 2025</div>
+            <div class="caption">AI Capstone · IBM/Coursera · April 2025</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CERT 3: JAVA -->
+  <!-- ============ CERT 3: AWS CLOUD PRACTITIONER ============ -->
+  <section class="detail-section" id="aws">
+    <div class="container">
+      <div class="detail-grid">
+        <div class="detail-content reveal">
+          <div class="cert-badge aws"><i class="fas fa-cloud"></i> Certified · May 2026</div>
+          <h2>AWS Cloud Practitioner Essentials</h2>
+          <p><strong>Provider:</strong> AWS Training & Certification · <strong>Completed:</strong> 11 May 2026</p>
+          <p>Completed as part of the <strong>IoT and Cloud Computing</strong> course at Riga Nordic University, under the scenario <em>"Telecom CDR Analytics Platform"</em>. Covers all 13 AWS Cloud Practitioner Essentials modules, with a full applied report analysing a real-world telecom migration to AWS.</p>
+
+          <h3>Course Modules (13 total)</h3>
+          <div class="module-list">
+            <div class="module"><span class="num-badge">01</span><h4>Intro to AWS</h4><p>Cloud concepts, EC2, pricing models</p></div>
+            <div class="module"><span class="num-badge">02</span><h4>Compute in the Cloud</h4><p>EC2 families, Lambda, containers</p></div>
+            <div class="module"><span class="num-badge">03</span><h4>Global Infrastructure</h4><p>Regions, AZs, CloudFront, edge</p></div>
+            <div class="module"><span class="num-badge">04</span><h4>Networking</h4><p>VPC, subnets, gateways, security groups</p></div>
+            <div class="module"><span class="num-badge">05</span><h4>Storage & Databases</h4><p>S3, EBS, EFS, RDS, DynamoDB</p></div>
+            <div class="module"><span class="num-badge">06</span><h4>Security</h4><p>Shared Responsibility, IAM, MFA</p></div>
+            <div class="module"><span class="num-badge">07</span><h4>Databases (Advanced)</h4><p>Aurora, Redshift, DocumentDB, Neptune</p></div>
+            <div class="module"><span class="num-badge">08</span><h4>AI/ML & Analytics</h4><p>SageMaker, Rekognition, Kinesis</p></div>
+            <div class="module"><span class="num-badge">09</span><h4>Security (Advanced)</h4><p>KMS, Shield, WAF, GuardDuty</p></div>
+            <div class="module"><span class="num-badge">10</span><h4>Monitoring & Governance</h4><p>CloudWatch, CloudTrail, Config</p></div>
+            <div class="module"><span class="num-badge">11</span><h4>Pricing & Support</h4><p>Free Tier, Cost Explorer, Support Plans</p></div>
+            <div class="module"><span class="num-badge">12</span><h4>Migrating to AWS</h4><p>CAF, 7 Rs, DMS, Snow Family</p></div>
+            <div class="module"><span class="num-badge">13</span><h4>Well-Architected</h4><p>Six pillars, Well-Architected Tool</p></div>
+          </div>
+
+          <h3>Applied Assignment — Telecom CDR Analytics Platform</h3>
+          <p>As part of the IoT and Cloud Computing course, I completed a full written report designing a cloud-native AWS architecture for a regional telecom operator processing <strong>50 million Call Detail Records (CDRs) per day</strong>.</p>
+          <ul>
+            <li><strong>Ingestion:</strong> AWS Direct Connect, Amazon S3 with WORM Object Lock</li>
+            <li><strong>Streaming:</strong> Amazon Kinesis Data Streams + AWS Lambda enrichment</li>
+            <li><strong>Data Lake:</strong> Amazon S3 with Parquet format, partitioned by date</li>
+            <li><strong>Warehouse:</strong> Amazon Redshift (Reserved Nodes) + Redshift Spectrum</li>
+            <li><strong>Ad-hoc Queries:</strong> Amazon Athena on S3 with AWS Glue Catalog</li>
+            <li><strong>Visualization:</strong> Amazon QuickSight dashboards</li>
+            <li><strong>Security:</strong> KMS encryption, GuardDuty, Macie, CloudTrail (GDPR Art. 33)</li>
+            <li><strong>Well-Architected alignment:</strong> Security, Reliability, Performance, Cost</li>
+          </ul>
+
+          <h3>Key Skills Gained</h3>
+          <ul>
+            <li>Cloud architecture design using AWS best practices</li>
+            <li>Cost optimisation with Reserved vs On-Demand pricing</li>
+            <li>Shared Responsibility Model applied to sensitive data (CDRs)</li>
+            <li>Well-Architected Framework review of production workloads</li>
+            <li>Real-world IoT/Telecom scenario analysis and design</li>
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <div class="image-frame">
+            <img src="images/aws-certificate.jpg" alt="AWS Cloud Practitioner Essentials Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <div class="placeholder" style="display:none;">
+              <i class="fab fa-aws"></i>
+              Add <code>images/aws-certificate.jpg</code> to your repo
+            </div>
+            <div class="caption">AWS Cloud Practitioner Essentials · May 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERT 4: JAVA ============ -->
   <section class="detail-section" id="java">
     <div class="container">
       <div class="detail-grid">
@@ -266,11 +331,11 @@ footer a:hover{opacity:.7}
         </div>
 
         <div class="reveal">
-          <div class="cert-preview">
+          <div class="image-frame">
             <img src="images/java-certificate.jpg" alt="Java Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-            <div style="display:none;padding:2rem;background:var(--bg-alt);border-radius:4px;color:var(--text-muted);font-size:.9rem;">
-              <i class="fab fa-java" style="font-size:2rem;color:var(--accent);display:block;margin-bottom:1rem;"></i>
-              Certificate image<br><small>(Add images/java-certificate.jpg to your repo)</small>
+            <div class="placeholder" style="display:none;">
+              <i class="fab fa-java"></i>
+              Add <code>images/java-certificate.jpg</code> to your repo
             </div>
             <div class="caption">Java Certificate · 2025</div>
           </div>
