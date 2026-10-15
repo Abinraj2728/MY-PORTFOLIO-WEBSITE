@@ -15,7 +15,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 @keyframes drawLine{from{width:0}to{width:60px}}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05);opacity:.9}}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .container{max-width:1100px;margin:0 auto;padding:0 2rem}
@@ -34,19 +33,7 @@ section{padding:6rem 0;position:relative}
 .scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-soft));width:0%;z-index:1001;transition:width .1s linear}
 .page-hero{padding:10rem 0 4rem;text-align:center;position:relative;overflow:hidden}
 .page-hero::before{content:'';position:absolute;top:-30%;right:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,122,.12),transparent 70%);animation:float 8s ease-in-out infinite;pointer-events:none}
-.page-hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(139,111,71,.08),transparent 70%);animation:float 10s ease-in-out infinite reverse;pointer-events:none}
 .page-hero-inner{position:relative;z-index:1}
 .page-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem}
 .page-eyebrow::before{content:'';display:inline-block;width:0;height:1px;background:var(--accent);animation:drawLine 1.2s ease .4s forwards}
-.page-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:500;line-height:1.1;color:var(--text);margin-bottom:1rem;animation:fadeUp .9s ease .2s both}
-.page-hero h1 em{font-style:italic;color:var(--accent);font-weight:400}
-.page-hero p{font-size:1.05rem;color:var(--text-soft);max-width:620px;margin:0 auto;font-weight:300;animation:fadeUp .9s ease .4s both}
-.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:2rem;transition:color .3s,gap .3s}
-.back-link:hover{color:var(--accent);gap:.8rem}
-.section-head{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:3rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);flex-wrap:wrap}
-.section-head .num{font-family:var(--serif);font-size:.95rem;font-weight:500;color:var(--accent);letter-spacing:.1em}
-.section-head h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:500;color:var(--text);flex:1}
-.section-head .badge{font-size:.72rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);background:rgba(201,169,122,.08);padding:.35rem .9rem;border-radius:100px;white-space:nowrap}
-.detail-section{padding:4rem 0}
-.detail-section+.detail-section{border-top:1px solid var(--border)}
-.detail-grid{display:grid;grid-template-columns:1fr 1fr;
+.page-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:500;line-height:1.1;color:var(--text);margin-bottom:1rem;animation:fadeUp .9s ease
