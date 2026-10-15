@@ -41,11 +41,7 @@ section{padding:6rem 0;position:relative}
 .page-hero p{font-size:1.05rem;color:var(--text-soft);max-width:620px;margin:0 auto;font-weight:300;animation:fadeUp .9s ease .4s both}
 .back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:2rem;transition:color .3s,gap .3s}
 .back-link:hover{color:var(--accent);gap:.8rem}
-.section-head{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:3rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);flex-wrap:wrap}
-.section-head .num{font-family:var(--serif);font-size:.95rem;font-weight:500;color:var(--accent);letter-spacing:.1em}
-.section-head h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:500;color:var(--text);flex:1}
-.section-head .badge{font-size:.72rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border-strong);padding:.35rem .9rem;border-radius:100px;white-space:nowrap}
-.detail-section{padding:4rem 0;scroll-margin-top:80px}
+.detail-section{padding:5rem 0;scroll-margin-top:80px}
 .detail-section+.detail-section{border-top:1px solid var(--border)}
 .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
 .detail-content h2{font-family:var(--serif);font-size:1.9rem;font-weight:500;margin-bottom:1.2rem;color:var(--text)}
@@ -60,8 +56,8 @@ section{padding:6rem 0;position:relative}
 .image-frame .placeholder{padding:3rem 2rem;text-align:center;background:var(--bg-alt);border-radius:4px;color:var(--text-muted);font-size:.9rem}
 .image-frame .placeholder i{font-size:2.5rem;color:var(--accent);display:block;margin-bottom:1rem}
 .image-frame .caption{font-size:.82rem;color:var(--text-muted);text-align:center;margin-top:.8rem;font-style:italic}
-.tag{font-size:.72rem;font-weight:500;letter-spacing:.04em;padding:.28rem .75rem;background:var(--bg-alt);border:1px solid var(--border);color:var(--text-soft);border-radius:100px}
 .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem}
+.tag{font-size:.72rem;font-weight:500;letter-spacing:.04em;padding:.28rem .75rem;background:var(--bg-alt);border:1px solid var(--border);color:var(--text-soft);border-radius:100px}
 .btn{display:inline-flex;align-items:center;gap:.7rem;padding:.85rem 1.6rem;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all .35s cubic-bezier(.22,1,.36,1);cursor:pointer;border:1px solid transparent}
 .btn-primary{background:var(--text);color:var(--bg)}
 .btn-primary:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
@@ -88,6 +84,7 @@ footer a:hover{opacity:.7}
         <li><a href="odin.html">Odin</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="new-certification.html">New Certs</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
@@ -96,7 +93,6 @@ footer a:hover{opacity:.7}
 
 <main>
 
-  <!-- HERO -->
   <section class="page-hero">
     <div class="container page-hero-inner">
       <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to home</a>
@@ -106,7 +102,6 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- PROJECT 1: Smart Home IoT -->
   <section class="detail-section" id="smart-home">
     <div class="container">
       <div class="detail-grid">
@@ -150,11 +145,11 @@ footer a:hover{opacity:.7}
 
         <div class="reveal">
           <div class="image-frame">
-            <img src="images/smart-home.jpg" alt="Smart Home IoT Prototype" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <img src="images/smart-home.png" alt="Smart Home IoT Prototype" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
             <div class="placeholder" style="display:none;">
               <i class="fas fa-microchip"></i>
               Add a screenshot of your Wokwi project<br>
-              <small style="display:block;margin-top:0.5rem;">Save it as <code>images/smart-home.jpg</code></small>
+              <small style="display:block;margin-top:0.5rem;">Save it as <code>images/smart-home.png</code></small>
             </div>
             <div class="caption">Smart Home IoT · Arduino on Wokwi</div>
           </div>
@@ -163,7 +158,6 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- MORE PROJECTS COMING -->
   <section class="detail-section" style="text-align:center;padding:4rem 0;">
     <div class="container">
       <p style="font-family:var(--serif);font-size:1.3rem;color:var(--text-soft);font-style:italic;">
