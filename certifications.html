@@ -63,14 +63,6 @@ section{padding:6rem 0;position:relative}
 .module .num-badge{display:inline-block;font-family:var(--serif);font-size:.8rem;font-weight:600;letter-spacing:.1em;color:var(--accent);margin-bottom:.4rem}
 .module h4{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:.25rem}
 .module p{font-size:.83rem;color:var(--text-muted);line-height:1.55;margin:0}
-.empty-slot{background:var(--bg-alt);border:2px dashed var(--border-strong);border-radius:12px;padding:4rem 2rem;text-align:center;max-width:700px;margin:3rem auto}
-.empty-slot .slot-icon{font-size:3rem;color:var(--accent-soft);margin-bottom:1.2rem;animation:float 4s ease-in-out infinite}
-.empty-slot h3{font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--text);margin-bottom:.8rem}
-.empty-slot p{color:var(--text-muted);font-size:.95rem;max-width:500px;margin:0 auto;line-height:1.7}
-.empty-slot .dots{display:flex;gap:.5rem;justify-content:center;margin-top:1.5rem}
-.empty-slot .dot{width:8px;height:8px;border-radius:50%;background:var(--accent-soft);animation:pulse 1.5s ease-in-out infinite}
-.empty-slot .dot:nth-child(2){animation-delay:.3s}
-.empty-slot .dot:nth-child(3){animation-delay:.6s}
 footer{border-top:1px solid var(--border);padding:2.5rem 0;text-align:center;font-size:.85rem;color:var(--text-muted)}
 footer a{color:var(--accent);text-decoration:none}
 footer a:hover{opacity:.7}
@@ -94,6 +86,7 @@ footer a:hover{opacity:.7}
         <li><a href="odin.html">Odin</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="certifications.html" class="active">Certifications</a></li>
+        <li><a href="new-certification.html">New Certs</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
@@ -102,7 +95,6 @@ footer a:hover{opacity:.7}
 
 <main>
 
-  <!-- HERO -->
   <section class="page-hero">
     <div class="container page-hero-inner">
       <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to home</a>
@@ -112,7 +104,6 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- ============ AWS ============ -->
   <section class="detail-section" id="aws">
     <div class="container">
       <div class="detail-grid">
@@ -121,25 +112,23 @@ footer a:hover{opacity:.7}
           <h2>AWS Cloud Practitioner Essentials</h2>
           <p><strong>Provider:</strong> AWS Training &amp; Certification · <strong>Completed:</strong> 11 May 2026 · <strong>Signed by:</strong> Michelle Vaz</p>
           <p>Completed as part of the <strong>IoT and Cloud Computing</strong> course at Riga Nordic University, under the scenario <em>"Telecom CDR Analytics Platform"</em>. Covers all 13 AWS Cloud Practitioner Essentials modules.</p>
-
           <h3>Course Modules (13 total)</h3>
           <div class="module-list">
-            <div class="module"><span class="num-badge">01</span><h4>Intro to AWS</h4><p>Cloud concepts, EC2, pricing</p></div>
+            <div class="module"><span class="num-badge">01</span><h4>Intro to AWS</h4><p>Cloud concepts, EC2</p></div>
             <div class="module"><span class="num-badge">02</span><h4>Compute</h4><p>EC2, Lambda, containers</p></div>
-            <div class="module"><span class="num-badge">03</span><h4>Global Infrastructure</h4><p>Regions, AZs, CloudFront</p></div>
+            <div class="module"><span class="num-badge">03</span><h4>Global Infra</h4><p>Regions, AZs, CloudFront</p></div>
             <div class="module"><span class="num-badge">04</span><h4>Networking</h4><p>VPC, subnets, gateways</p></div>
-            <div class="module"><span class="num-badge">05</span><h4>Storage &amp; Databases</h4><p>S3, EBS, RDS, DynamoDB</p></div>
-            <div class="module"><span class="num-badge">06</span><h4>Security</h4><p>IAM, MFA, Shared Responsibility</p></div>
-            <div class="module"><span class="num-badge">07</span><h4>Databases (Adv)</h4><p>Aurora, Redshift, Neptune</p></div>
-            <div class="module"><span class="num-badge">08</span><h4>AI/ML &amp; Analytics</h4><p>SageMaker, Kinesis</p></div>
-            <div class="module"><span class="num-badge">09</span><h4>Security (Adv)</h4><p>KMS, Shield, WAF, GuardDuty</p></div>
-            <div class="module"><span class="num-badge">10</span><h4>Monitoring</h4><p>CloudWatch, CloudTrail, Config</p></div>
-            <div class="module"><span class="num-badge">11</span><h4>Pricing &amp; Support</h4><p>Free Tier, Cost Explorer</p></div>
-            <div class="module"><span class="num-badge">12</span><h4>Migrating to AWS</h4><p>CAF, 7 Rs, DMS, Snow Family</p></div>
-            <div class="module"><span class="num-badge">13</span><h4>Well-Architected</h4><p>Six pillars, WA Tool</p></div>
+            <div class="module"><span class="num-badge">05</span><h4>Storage &amp; DB</h4><p>S3, EBS, RDS, DynamoDB</p></div>
+            <div class="module"><span class="num-badge">06</span><h4>Security</h4><p>IAM, MFA, Shared Resp.</p></div>
+            <div class="module"><span class="num-badge">07</span><h4>DB (Adv)</h4><p>Aurora, Redshift</p></div>
+            <div class="module"><span class="num-badge">08</span><h4>AI/ML</h4><p>SageMaker, Kinesis</p></div>
+            <div class="module"><span class="num-badge">09</span><h4>Security (Adv)</h4><p>KMS, Shield, WAF</p></div>
+            <div class="module"><span class="num-badge">10</span><h4>Monitoring</h4><p>CloudWatch, CloudTrail</p></div>
+            <div class="module"><span class="num-badge">11</span><h4>Pricing</h4><p>Free Tier, Cost Explorer</p></div>
+            <div class="module"><span class="num-badge">12</span><h4>Migration</h4><p>CAF, 7 Rs, DMS</p></div>
+            <div class="module"><span class="num-badge">13</span><h4>Well-Architected</h4><p>Six pillars</p></div>
           </div>
         </div>
-
         <div class="reveal">
           <div class="image-frame">
             <img src="images/aws-certificate.png" alt="AWS Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
@@ -151,7 +140,6 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- ============ C PROGRAMMING ============ -->
   <section class="detail-section" id="c-programming">
     <div class="container">
       <div class="detail-grid">
@@ -179,7 +167,6 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- ============ AI CAPSTONE ============ -->
   <section class="detail-section" id="ai">
     <div class="container">
       <div class="detail-grid">
@@ -207,7 +194,6 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- ============ JAVA ============ -->
   <section class="detail-section" id="java">
     <div class="container">
       <div class="detail-grid">
@@ -233,26 +219,15 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- ============================================================
-       🔽 NEW CERTIFICATES GO BELOW THIS LINE 🔽
-       To add a new certificate, copy the template block
-       from your guide and paste it right here, before
-       the "COMING SOON" section below.
-       ============================================================ -->
-
-  <!-- ============ COMING SOON / EMPTY SLOT ============ -->
-  <section class="detail-section" id="coming-soon" style="border-top:1px solid var(--border);">
+  <section class="detail-section" style="text-align:center;padding:4rem 0;border-top:1px solid var(--border);">
     <div class="container">
-      <div class="empty-slot reveal">
-        <div class="slot-icon"><i class="fas fa-plus-circle"></i></div>
-        <h3>More Certifications Coming</h3>
-        <p>I'm actively completing new courses and certifications. Check back soon — new certificates and project presentations will appear here as I finish them.</p>
-        <div class="dots">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-      </div>
+      <p style="font-family:var(--serif);font-size:1.3rem;color:var(--text-soft);font-style:italic;margin-bottom:1.5rem;">
+        Currently completing 11 additional certifications — see the new page.
+      </p>
+      <a href="new-certification.html" class="btn btn-primary" style="display:inline-flex;">
+        <i class="fas fa-plus-circle"></i>
+        <span>View New Certifications</span>
+      </a>
     </div>
   </section>
 
