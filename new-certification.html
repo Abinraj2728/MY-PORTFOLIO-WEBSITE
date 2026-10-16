@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>New Certifications · Abinraj Chovullakandy</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Past Certifications · Abinraj Chovullakandy</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="theme.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#f5f3ee;--bg-alt:#efece4;--card-bg:#fff;--text:#1a1a1a;--text-soft:#52504a;--text-muted:#8a877e;--accent:#8b6f47;--accent-soft:#c9a97a;--border:#e2ddd2;--border-strong:#cfc7b7;--shadow-md:0 10px 30px -10px rgba(60,50,30,.12);--shadow-lg:0 24px 60px -20px rgba(60,50,30,.18);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',sans-serif}
@@ -15,7 +16,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 @keyframes drawLine{from{width:0}to{width:60px}}
-@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.05);opacity:.9}}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .container{max-width:1100px;margin:0 auto;padding:0 2rem}
@@ -42,44 +42,42 @@ section{padding:6rem 0;position:relative}
 .page-hero p{font-size:1.05rem;color:var(--text-soft);max-width:620px;margin:0 auto;font-weight:300;animation:fadeUp .9s ease .4s both}
 .back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:2rem;transition:color .3s,gap .3s}
 .back-link:hover{color:var(--accent);gap:.8rem}
-
-/* PROGRESS COUNTER */
-.progress-block{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:2rem;margin:0 auto 3rem;max-width:700px;box-shadow:var(--shadow-md);text-align:center}
-.progress-block .big-num{font-family:var(--serif);font-size:3.5rem;font-weight:600;color:var(--accent);line-height:1;display:block;margin-bottom:.5rem}
-.progress-block .label{font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.5rem}
-.progress-bar{height:10px;background:var(--bg-alt);border-radius:100px;overflow:hidden;position:relative;margin-bottom:.8rem}
-.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-soft));width:0%;border-radius:100px;transition:width 1.5s cubic-bezier(.22,1,.36,1)}
-.progress-pct{font-size:.85rem;color:var(--text-muted)}
-
-/* CERT GRID */
-.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:2rem}
-.cert-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-align:center;transition:all .4s cubic-bezier(.22,1,.36,1);text-decoration:none;color:inherit;display:flex;flex-direction:column;position:relative;overflow:hidden}
-.cert-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-soft));transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.22,1,.36,1)}
-.cert-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--border-strong)}
-.cert-card:hover::before{transform:scaleX(1)}
-.cert-img-wrap{background:var(--bg-alt);border-radius:8px;padding:.5rem;margin-bottom:1rem;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.cert-img-wrap img{width:100%;height:100%;object-fit:contain;border-radius:4px}
-.cert-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-muted);font-size:.8rem;gap:.5rem}
-.cert-placeholder i{font-size:2rem;color:var(--accent-soft)}
-.cert-card h3{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--text);margin-bottom:.4rem;line-height:1.3}
-.cert-card .provider{font-size:.8rem;color:var(--text-muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem}
-.cert-card .date{font-size:.75rem;color:var(--accent);font-weight:500;letter-spacing:.08em;padding:.25rem .75rem;background:rgba(201,169,122,.1);border-radius:100px;display:inline-block;margin-top:auto}
-.cert-card .badge-new{position:absolute;top:1rem;right:1rem;background:var(--accent);color:#fff;font-size:.65rem;font-weight:600;letter-spacing:.1em;padding:.25rem .6rem;border-radius:100px;text-transform:uppercase}
-
-/* EMPTY SLOT */
-.empty-slot{background:var(--bg-alt);border:2px dashed var(--border-strong);border-radius:12px;padding:3rem 2rem;text-align:center;margin:2rem 0}
-.empty-slot .slot-icon{font-size:2.5rem;color:var(--accent-soft);margin-bottom:1rem;animation:float 4s ease-in-out infinite}
-.empty-slot h3{font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--text);margin-bottom:.6rem}
-.empty-slot p{color:var(--text-muted);font-size:.9rem;max-width:500px;margin:0 auto;line-height:1.6}
-
+.detail-section{padding:5rem 0;scroll-margin-top:80px}
+.detail-section+.detail-section{border-top:1px solid var(--border)}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.detail-content h2{font-family:var(--serif);font-size:1.9rem;font-weight:500;margin-bottom:1.2rem;color:var(--text)}
+.detail-content h3{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin:2rem 0 .8rem;color:var(--text)}
+.detail-content p{color:var(--text-soft);margin-bottom:1rem;font-size:.98rem;line-height:1.75}
+.detail-content ul{list-style:none;margin-bottom:1.5rem}
+.detail-content ul li{color:var(--text-soft);padding-left:1.6rem;position:relative;margin-bottom:.6rem;font-size:.95rem;line-height:1.7}
+.detail-content ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:500}
+.cert-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;background:rgba(107,142,78,.1);color:#4a6b32;border:1px solid rgba(107,142,78,.3);border-radius:100px;margin-bottom:1.2rem}
+.cert-badge.aws{background:rgba(255,153,0,.1);color:#a05e00;border-color:rgba(255,153,0,.35)}
+.image-frame{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:.8rem;box-shadow:var(--shadow-md);position:sticky;top:100px}
+.image-frame img{width:100%;border-radius:4px;display:block}
+.image-frame .placeholder{padding:3rem 2rem;text-align:center;background:var(--bg-alt);border-radius:4px;color:var(--text-muted);font-size:.9rem}
+.image-frame .placeholder i{font-size:2.5rem;color:var(--accent);display:block;margin-bottom:1rem}
+.image-frame .caption{font-size:.82rem;color:var(--text-muted);text-align:center;margin-top:.8rem;font-style:italic}
+.module-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-top:1.5rem}
+.module{padding:1.1rem 1.3rem;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;transition:all .4s ease}
+.module:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.module .num-badge{display:inline-block;font-family:var(--serif);font-size:.8rem;font-weight:600;letter-spacing:.1em;color:var(--accent);margin-bottom:.4rem}
+.module h4{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:.25rem}
+.module p{font-size:.83rem;color:var(--text-muted);line-height:1.55;margin:0}
+.presentation-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.2rem 0 1.5rem}
+.btn{display:inline-flex;align-items:center;gap:.7rem;padding:.85rem 1.6rem;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all .35s cubic-bezier(.22,1,.36,1);cursor:pointer;border:1px solid transparent;font-family:var(--sans)}
+.btn-presentation{background:var(--text);color:var(--bg)}
+.btn-presentation:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
+.btn-download{background:transparent;color:var(--text);border-color:var(--border-strong)}
+.btn-download:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
 footer{border-top:1px solid var(--border);padding:2.5rem 0;text-align:center;font-size:.85rem;color:var(--text-muted)}
 footer a{color:var(--accent);text-decoration:none}
 footer a:hover{opacity:.7}
 .scroll-top{position:fixed;right:1.5rem;bottom:1.5rem;width:46px;height:46px;background:var(--text);color:var(--bg);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.95rem;opacity:0;pointer-events:none;transform:translateY(20px);transition:all .4s cubic-bezier(.22,1,.36,1);z-index:999;box-shadow:var(--shadow-md)}
 .scroll-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
 .scroll-top:hover{transform:translateY(-4px) scale(1.05)}
-@media(max-width:860px){.nav-links{display:none}.cert-grid{grid-template-columns:1fr 1fr}section{padding:4rem 0}.page-hero{padding:7rem 0 3rem}}
-@media(max-width:480px){.container{padding:0 1.2rem}.top-bar-inner{padding:.8rem 1.2rem}.brand{font-size:1.2rem}.cert-grid{grid-template-columns:1fr}}
+@media(max-width:860px){.nav-links{display:none}.detail-grid{grid-template-columns:1fr;gap:2rem}.image-frame{position:static}section{padding:4rem 0}.page-hero{padding:7rem 0 3rem}}
+@media(max-width:480px){.container{padding:0 1.2rem}.top-bar-inner{padding:.8rem 1.2rem}.brand{font-size:1.2rem}}
 </style>
 </head>
 <body>
@@ -94,218 +92,167 @@ footer a:hover{opacity:.7}
         <li><a href="index.html">Home</a></li>
         <li><a href="odin.html">Odin</a></li>
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="certifications.html">Past Certs</a></li>
-        <li><a href="new-certification.html" class="active">New Certs</a></li>
+        <li><a href="certifications.html" class="active">Certifications</a></li>
+        <li><a href="new-certification.html">New Certs</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
+    <div class="theme-switcher" id="themeSwitcher">
+      <button class="theme-switcher-btn" id="themeSwitcherBtn" aria-label="Change theme">
+        <i class="fas fa-palette"></i><span class="label">Theme</span><i class="fas fa-chevron-down arrow"></i>
+      </button>
+      <div class="theme-dropdown">
+        <button class="theme-option" data-theme-set="ocean"><span class="swatch ocean"></span> Ocean Blue <i class="fas fa-check check"></i></button>
+        <button class="theme-option" data-theme-set="forest"><span class="swatch forest"></span> Forest Green <i class="fas fa-check check"></i></button>
+        <button class="theme-option" data-theme-set="rose"><span class="swatch rose"></span> Rose <i class="fas fa-check check"></i></button>
+        <button class="theme-option" data-theme-set="dark"><span class="swatch dark"></span> Dark <i class="fas fa-check check"></i></button>
+      </div>
+    </div>
   </div>
 </header>
 
 <main>
 
-  <!-- HERO -->
   <section class="page-hero">
     <div class="container page-hero-inner">
       <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to home</a>
-      <div class="page-eyebrow">In Progress · 2026</div>
-      <h1>New <em>Certifications</em></h1>
-      <p>A growing collection of certifications I'm completing as part of my Information Systems studies at Riga Nordic University.</p>
+      <div class="page-eyebrow">Completed Certifications</div>
+      <h1>Past <em>Certifications</em></h1>
+      <p>Four completed certifications — each with a detailed presentation of the course content and outcomes.</p>
     </div>
   </section>
 
-  <!-- PROGRESS COUNTER -->
-  <section style="padding:0 0 4rem;">
+  <section class="detail-section" id="aws">
     <div class="container">
-      <div class="progress-block reveal">
-        <span class="big-num"><span id="certCount">0</span> / 11</span>
-        <div class="label">Certificates Completed</div>
-        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-        <div class="progress-pct" id="progressPct">0% complete</div>
+      <div class="detail-grid">
+        <div class="detail-content reveal">
+          <div class="cert-badge aws"><i class="fas fa-cloud"></i> Certified · May 2026</div>
+          <h2>AWS Cloud Practitioner Essentials</h2>
+          <p><strong>Provider:</strong> AWS Training &amp; Certification · <strong>Completed:</strong> 11 May 2026 · <strong>Signed by:</strong> Michelle Vaz</p>
+          <p>Completed as part of the <strong>IoT and Cloud Computing</strong> course at Riga Nordic University, under the scenario <em>"Telecom CDR Analytics Platform"</em>. Covers all 13 AWS Cloud Practitioner Essentials modules.</p>
+
+          <div class="presentation-actions">
+            <a href="presentations/aws-report-presentation.pdf" target="_blank" rel="noopener" class="btn btn-presentation"><i class="fas fa-file-pdf"></i> <span>View Presentation</span></a>
+            <a href="presentations/aws-report-presentation.pdf" download class="btn btn-download"><i class="fas fa-download"></i> <span>Download</span></a>
+          </div>
+
+          <h3>Course Modules (13 total)</h3>
+          <div class="module-list">
+            <div class="module"><span class="num-badge">01</span><h4>Intro to AWS</h4><p>Cloud concepts, EC2, pricing</p></div>
+            <div class="module"><span class="num-badge">02</span><h4>Compute</h4><p>EC2, Lambda, containers</p></div>
+            <div class="module"><span class="num-badge">03</span><h4>Global Infrastructure</h4><p>Regions, AZs, CloudFront</p></div>
+            <div class="module"><span class="num-badge">04</span><h4>Networking</h4><p>VPC, subnets, gateways</p></div>
+            <div class="module"><span class="num-badge">05</span><h4>Storage &amp; Databases</h4><p>S3, EBS, RDS, DynamoDB</p></div>
+            <div class="module"><span class="num-badge">06</span><h4>Security</h4><p>IAM, MFA, Shared Responsibility</p></div>
+            <div class="module"><span class="num-badge">07</span><h4>Databases (Adv)</h4><p>Aurora, Redshift, Neptune</p></div>
+            <div class="module"><span class="num-badge">08</span><h4>AI/ML &amp; Analytics</h4><p>SageMaker, Kinesis</p></div>
+            <div class="module"><span class="num-badge">09</span><h4>Security (Adv)</h4><p>KMS, Shield, WAF, GuardDuty</p></div>
+            <div class="module"><span class="num-badge">10</span><h4>Monitoring</h4><p>CloudWatch, CloudTrail, Config</p></div>
+            <div class="module"><span class="num-badge">11</span><h4>Pricing &amp; Support</h4><p>Free Tier, Cost Explorer</p></div>
+            <div class="module"><span class="num-badge">12</span><h4>Migrating to AWS</h4><p>CAF, 7 Rs, DMS, Snow Family</p></div>
+            <div class="module"><span class="num-badge">13</span><h4>Well-Architected</h4><p>Six pillars, WA Tool</p></div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="image-frame">
+            <img src="images/aws-certificate.png" alt="AWS Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <div class="placeholder" style="display:none;"><i class="fab fa-aws"></i>Add <code>images/aws-certificate.png</code></div>
+            <div class="caption">AWS Cloud Practitioner Essentials · May 2026</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CERT GRID -->
-  <section style="padding-top:0;">
+  <section class="detail-section" id="c-programming">
     <div class="container">
+      <div class="detail-grid">
+        <div class="detail-content reveal">
+          <div class="cert-badge"><i class="fas fa-check-circle"></i> Certified · May 2025</div>
+          <h2>Diploma in C Programming</h2>
+          <p><strong>Provider:</strong> Alison · <strong>Completed:</strong> 07 May 2025</p>
+          <p>Comprehensive course covering C fundamentals across 16 modules: number systems, program flow, data types, arrays, strings, pointers, constants, logic, and loops.</p>
 
-      <div class="cert-grid">
-
-        <!-- ═══════════════════════════════════════════════
-             NEW CERTIFICATE TEMPLATE
-             Copy the block below and paste it here for each new cert.
-             Change these 5 things:
-               1.  cert-01.png  → your image filename
-               2.  ICON-CLASS   → e.g. fab fa-python
-               3.  TITLE        → certificate name
-               4.  PROVIDER     → who issued it
-               5.  DATE         → completion date
-             ═══════════════════════════════════════════════ -->
-
-        <!-- CERTIFICATE 1 -->
-        <div class="cert-card reveal">
-          <div class="badge-new">New</div>
-          <div class="cert-img-wrap">
-            <img src="images/new-certification/cert-01.png" alt="Certificate 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="cert-placeholder" style="display:none;">
-              <i class="fas fa-certificate"></i>
-              <span>cert-01.png</span>
-            </div>
+          <div class="presentation-actions">
+            <a href="presentations/c-programming-presentation.pdf" target="_blank" rel="noopener" class="btn btn-presentation"><i class="fas fa-file-powerpoint"></i> <span>View Presentation</span></a>
+            <a href="presentations/c-programming-presentation.pdf" download class="btn btn-download"><i class="fas fa-download"></i> <span>Download</span></a>
           </div>
-          <h3>Certificate 1 Title</h3>
-          <div class="provider">Provider Name</div>
-          <div class="date">2026</div>
-        </div>
 
-        <!-- CERTIFICATE 2 -->
-        <div class="cert-card reveal">
-          <div class="cert-img-wrap">
-            <img src="images/new-certification/cert-02.png" alt="Certificate 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="cert-placeholder" style="display:none;">
-              <i class="fas fa-certificate"></i>
-              <span>cert-02.png</span>
-            </div>
+          <h3>Key Topics</h3>
+          <ul>
+            <li>Number Systems, Programming Basics, Program Flow</li>
+            <li>Data types, Variables, Arrays, Strings</li>
+            <li>Pointers, Constants, Logical Operators</li>
+            <li>GOTO, Loops, Final Assessment</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="image-frame">
+            <img src="images/c-certificate.png" alt="C Programming Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <div class="placeholder" style="display:none;"><i class="fas fa-code"></i>Add <code>images/c-certificate.png</code></div>
+            <div class="caption">Diploma in C Programming · Alison · 2025</div>
           </div>
-          <h3>Certificate 2 Title</h3>
-          <div class="provider">Provider Name</div>
-          <div class="date">2026</div>
         </div>
-
-        <!-- CERTIFICATE 3 -->
-        <div class="cert-card reveal">
-          <div class="cert-img-wrap">
-            <img src="images/new-certification/cert-03.png" alt="Certificate 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="cert-placeholder" style="display:none;">
-              <i class="fas fa-certificate"></i>
-              <span>cert-03.png</span>
-            </div>
-          </div>
-          <h3>Certificate 3 Title</h3>
-          <div class="provider">Provider Name</div>
-          <div class="date">2026</div>
-        </div>
-
-        <!-- CERTIFICATE 4 -->
-        <div class="cert-card reveal">
-          <div class="cert-img-wrap">
-            <img src="images/new-certification/cert-04.png" alt="Certificate 4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="cert-placeholder" style="display:none;">
-              <i class="fas fa-certificate"></i>
-              <span>cert-04.png</span>
-            </div>
-          </div>
-          <h3>Certificate 4 Title</h3>
-          <div class="provider">Provider Name</div>
-          <div class="date">2026</div>
-        </div>
-
-        <!-- CERTIFICATE 5 -->
-        <div class="cert-card reveal">
-          <div class="cert-img-wrap">
-            <img src="images/new-certification/cert-05.png" alt="Certificate 5" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="cert-placeholder" style="display:none;">
-              <i class="fas fa-certificate"></i>
-              <span>cert-05.png</span>
-            </div>
-          </div>
-          <h3>Certificate 5 Title</h3>
-          <div class="provider">Provider Name</div>
-          <div class="date">2026</div>
-        </div>
-
-        <!-- CERTIFICATE 6 -->
-        <div class="cert-card reveal">
-          <div class="cert-img-wrap">
-            <img src="images/new-certification/cert-06.png" alt="Certificate 6" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="cert-placeholder" style="display:none;">
-              <i class="fas fa-certificate"></i>
-              <span>cert-06.png</span>
-            </div>
-          </div>
-          <h3>Certificate 6 Title</h3>
-          <div class="provider">Provider Name</div>
-          <div class="date">2026</div>
-        </div>
-
-        <!-- CERTIFICATE 7 -->
-        <div class="cert-card reveal">
-          <div class="cert-img-wrap">
-            <img src="images/new-certification/cert-07.png" alt="Certificate 7" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="cert-placeholder" style="display:none;">
-              <i class="fas fa-certificate"></i>
-              <span>cert-07.png</span>
-            </div>
-          </div>
-          <h3>Certificate 7 Title</h3>
-          <div class="provider">Provider Name</div>
-          <div class="date">2026</div>
-        </div>
-
-        <!-- CERTIFICATE 8 -->
-        <div class="cert-card reveal">
-          <div class="cert-img-wrap">
-            <img src="images/new-certification/cert-08.png" alt="Certificate 8" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="cert-placeholder" style="display:none;">
-              <i class="fas fa-certificate"></i>
-              <span>cert-08.png</span>
-            </div>
-          </div>
-          <h3>Certificate 8 Title</h3>
-          <div class="provider">Provider Name</div>
-          <div class="date">2026</div>
-        </div>
-
-        <!-- CERTIFICATE 9 -->
-        <div class="cert-card reveal">
-          <div class="cert-img-wrap">
-            <img src="images/new-certification/cert-09.png" alt="Certificate 9" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="cert-placeholder" style="display:none;">
-              <i class="fas fa-certificate"></i>
-              <span>cert-09.png</span>
-            </div>
-          </div>
-          <h3>Certificate 9 Title</h3>
-          <div class="provider">Provider Name</div>
-          <div class="date">2026</div>
-        </div>
-
-        <!-- CERTIFICATE 10 -->
-        <div class="cert-card reveal">
-          <div class="cert-img-wrap">
-            <img src="images/new-certification/cert-10.png" alt="Certificate 10" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="cert-placeholder" style="display:none;">
-              <i class="fas fa-certificate"></i>
-              <span>cert-10.png</span>
-            </div>
-          </div>
-          <h3>Certificate 10 Title</h3>
-          <div class="provider">Provider Name</div>
-          <div class="date">2026</div>
-        </div>
-
-        <!-- CERTIFICATE 11 -->
-        <div class="cert-card reveal">
-          <div class="cert-img-wrap">
-            <img src="images/new-certification/cert-11.png" alt="Certificate 11" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="cert-placeholder" style="display:none;">
-              <i class="fas fa-certificate"></i>
-              <span>cert-11.png</span>
-            </div>
-          </div>
-          <h3>Certificate 11 Title</h3>
-          <div class="provider">Provider Name</div>
-          <div class="date">2026</div>
-        </div>
-
       </div>
+    </div>
+  </section>
 
-      <!-- EMPTY SLOT (info box) -->
-      <div class="empty-slot reveal" style="margin-top:3rem;">
-        <div class="slot-icon"><i class="fas fa-plus-circle"></i></div>
-        <h3>Actively Working On It</h3>
-        <p>I'm completing 11 new certifications as part of my Information Systems degree. Each one will be uploaded here as I finish it.</p>
+  <section class="detail-section" id="ai-capstone">
+    <div class="container">
+      <div class="detail-grid">
+        <div class="detail-content reveal">
+          <div class="cert-badge"><i class="fas fa-brain"></i> Certified · April 2025</div>
+          <h2>AI Capstone Project with Deep Learning</h2>
+          <p><strong>Provider:</strong> IBM via Coursera · <strong>Completed:</strong> 17 April 2025</p>
+          <p>End-to-end deep learning project — image classification with PyTorch and Keras/TensorFlow. Part of the IBM AI Engineering Professional Certificate.</p>
+
+          <div class="presentation-actions">
+            <a href="presentations/ai-capstone-presentation.pdf" target="_blank" rel="noopener" class="btn btn-presentation"><i class="fas fa-file-powerpoint"></i> <span>View Presentation</span></a>
+            <a href="presentations/ai-capstone-presentation.pdf" download class="btn btn-download"><i class="fas fa-download"></i> <span>Download</span></a>
+          </div>
+
+          <h3>Key Learnings</h3>
+          <ul>
+            <li>Data loading, preparation, augmentation</li>
+            <li>Transfer learning with ResNet &amp; VGG</li>
+            <li>Evaluation with confusion matrices</li>
+          </ul>
+          <p style="font-size:.85rem;color:var(--text-muted);"><strong>Verify:</strong> <a href="https://coursera.org/verify/2YWJK7NIKSY3" target="_blank" style="color:var(--accent);">coursera.org/verify/2YWJK7NIKSY3</a></p>
+        </div>
+        <div class="reveal">
+          <div class="image-frame">
+            <img src="images/ai-certificate.png" alt="AI Capstone Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <div class="placeholder" style="display:none;"><i class="fas fa-brain"></i>Add <code>images/ai-certificate.png</code></div>
+            <div class="caption">AI Capstone · IBM/Coursera · 2025</div>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
+  <section class="detail-section" id="java">
+    <div class="container">
+      <div class="detail-grid">
+        <div class="detail-content reveal">
+          <div class="cert-badge"><i class="fab fa-java"></i> Certified · 2025</div>
+          <h2>Java Certificate</h2>
+          <p>Java programming certification covering OOP, syntax, and application development fundamentals.</p>
+          <h3>Skills Covered</h3>
+          <ul>
+            <li>Object-oriented programming principles</li>
+            <li>Classes, objects, inheritance, polymorphism</li>
+            <li>Exception handling and file I/O</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="image-frame">
+            <img src="images/java-certificate.png" alt="Java Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <div class="placeholder" style="display:none;"><i class="fab fa-java"></i>Add <code>images/java-certificate.png</code></div>
+            <div class="caption">Java Certificate · 2025</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -332,34 +279,36 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 
-// Auto-count certificates by checking images
-window.addEventListener('load', () => {
-  const certCards = document.querySelectorAll('.cert-card');
-  const total = 11;
-  let count = 0;
-  certCards.forEach(card => {
-    const img = card.querySelector('img');
-    if (img && img.style.display !== 'none' && img.complete && img.naturalWidth > 0) {
-      count++;
-      card.querySelector('.badge-new')?.remove(); // remove "New" badge once complete
+<script>
+(function() {
+  const saved = localStorage.getItem('portfolio-theme') || 'ocean';
+  document.documentElement.setAttribute('data-theme', saved);
+  document.addEventListener('DOMContentLoaded', function() {
+    const switcher = document.getElementById('themeSwitcher');
+    const btn = document.getElementById('themeSwitcherBtn');
+    if (!switcher || !btn) return;
+    function updateActive() {
+      const current = document.documentElement.getAttribute('data-theme') || 'ocean';
+      document.querySelectorAll('.theme-option').forEach(opt => {
+        opt.classList.toggle('active', opt.dataset.themeSet === current);
+      });
     }
+    updateActive();
+    btn.addEventListener('click', function(e) { e.stopPropagation(); switcher.classList.toggle('open'); });
+    document.addEventListener('click', function(e) { if (!switcher.contains(e.target)) switcher.classList.remove('open'); });
+    document.querySelectorAll('.theme-option').forEach(opt => {
+      opt.addEventListener('click', function() {
+        const theme = this.dataset.themeSet;
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('portfolio-theme', theme);
+        updateActive();
+        switcher.classList.remove('open');
+      });
+    });
   });
-  // Animate counter
-  const countEl = document.getElementById('certCount');
-  const fillEl = document.getElementById('progressFill');
-  const pctEl = document.getElementById('progressPct');
-  let current = 0;
-  const step = Math.max(1, Math.ceil(count / 30));
-  const interval = setInterval(() => {
-    current += step;
-    if (current >= count) { current = count; clearInterval(interval); }
-    countEl.textContent = current;
-    const pct = Math.round((current / total) * 100);
-    fillEl.style.width = pct + '%';
-    pctEl.textContent = pct + '% complete';
-  }, 40);
-});
+})();
 </script>
 </body>
 </html>
