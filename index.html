@@ -43,7 +43,8 @@ section{padding:6rem 0;position:relative}
 .page-hero p.lead{font-size:1.05rem;color:var(--text-soft);max-width:620px;font-weight:300;line-height:1.7;animation:fadeUp .9s ease .4s both}
 .hero-inner{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center}
 .hero-avatar-wrap{position:relative;animation:fadeUp 1s ease .4s both}
-.hero-avatar{width:260px;height:260px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:5rem;font-weight:500;color:#5c4a30;background:linear-gradient(135deg,#e8dfd0,#d4c5a8);box-shadow:var(--shadow-lg);border:6px solid var(--card-bg);transition:transform .5s cubic-bezier(.22,1,.36,1);overflow:hidden}
+.hero-avatar{width:280px;height:280px;border-radius:50%;position:relative;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:5rem;font-weight:500;color:#5c4a30;background:linear-gradient(135deg,#e8dfd0,#d4c5a8);box-shadow:var(--shadow-lg);border:6px solid var(--card-bg);transition:transform .5s cubic-bezier(.22,1,.36,1);overflow:hidden;padding:0}
+.hero-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 20%;border-radius:50%;display:block}
 .hero-avatar:hover{transform:scale(1.03) rotate(-2deg)}
 .hero-avatar-ring{position:absolute;inset:-16px;border-radius:50%;border:1px dashed var(--border-strong);animation:pulse 4s ease-in-out infinite;pointer-events:none}
 .hero-meta{display:flex;flex-wrap:wrap;gap:1.5rem;margin-bottom:2.5rem;font-size:.9rem;color:var(--text-muted)}
@@ -83,8 +84,8 @@ footer a:hover{opacity:.7}
 .scroll-top{position:fixed;right:1.5rem;bottom:1.5rem;width:46px;height:46px;background:var(--text);color:var(--bg);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.95rem;opacity:0;pointer-events:none;transform:translateY(20px);transition:all .4s cubic-bezier(.22,1,.36,1);z-index:999;box-shadow:var(--shadow-md)}
 .scroll-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
 .scroll-top:hover{transform:translateY(-4px) scale(1.05)}
-@media(max-width:860px){.nav-links{display:none}.hero-inner{grid-template-columns:1fr;gap:3rem;text-align:center}.hero-avatar{width:200px;height:200px;font-size:4rem;margin:0 auto}.hero-avatar-wrap{margin:0 auto}.hero-actions{justify-content:center}.hero-meta{justify-content:center}.page-hero{min-height:auto;padding:7rem 0 3rem}section{padding:4rem 0}.section-head{flex-wrap:wrap}}
-@media(max-width:480px){.container{padding:0 1.2rem}.top-bar-inner{padding:.8rem 1.2rem}.brand{font-size:1.2rem}.card{padding:1.5rem 1.3rem}}
+@media(max-width:860px){.nav-links{display:none}.hero-inner{grid-template-columns:1fr;gap:3rem;text-align:center}.hero-avatar{width:220px;height:220px}.hero-avatar-wrap{margin:0 auto}.hero-actions{justify-content:center}.hero-meta{justify-content:center}.page-hero{min-height:auto;padding:7rem 0 3rem}section{padding:4rem 0}.section-head{flex-wrap:wrap}}
+@media(max-width:480px){.container{padding:0 1.2rem}.top-bar-inner{padding:.8rem 1.2rem}.brand{font-size:1.2rem}.card{padding:1.5rem 1.3rem}.hero-avatar{width:180px;height:180px}}
 </style>
 </head>
 <body>
@@ -126,7 +127,9 @@ footer a:hover{opacity:.7}
         </div>
         <div class="hero-avatar-wrap">
           <div class="hero-avatar-ring"></div>
-          <div class="hero-avatar">AC</div>
+          <div class="hero-avatar">
+            <img src="images/avatar.jpg" alt="Abinraj Chovullakandy">
+          </div>
         </div>
       </div>
     </div>
