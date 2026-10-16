@@ -125,7 +125,7 @@ footer a:hover{opacity:.7}
   <section class="detail-section" id="aws">
     <div class="container">
       <div class="detail-grid">
-        <div class="detail-content reveal">
+        <div class="detail-content fade-left">
           <div class="cert-badge aws"><i class="fas fa-cloud"></i> Certified · May 2026</div>
           <h2>AWS Cloud Practitioner Essentials</h2>
           <p><strong>Provider:</strong> AWS Training &amp; Certification · <strong>Completed:</strong> 11 May 2026 · <strong>Signed by:</strong> Michelle Vaz</p>
@@ -137,7 +137,7 @@ footer a:hover{opacity:.7}
           </div>
 
           <h3>Course Modules (13 total)</h3>
-          <div class="module-list">
+          <div class="module-list stagger">
             <div class="module"><span class="num-badge">01</span><h4>Intro to AWS</h4><p>Cloud concepts, EC2, pricing</p></div>
             <div class="module"><span class="num-badge">02</span><h4>Compute</h4><p>EC2, Lambda, containers</p></div>
             <div class="module"><span class="num-badge">03</span><h4>Global Infrastructure</h4><p>Regions, AZs, CloudFront</p></div>
@@ -154,7 +154,7 @@ footer a:hover{opacity:.7}
           </div>
         </div>
 
-        <div class="reveal">
+        <div class="fade-right">
           <div class="image-frame">
             <img src="images/aws-certificate.png" alt="AWS Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
             <div class="placeholder" style="display:none;"><i class="fab fa-aws"></i>Add <code>images/aws-certificate.png</code></div>
@@ -168,7 +168,7 @@ footer a:hover{opacity:.7}
   <section class="detail-section" id="c-programming">
     <div class="container">
       <div class="detail-grid">
-        <div class="detail-content reveal">
+        <div class="detail-content fade-left">
           <div class="cert-badge"><i class="fas fa-check-circle"></i> Certified · May 2025</div>
           <h2>Diploma in C Programming</h2>
           <p><strong>Provider:</strong> Alison · <strong>Completed:</strong> 07 May 2025</p>
@@ -187,7 +187,7 @@ footer a:hover{opacity:.7}
             <li>GOTO, Loops, Final Assessment</li>
           </ul>
         </div>
-        <div class="reveal">
+        <div class="fade-right">
           <div class="image-frame">
             <img src="images/c-certificate.png" alt="C Programming Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
             <div class="placeholder" style="display:none;"><i class="fas fa-code"></i>Add <code>images/c-certificate.png</code></div>
@@ -201,7 +201,7 @@ footer a:hover{opacity:.7}
   <section class="detail-section" id="ai-capstone">
     <div class="container">
       <div class="detail-grid">
-        <div class="detail-content reveal">
+        <div class="detail-content fade-left">
           <div class="cert-badge"><i class="fas fa-brain"></i> Certified · April 2025</div>
           <h2>AI Capstone Project with Deep Learning</h2>
           <p><strong>Provider:</strong> IBM via Coursera · <strong>Completed:</strong> 17 April 2025</p>
@@ -220,7 +220,7 @@ footer a:hover{opacity:.7}
           </ul>
           <p style="font-size:.85rem;color:var(--text-muted);"><strong>Verify:</strong> <a href="https://coursera.org/verify/2YWJK7NIKSY3" target="_blank" style="color:var(--accent);">coursera.org/verify/2YWJK7NIKSY3</a></p>
         </div>
-        <div class="reveal">
+        <div class="fade-right">
           <div class="image-frame">
             <img src="images/ai-certificate.png" alt="AI Capstone Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
             <div class="placeholder" style="display:none;"><i class="fas fa-brain"></i>Add <code>images/ai-certificate.png</code></div>
@@ -234,7 +234,7 @@ footer a:hover{opacity:.7}
   <section class="detail-section" id="java">
     <div class="container">
       <div class="detail-grid">
-        <div class="detail-content reveal">
+        <div class="detail-content fade-left">
           <div class="cert-badge"><i class="fab fa-java"></i> Certified · 2025</div>
           <h2>Java Certificate</h2>
           <p>Java programming certification covering OOP, syntax, and application development fundamentals.</p>
@@ -245,7 +245,7 @@ footer a:hover{opacity:.7}
             <li>Exception handling and file I/O</li>
           </ul>
         </div>
-        <div class="reveal">
+        <div class="fade-right">
           <div class="image-frame">
             <img src="images/java-certificate.png" alt="Java Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
             <div class="placeholder" style="display:none;"><i class="fab fa-java"></i>Add <code>images/java-certificate.png</code></div>
@@ -275,10 +275,13 @@ window.addEventListener('scroll', () => {
   else { topBar.classList.remove('scrolled'); scrollTopBtn.classList.remove('visible'); }
 });
 scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  entries.forEach(entry => { 
+    if (entry.isIntersecting) entry.target.classList.add('visible'); 
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal, .fade-in, .fade-up, .fade-left, .fade-right, .scale-in, .section-reveal, .stagger').forEach(el => observer.observe(el));
 </script>
 
 <script>
