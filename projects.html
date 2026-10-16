@@ -51,6 +51,7 @@ section{padding:6rem 0;position:relative}
 .detail-content ul li{color:var(--text-soft);padding-left:1.6rem;position:relative;margin-bottom:.6rem;font-size:.95rem;line-height:1.7}
 .detail-content ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:500}
 .project-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;background:rgba(107,142,78,.1);color:#4a6b32;border:1px solid rgba(107,142,78,.3);border-radius:100px;margin-bottom:1.2rem}
+.project-badge.chatbot{background:rgba(99,102,241,.1);color:#4338ca;border-color:rgba(99,102,241,.35)}
 .image-frame{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:.8rem;box-shadow:var(--shadow-md);position:sticky;top:100px}
 .image-frame img{width:100%;border-radius:4px;display:block}
 .image-frame .placeholder{padding:3rem 2rem;text-align:center;background:var(--bg-alt);border-radius:4px;color:var(--text-muted);font-size:.9rem}
@@ -58,9 +59,15 @@ section{padding:6rem 0;position:relative}
 .image-frame .caption{font-size:.82rem;color:var(--text-muted);text-align:center;margin-top:.8rem;font-style:italic}
 .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem}
 .tag{font-size:.72rem;font-weight:500;letter-spacing:.04em;padding:.28rem .75rem;background:var(--bg-alt);border:1px solid var(--border);color:var(--text-soft);border-radius:100px}
-.btn{display:inline-flex;align-items:center;gap:.7rem;padding:.85rem 1.6rem;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all .35s cubic-bezier(.22,1,.36,1);cursor:pointer;border:1px solid transparent}
-.btn-primary{background:var(--text);color:var(--bg)}
-.btn-primary:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:.7rem;padding:.85rem 1.6rem;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all .35s cubic-bezier(.22,1,.36,1);cursor:pointer;border:1px solid transparent;font-family:var(--sans)}
+.btn-presentation{background:var(--text);color:var(--bg)}
+.btn-presentation:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
+.btn-download{background:transparent;color:var(--text);border-color:var(--border-strong)}
+.btn-download:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.presentation-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.5rem 0;}
+
 footer{border-top:1px solid var(--border);padding:2.5rem 0;text-align:center;font-size:.85rem;color:var(--text-muted)}
 footer a{color:var(--accent);text-decoration:none}
 footer a:hover{opacity:.7}
@@ -102,6 +109,7 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
+  <!-- PROJECT 1: Smart Home IoT -->
   <section class="detail-section" id="smart-home">
     <div class="container">
       <div class="detail-grid">
@@ -137,7 +145,7 @@ footer a:hover{opacity:.7}
             <li>Building complete IoT workflows from sensor to actuator</li>
           </ul>
 
-          <a href="https://github.com/Abinraj2728/robotic-project" target="_blank" class="btn btn-primary" style="margin-top:1rem;">
+          <a href="https://github.com/Abinraj2728/robotic-project" target="_blank" rel="noopener" class="btn btn-presentation" style="margin-top:1rem;">
             <i class="fab fa-github"></i>
             <span>View on GitHub</span>
           </a>
@@ -152,6 +160,60 @@ footer a:hover{opacity:.7}
               <small style="display:block;margin-top:0.5rem;">Save it as <code>images/smart-home.png</code></small>
             </div>
             <div class="caption">Smart Home IoT · Arduino on Wokwi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT 2: Simple C++ Chatbot -->
+  <section class="detail-section" id="c-chatbot">
+    <div class="container">
+      <div class="detail-grid">
+        <div class="detail-content reveal">
+          <div class="project-badge chatbot"><i class="fas fa-robot"></i> Mini Project · Automata Course · 2024</div>
+          <h2>Simple C++ Chatbot</h2>
+          <p>A mini project building a simple rule-based chatbot in C++ that answers basic user queries. The chatbot demonstrates string handling, conditionals, loops, and user interaction in a console application — a foundation for understanding how modern conversational interfaces work.</p>
+
+          <h3>Key Features</h3>
+          <ul>
+            <li><strong>Greeting system:</strong> Friendly welcome message on startup</li>
+            <li><strong>Query matching:</strong> Compares user input against predefined responses</li>
+            <li><strong>Exit command:</strong> User types "exit" to end the session gracefully</li>
+            <li><strong>Console interface:</strong> Simple, clean text-based user interaction</li>
+          </ul>
+
+          <h3>Technologies Used</h3>
+          <div class="tags">
+            <span class="tag">C++</span>
+            <span class="tag">String Handling</span>
+            <span class="tag">Conditionals</span>
+            <span class="tag">Loops</span>
+            <span class="tag">Console App</span>
+          </div>
+
+          <h3>What I Learned</h3>
+          <ul>
+            <li>String manipulation and comparison in C++</li>
+            <li>Control flow with if/else chains</li>
+            <li>Building conversational logic with rule-based matching</li>
+            <li>Designing a user-friendly console interface</li>
+          </ul>
+
+          <div class="presentation-actions">
+            <a href="presentations/c-chatbot-presentation.pdf" target="_blank" rel="noopener" class="btn btn-presentation"><i class="fas fa-file-powerpoint"></i> <span>View Presentation</span></a>
+            <a href="presentations/c-chatbot-presentation.pdf" download class="btn btn-download"><i class="fas fa-download"></i> <span>Download</span></a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="image-frame">
+            <div class="placeholder">
+              <i class="fas fa-robot"></i>
+              Simple C++ Chatbot<br>
+              <small style="display:block;margin-top:0.5rem;">Presentation available above</small>
+            </div>
+            <div class="caption">Simple C++ Chatbot · 2024</div>
           </div>
         </div>
       </div>
