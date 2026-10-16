@@ -52,12 +52,21 @@ section{padding:6rem 0;position:relative}
 .detail-content ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:500}
 .status-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;background:rgba(201,169,122,.12);color:var(--accent-dark);border:1px solid rgba(201,169,122,.4);border-radius:100px;margin-bottom:1.2rem}
 [data-theme="dark"] .status-badge{color:var(--accent-soft)}
-.module-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-top:1.5rem}
-.module{padding:1.2rem 1.4rem;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;transition:all .4s ease}
+
+/* CLICKABLE CURRICULUM CARDS */
+.module-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-top:1.5rem}
+.module{padding:1.4rem 1.5rem;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;transition:all .4s cubic-bezier(.22,1,.36,1);text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden}
+.module::after{content:'\f35d';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:1.2rem;right:1.2rem;font-size:.75rem;color:var(--accent);opacity:0;transform:translate(-4px,4px);transition:all .4s cubic-bezier(.22,1,.36,1)}
 .module:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.module .num-badge{display:inline-block;font-family:var(--serif);font-size:.8rem;font-weight:600;letter-spacing:.1em;color:var(--accent);margin-bottom:.5rem}
-.module h4{font-size:.98rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+.module:hover::after{opacity:1;transform:translate(0,0)}
+.module .num-badge{display:inline-block;font-family:var(--serif);font-size:.75rem;font-weight:600;letter-spacing:.15em;color:var(--accent);margin-bottom:.5rem;text-transform:uppercase}
+.module h4{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:.35rem;line-height:1.35;padding-right:1.5rem}
 .module p{font-size:.85rem;color:var(--text-muted);line-height:1.6;margin:0}
+
+/* TIP BOX */
+.tip-box{background:var(--bg-alt);border-left:3px solid var(--accent);border-radius:8px;padding:1.2rem 1.5rem;margin-top:2rem;font-size:.9rem;color:var(--text-soft);line-height:1.7}
+.tip-box i{color:var(--accent);margin-right:.5rem}
+
 footer{border-top:1px solid var(--border);padding:2.5rem 0;text-align:center;font-size:.85rem;color:var(--text-muted)}
 footer a{color:var(--accent);text-decoration:none}
 footer a:hover{opacity:.7}
@@ -89,41 +98,28 @@ footer a:hover{opacity:.7}
 </header>
 
 <main>
+
+  <!-- HERO -->
   <section class="page-hero">
     <div class="container page-hero-inner">
       <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to home</a>
-      <div class="page-eyebrow">In Progress · 2025–2026</div>
+      <div class="page-eyebrow">Currently Learning · Full Stack JavaScript</div>
       <h1>The Odin <em>Project</em></h1>
-      <p>A comprehensive open-source full-stack web development curriculum. Currently working through the JavaScript track and building real projects.</p>
+      <p>A free, open-source full-stack web development curriculum. Each card below links to the actual course page on The Odin Project.</p>
     </div>
   </section>
 
+  <!-- INTRO -->
   <section class="detail-section">
     <div class="container">
       <div class="detail-grid">
         <div class="detail-content reveal">
           <div class="status-badge"><i class="fas fa-circle" style="font-size:.5rem;"></i> Currently In Progress</div>
           <h2>What is The Odin Project?</h2>
-          <p>The Odin Project is a free, open-source curriculum that teaches full-stack web development. Unlike video courses, it focuses on project-based learning — you build real applications as you learn.</p>
-          <p>I chose The Odin Project because it emphasizes practical skills over tutorials. Every concept comes with a project that forces you to apply what you've learned.</p>
+          <p>The Odin Project is a free, open-source curriculum that teaches full-stack web development through hands-on projects. Rather than watching videos, you build real applications while following the curriculum.</p>
+          <p>I chose The Odin Project because it emphasizes practical skills. Every concept comes with a project that forces me to apply what I've learned.</p>
 
-          <h3>Curriculum Tracks</h3>
-          <ul>
-            <li><strong>Foundations:</strong> HTML, CSS, JavaScript basics, Git, and developer tools</li>
-            <li><strong>Full Stack JavaScript:</strong> Advanced JS, React, Node.js, Express, MongoDB</li>
-            <li><strong>Full Stack Ruby on Rails:</strong> Alternative track (not taken)</li>
-          </ul>
-
-          <h3>Skills Being Developed</h3>
-          <ul>
-            <li>Semantic HTML &amp; modern CSS (Flexbox, Grid)</li>
-            <li>JavaScript (ES6+), DOM manipulation, async/await</li>
-            <li>Git &amp; GitHub workflows</li>
-            <li>React, Node.js, Express, databases</li>
-            <li>Testing, debugging, and clean code practices</li>
-          </ul>
-
-          <h3>Why It Matters</h3>
+          <h3>Why It Works For Me</h3>
           <ul>
             <li>Portfolio-ready projects — every lesson produces a real app</li>
             <li>Industry-relevant — teaches what actual developers use</li>
@@ -134,31 +130,102 @@ footer a:hover{opacity:.7}
 
         <div class="reveal">
           <div class="module-list" style="margin-top:0;">
-            <div class="module"><span class="num-badge">FOUNDATIONS</span><h4>HTML &amp; CSS</h4><p>Semantic markup, layouts, responsive design</p></div>
-            <div class="module"><span class="num-badge">FOUNDATIONS</span><h4>JavaScript Basics</h4><p>Variables, functions, arrays, objects, loops</p></div>
-            <div class="module"><span class="num-badge">FOUNDATIONS</span><h4>Git &amp; Dev Tools</h4><p>Version control, command line, debugging</p></div>
-            <div class="module"><span class="num-badge">FULL-STACK JS</span><h4>Advanced JS</h4><p>Closures, promises, async/await, modules</p></div>
-            <div class="module"><span class="num-badge">FULL-STACK JS</span><h4>React</h4><p>Components, hooks, state management</p></div>
-            <div class="module"><span class="num-badge">FULL-STACK JS</span><h4>Node.js &amp; Express</h4><p>Backend APIs, routing, middleware</p></div>
-            <div class="module"><span class="num-badge">FULL-STACK JS</span><h4>Databases</h4><p>MongoDB, PostgreSQL, ORMs</p></div>
-            <div class="module"><span class="num-badge">PORTFOLIO</span><h4>Capstone Projects</h4><p>Building complete, deployable web apps</p></div>
+            <a href="https://www.theodinproject.com/paths/foundations/courses/foundations" target="_blank" rel="noopener" class="module">
+              <span class="num-badge">Track 01</span>
+              <h4>Foundations</h4>
+              <p>HTML, CSS, JavaScript basics, Git, and developer tools</p>
+            </a>
+            <a href="https://www.theodinproject.com/paths/full-stack-javascript" target="_blank" rel="noopener" class="module">
+              <span class="num-badge">Track 02</span>
+              <h4>Full Stack JavaScript</h4>
+              <p>Advanced JS, React, Node.js, Express, databases</p>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CURRICULUM -->
+  <section class="detail-section" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="reveal" style="text-align:center;margin-bottom:2rem;">
+        <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:500;color:var(--text);margin-bottom:.6rem;">Curriculum Modules</h2>
+        <p style="color:var(--text-soft);font-size:.95rem;max-width:520px;margin:0 auto;">Click any card to open the course page on The Odin Project.</p>
+      </div>
+
+      <div class="module-list">
+
+        <a href="https://www.theodinproject.com/paths/foundations/courses/foundations" target="_blank" rel="noopener" class="module reveal">
+          <span class="num-badge">Foundations</span>
+          <h4>Foundations</h4>
+          <p>HTML, CSS, JavaScript basics, Git, and developer tools</p>
+        </a>
+
+        <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/intermediate-html-and-css" target="_blank" rel="noopener" class="module reveal">
+          <span class="num-badge">Intermediate</span>
+          <h4>Intermediate HTML &amp; CSS</h4>
+          <p>SVG, tables, forms, grid, positioning, custom properties</p>
+        </a>
+
+        <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript" target="_blank" rel="noopener" class="module reveal">
+          <span class="num-badge">JavaScript</span>
+          <h4>JavaScript</h4>
+          <p>Objects, classes, async/await, testing, DOM manipulation</p>
+        </a>
+
+        <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/react-js" target="_blank" rel="noopener" class="module reveal">
+          <span class="num-badge">React</span>
+          <h4>React JS</h4>
+          <p>Components, hooks, state management, routing</p>
+        </a>
+
+        <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/nodejs" target="_blank" rel="noopener" class="module reveal">
+          <span class="num-badge">Backend</span>
+          <h4>Node.js</h4>
+          <p>Express, APIs, authentication, middleware</p>
+        </a>
+
+        <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/databases" target="_blank" rel="noopener" class="module reveal">
+          <span class="num-badge">Databases</span>
+          <h4>Databases</h4>
+          <p>SQL, PostgreSQL, MongoDB, ORMs, data modeling</p>
+        </a>
+
+        <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/nodejs/lessons/project-odin-book" target="_blank" rel="noopener" class="module reveal">
+          <span class="num-badge">Capstone</span>
+          <h4>Odin Book</h4>
+          <p>Final project — a full social network built from scratch</p>
+        </a>
+
+        <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/getting-hired" target="_blank" rel="noopener" class="module reveal">
+          <span class="num-badge">Career</span>
+          <h4>Getting Hired</h4>
+          <p>Portfolio, resume, interview prep, job search strategy</p>
+        </a>
+
+      </div>
+
+      <div class="tip-box reveal" style="margin-top:2.5rem;">
+        <i class="fas fa-info-circle"></i>
+        Each card opens the official The Odin Project curriculum page in a new tab. Follow the same sequence — the curriculum is designed to be done in order.
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="detail-section" style="text-align:center;">
     <div class="container">
-      <p style="font-family:var(--serif);font-size:1.3rem;color:var(--text-soft);font-style:italic;margin-bottom:1.5rem;">
+      <p style="font-family:var(--serif);font-size:1.4rem;color:var(--text-soft);font-style:italic;margin-bottom:1.5rem;max-width:600px;margin-left:auto;margin-right:auto;">
         "The best way to learn to code is to build things."
       </p>
-      <a href="https://www.theodinproject.com/" target="_blank" class="btn btn-primary" style="display:inline-flex;">
+      <a href="https://www.theodinproject.com/" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;align-items:center;gap:.7rem;padding:.95rem 1.8rem;background:var(--text);color:var(--bg);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;border-radius:4px;">
         <i class="fas fa-external-link-alt"></i>
         <span>Visit The Odin Project</span>
       </a>
     </div>
   </section>
+
 </main>
 
 <footer>
