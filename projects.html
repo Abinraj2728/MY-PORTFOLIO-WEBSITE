@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Past Projects · Abinraj Chovullakandy</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="theme.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#f5f3ee;--bg-alt:#efece4;--card-bg:#fff;--text:#1a1a1a;--text-soft:#52504a;--text-muted:#8a877e;--accent:#8b6f47;--accent-soft:#c9a97a;--border:#e2ddd2;--border-strong:#cfc7b7;--shadow-md:0 10px 30px -10px rgba(60,50,30,.12);--shadow-lg:0 24px 60px -20px rgba(60,50,30,.18);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',sans-serif}
@@ -59,15 +60,12 @@ section{padding:6rem 0;position:relative}
 .image-frame .caption{font-size:.82rem;color:var(--text-muted);text-align:center;margin-top:.8rem;font-style:italic}
 .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem}
 .tag{font-size:.72rem;font-weight:500;letter-spacing:.04em;padding:.28rem .75rem;background:var(--bg-alt);border:1px solid var(--border);color:var(--text-soft);border-radius:100px}
-
-/* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:.7rem;padding:.85rem 1.6rem;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all .35s cubic-bezier(.22,1,.36,1);cursor:pointer;border:1px solid transparent;font-family:var(--sans)}
 .btn-presentation{background:var(--text);color:var(--bg)}
 .btn-presentation:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
 .btn-download{background:transparent;color:var(--text);border-color:var(--border-strong)}
 .btn-download:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
 .presentation-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.5rem 0;}
-
 footer{border-top:1px solid var(--border);padding:2.5rem 0;text-align:center;font-size:.85rem;color:var(--text-muted)}
 footer a{color:var(--accent);text-decoration:none}
 footer a:hover{opacity:.7}
@@ -95,6 +93,17 @@ footer a:hover{opacity:.7}
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
+    <div class="theme-switcher" id="themeSwitcher">
+      <button class="theme-switcher-btn" id="themeSwitcherBtn" aria-label="Change theme">
+        <i class="fas fa-palette"></i><span class="label">Theme</span><i class="fas fa-chevron-down arrow"></i>
+      </button>
+      <div class="theme-dropdown">
+        <button class="theme-option" data-theme-set="ocean"><span class="swatch ocean"></span> Ocean Blue <i class="fas fa-check check"></i></button>
+        <button class="theme-option" data-theme-set="forest"><span class="swatch forest"></span> Forest Green <i class="fas fa-check check"></i></button>
+        <button class="theme-option" data-theme-set="rose"><span class="swatch rose"></span> Rose <i class="fas fa-check check"></i></button>
+        <button class="theme-option" data-theme-set="dark"><span class="swatch dark"></span> Dark <i class="fas fa-check check"></i></button>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -109,7 +118,6 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- PROJECT 1: Smart Home IoT -->
   <section class="detail-section" id="smart-home">
     <div class="container">
       <div class="detail-grid">
@@ -166,7 +174,6 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
-  <!-- PROJECT 2: Simple C++ Chatbot -->
   <section class="detail-section" id="c-chatbot">
     <div class="container">
       <div class="detail-grid">
@@ -251,6 +258,36 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+<script>
+(function() {
+  const saved = localStorage.getItem('portfolio-theme') || 'ocean';
+  document.documentElement.setAttribute('data-theme', saved);
+  document.addEventListener('DOMContentLoaded', function() {
+    const switcher = document.getElementById('themeSwitcher');
+    const btn = document.getElementById('themeSwitcherBtn');
+    if (!switcher || !btn) return;
+    function updateActive() {
+      const current = document.documentElement.getAttribute('data-theme') || 'ocean';
+      document.querySelectorAll('.theme-option').forEach(opt => {
+        opt.classList.toggle('active', opt.dataset.themeSet === current);
+      });
+    }
+    updateActive();
+    btn.addEventListener('click', function(e) { e.stopPropagation(); switcher.classList.toggle('open'); });
+    document.addEventListener('click', function(e) { if (!switcher.contains(e.target)) switcher.classList.remove('open'); });
+    document.querySelectorAll('.theme-option').forEach(opt => {
+      opt.addEventListener('click', function() {
+        const theme = this.dataset.themeSet;
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('portfolio-theme', theme);
+        updateActive();
+        switcher.classList.remove('open');
+      });
+    });
+  });
+})();
 </script>
 </body>
 </html>
