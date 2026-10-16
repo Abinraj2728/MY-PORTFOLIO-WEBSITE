@@ -15,6 +15,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 @keyframes drawLine{from{width:0}to{width:60px}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05);opacity:.9}}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .container{max-width:1100px;margin:0 auto;padding:0 2rem}
@@ -33,6 +34,7 @@ section{padding:6rem 0;position:relative}
 .scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-soft));width:0%;z-index:1001;transition:width .1s linear}
 .page-hero{padding:10rem 0 4rem;text-align:center;position:relative;overflow:hidden}
 .page-hero::before{content:'';position:absolute;top:-30%;right:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,122,.12),transparent 70%);animation:float 8s ease-in-out infinite;pointer-events:none}
+.page-hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(139,111,71,.08),transparent 70%);animation:float 10s ease-in-out infinite reverse;pointer-events:none}
 .page-hero-inner{position:relative;z-index:1}
 .page-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem}
 .page-eyebrow::before{content:'';display:inline-block;width:0;height:1px;background:var(--accent);animation:drawLine 1.2s ease .4s forwards}
@@ -63,7 +65,13 @@ section{padding:6rem 0;position:relative}
 .module h4{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:.35rem;line-height:1.35;padding-right:1.5rem}
 .module p{font-size:.85rem;color:var(--text-muted);line-height:1.6;margin:0}
 
-/* TIP BOX */
+/* PRESENTATION CARD — HIGHLIGHTED */
+.module.presentation{background:linear-gradient(135deg,var(--card-bg) 0%,#faf7f0 100%);border-color:var(--accent-soft)}
+.module.presentation::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--accent),var(--accent-soft))}
+.module.presentation .num-badge{color:var(--accent)}
+.module.presentation .presentation-tag{display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .6rem;background:rgba(201,169,122,.15);color:var(--accent-dark);border-radius:100px;margin-left:.4rem}
+[data-theme="dark"] .module.presentation .presentation-tag{color:var(--accent-soft)}
+
 .tip-box{background:var(--bg-alt);border-left:3px solid var(--accent);border-radius:8px;padding:1.2rem 1.5rem;margin-top:2rem;font-size:.9rem;color:var(--text-soft);line-height:1.7}
 .tip-box i{color:var(--accent);margin-right:.5rem}
 
@@ -105,7 +113,7 @@ footer a:hover{opacity:.7}
       <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to home</a>
       <div class="page-eyebrow">Currently Learning · Full Stack JavaScript</div>
       <h1>The Odin <em>Project</em></h1>
-      <p>A free, open-source full-stack web development curriculum. Each card below links to the actual course page on The Odin Project.</p>
+      <p>A free, open-source full-stack web development curriculum. Building real projects, one lesson at a time.</p>
     </div>
   </section>
 
@@ -151,7 +159,7 @@ footer a:hover{opacity:.7}
     <div class="container">
       <div class="reveal" style="text-align:center;margin-bottom:2rem;">
         <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:500;color:var(--text);margin-bottom:.6rem;">Curriculum Modules</h2>
-        <p style="color:var(--text-soft);font-size:.95rem;max-width:520px;margin:0 auto;">Click any card to open the course page on The Odin Project.</p>
+        <p style="color:var(--text-soft);font-size:.95rem;max-width:520px;margin:0 auto;">Click any card to open it. Cards marked <strong style="color:var(--accent);">📊 Presentation</strong> open my own study presentations.</p>
       </div>
 
       <div class="module-list">
@@ -162,10 +170,11 @@ footer a:hover{opacity:.7}
           <p>HTML, CSS, JavaScript basics, Git, and developer tools</p>
         </a>
 
-        <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/intermediate-html-and-css" target="_blank" rel="noopener" class="module reveal">
-          <span class="num-badge">Intermediate</span>
+        <!-- PRESENTATION CARD -->
+        <a href="odin/intermediate-html-css.html" class="module presentation reveal">
+          <span class="num-badge">Intermediate <span class="presentation-tag"><i class="fas fa-file-powerpoint"></i> Presentation</span></span>
           <h4>Intermediate HTML &amp; CSS</h4>
-          <p>SVG, tables, forms, grid, positioning, custom properties</p>
+          <p>My presentation on SVG, tables, forms, grid, positioning — click to view slides</p>
         </a>
 
         <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript" target="_blank" rel="noopener" class="module reveal">
@@ -208,7 +217,7 @@ footer a:hover{opacity:.7}
 
       <div class="tip-box reveal" style="margin-top:2.5rem;">
         <i class="fas fa-info-circle"></i>
-        Each card opens the official The Odin Project curriculum page in a new tab. Follow the same sequence — the curriculum is designed to be done in order.
+        Cards with <strong>📊 Presentation</strong> open my personal study presentations. All others open the official The Odin Project curriculum page in a new tab.
       </div>
     </div>
   </section>
