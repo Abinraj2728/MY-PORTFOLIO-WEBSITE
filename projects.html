@@ -121,7 +121,7 @@ footer a:hover{opacity:.7}
   <section class="detail-section" id="smart-home">
     <div class="container">
       <div class="detail-grid">
-        <div class="detail-content reveal">
+        <div class="detail-content fade-left">
           <div class="project-badge"><i class="fas fa-microchip"></i> Robotics Subject · 2026</div>
           <h2>Smart Home IoT Prototype</h2>
           <p>A virtual IoT prototype simulating a smart home environment, created for a Robotics subject. Features automatic light control with a PIR motion sensor, temperature-based fan control (DHT22, 30°C threshold), and remote control simulation via serial commands. Built with Arduino on Wokwi.</p>
@@ -159,7 +159,7 @@ footer a:hover{opacity:.7}
           </a>
         </div>
 
-        <div class="reveal">
+        <div class="fade-right">
           <div class="image-frame">
             <img src="images/smart-home.png" alt="Smart Home IoT Prototype" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
             <div class="placeholder" style="display:none;">
@@ -177,7 +177,7 @@ footer a:hover{opacity:.7}
   <section class="detail-section" id="c-chatbot">
     <div class="container">
       <div class="detail-grid">
-        <div class="detail-content reveal">
+        <div class="detail-content fade-left">
           <div class="project-badge chatbot"><i class="fas fa-robot"></i> Mini Project · Automata Course · 2024</div>
           <h2>Simple C++ Chatbot</h2>
           <p>A mini project building a simple rule-based chatbot in C++ that answers basic user queries. The chatbot demonstrates string handling, conditionals, loops, and user interaction in a console application — a foundation for understanding how modern conversational interfaces work.</p>
@@ -213,7 +213,7 @@ footer a:hover{opacity:.7}
           </div>
         </div>
 
-        <div class="reveal">
+        <div class="fade-right">
           <div class="image-frame">
             <div class="placeholder">
               <i class="fas fa-robot"></i>
@@ -229,7 +229,7 @@ footer a:hover{opacity:.7}
 
   <section class="detail-section" style="text-align:center;padding:4rem 0;">
     <div class="container">
-      <p style="font-family:var(--serif);font-size:1.3rem;color:var(--text-soft);font-style:italic;">
+      <p class="fade-up" style="font-family:var(--serif);font-size:1.3rem;color:var(--text-soft);font-style:italic;">
         More projects coming soon — currently working through The Odin Project curriculum.
       </p>
     </div>
@@ -254,10 +254,13 @@ window.addEventListener('scroll', () => {
   else { topBar.classList.remove('scrolled'); scrollTopBtn.classList.remove('visible'); }
 });
 scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  entries.forEach(entry => { 
+    if (entry.isIntersecting) entry.target.classList.add('visible'); 
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal, .fade-in, .fade-up, .fade-left, .fade-right, .scale-in, .section-reveal, .stagger').forEach(el => observer.observe(el));
 </script>
 
 <script>
