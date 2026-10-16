@@ -114,7 +114,7 @@ footer a:hover{opacity:.7}
 
   <section style="padding-top:0;">
     <div class="container">
-      <div class="action-row">
+      <div class="action-row fade-up">
         <a href="intermediate-html-css.pdf" download class="btn btn-primary"><i class="fas fa-download"></i><span>Download Presentation</span></a>
         <a href="intermediate-html-css.pdf" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fas fa-external-link-alt"></i><span>Open in New Tab</span></a>
       </div>
@@ -123,7 +123,7 @@ footer a:hover{opacity:.7}
 
   <section style="padding-top:0;">
     <div class="container">
-      <div class="pdf-viewer reveal">
+      <div class="pdf-viewer fade-up">
         <iframe src="intermediate-html-css.pdf#view=FitH" title="Intermediate HTML & CSS Presentation">
           <div class="fallback">
             <i class="fas fa-file-pdf"></i>
@@ -137,22 +137,22 @@ footer a:hover{opacity:.7}
 
   <section style="background:var(--bg-alt);">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head fade-left">
         <h2>What's Covered</h2>
       </div>
-      <div class="topic-grid">
-        <div class="topic reveal"><span class="num-badge">Module 01</span><h4>Intermediate HTML</h4><p>Emmet shorthand, scalable SVG graphics, and semantic tables for data.</p></div>
-        <div class="topic reveal"><span class="num-badge">Module 02</span><h4>Intermediate CSS</h4><p>Cascade &amp; specificity, units, selectors, positioning, and visual polish.</p></div>
-        <div class="topic reveal"><span class="num-badge">Module 03</span><h4>Forms &amp; Validation</h4><p>Accessible form structure, browser-enforced validation, and error handling.</p></div>
-        <div class="topic reveal"><span class="num-badge">Module 04</span><h4>CSS Grid Layout</h4><p>Two-dimensional layouts applied in a real admin dashboard project.</p></div>
+      <div class="topic-grid stagger">
+        <div class="topic"><span class="num-badge">Module 01</span><h4>Intermediate HTML</h4><p>Emmet shorthand, scalable SVG graphics, and semantic tables for data.</p></div>
+        <div class="topic"><span class="num-badge">Module 02</span><h4>Intermediate CSS</h4><p>Cascade &amp; specificity, units, selectors, positioning, and visual polish.</p></div>
+        <div class="topic"><span class="num-badge">Module 03</span><h4>Forms &amp; Validation</h4><p>Accessible form structure, browser-enforced validation, and error handling.</p></div>
+        <div class="topic"><span class="num-badge">Module 04</span><h4>CSS Grid Layout</h4><p>Two-dimensional layouts applied in a real admin dashboard project.</p></div>
       </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="section-head reveal"><h2>Key Takeaways</h2></div>
-      <div style="max-width:800px;font-size:.98rem;line-height:1.8;color:var(--text-soft);" class="reveal">
+      <div class="section-head fade-left"><h2>Key Takeaways</h2></div>
+      <div style="max-width:800px;font-size:.98rem;line-height:1.8;color:var(--text-soft);" class="fade-up">
         <ul style="list-style:none;">
           <li style="padding-left:1.6rem;position:relative;margin-bottom:.8rem;"><span style="position:absolute;left:0;color:var(--accent);font-weight:500;">→</span> Semantic HTML makes content more meaningful and easier to maintain.</li>
           <li style="padding-left:1.6rem;position:relative;margin-bottom:.8rem;"><span style="position:absolute;left:0;color:var(--accent);font-weight:500;">→</span> Understanding the cascade, units, and positioning helps debug CSS confidently.</li>
@@ -183,10 +183,13 @@ window.addEventListener('scroll', () => {
   else { topBar.classList.remove('scrolled'); scrollTopBtn.classList.remove('visible'); }
 });
 scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  entries.forEach(entry => { 
+    if (entry.isIntersecting) entry.target.classList.add('visible'); 
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal, .fade-in, .fade-up, .fade-left, .fade-right, .scale-in, .section-reveal, .stagger').forEach(el => observer.observe(el));
 </script>
 
 <script>
