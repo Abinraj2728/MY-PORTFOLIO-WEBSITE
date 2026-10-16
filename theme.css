@@ -1,1 +1,415 @@
+/* ============================================================
+   THEME SYSTEM — Abinraj Portfolio
+   Default: Ocean Blue
+   Options: Ocean Blue, Forest Green, Rose, Dark
+   ============================================================ */
 
+/* ===== DEFAULT — OCEAN BLUE ===== */
+:root,
+[data-theme="ocean"] {
+  --bg: #f0f4f8;
+  --bg-alt: #e0ecf5;
+  --card-bg: #ffffff;
+  --text: #0f172a;
+  --text-soft: #475569;
+  --text-muted: #64748b;
+  --accent: #0369a1;
+  --accent-soft: #38bdf8;
+  --accent-dark: #075985;
+  --border: #dbeafe;
+  --border-strong: #bfdbfe;
+  --shadow-md: 0 10px 30px -10px rgba(3, 105, 161, 0.15);
+  --shadow-lg: 0 24px 60px -20px rgba(3, 105, 161, 0.2);
+  --serif: 'Lora', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --bg-gradient: linear-gradient(180deg, #f0f4f8 0%, #e0ecf5 100%);
+  --bg-alt-gradient: linear-gradient(135deg, #e0ecf5 0%, #dbeafe 100%);
+  --btn-gradient: linear-gradient(135deg, #0369a1, #075985);
+  --btn-gradient-hover: linear-gradient(135deg, #075985, #0c4a6e);
+  --avatar-gradient: linear-gradient(135deg, #bae6fd, #7dd3fc);
+  --avatar-text: #075985;
+  --progress-gradient: linear-gradient(90deg, #0369a1, #38bdf8);
+}
+
+/* ===== FOREST GREEN ===== */
+[data-theme="forest"] {
+  --bg: #f5f7f0;
+  --bg-alt: #eaf0e0;
+  --card-bg: #ffffff;
+  --text: #0f1c10;
+  --text-soft: #3f5238;
+  --text-muted: #6b7a5e;
+  --accent: #166534;
+  --accent-soft: #4ade80;
+  --accent-dark: #14532d;
+  --border: #d7e5c8;
+  --border-strong: #b6d1a0;
+  --shadow-md: 0 10px 30px -10px rgba(22, 101, 52, 0.15);
+  --shadow-lg: 0 24px 60px -20px rgba(22, 101, 52, 0.2);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --bg-gradient: linear-gradient(180deg, #f5f7f0 0%, #eaf0e0 100%);
+  --bg-alt-gradient: linear-gradient(135deg, #eaf0e0 0%, #d7e5c8 100%);
+  --btn-gradient: linear-gradient(135deg, #166534, #14532d);
+  --btn-gradient-hover: linear-gradient(135deg, #14532d, #052e16);
+  --avatar-gradient: linear-gradient(135deg, #bbf7d0, #86efac);
+  --avatar-text: #14532d;
+  --progress-gradient: linear-gradient(90deg, #166534, #4ade80);
+}
+
+/* ===== ROSE ===== */
+[data-theme="rose"] {
+  --bg: #fdf2f8;
+  --bg-alt: #fce7f3;
+  --card-bg: #ffffff;
+  --text: #1f0a14;
+  --text-soft: #5c2739;
+  --text-muted: #9d5c72;
+  --accent: #be185d;
+  --accent-soft: #fb7185;
+  --accent-dark: #831843;
+  --border: #fbcfe8;
+  --border-strong: #f9a8d4;
+  --shadow-md: 0 10px 30px -10px rgba(190, 24, 93, 0.15);
+  --shadow-lg: 0 24px 60px -20px rgba(190, 24, 93, 0.2);
+  --serif: 'Lora', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --bg-gradient: linear-gradient(180deg, #fdf2f8 0%, #fce7f3 100%);
+  --bg-alt-gradient: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+  --btn-gradient: linear-gradient(135deg, #be185d, #831843);
+  --btn-gradient-hover: linear-gradient(135deg, #831843, #500724);
+  --avatar-gradient: linear-gradient(135deg, #fecdd3, #fda4af);
+  --avatar-text: #831843;
+  --progress-gradient: linear-gradient(90deg, #be185d, #fb7185);
+}
+
+/* ===== DARK ===== */
+[data-theme="dark"] {
+  --bg: #0a0f14;
+  --bg-alt: #101820;
+  --card-bg: #131c26;
+  --text: #e5eef5;
+  --text-soft: #a8bccb;
+  --text-muted: #7a8fa0;
+  --accent: #38bdf8;
+  --accent-soft: #7dd3fc;
+  --accent-dark: #0ea5e9;
+  --border: #1c2b3a;
+  --border-strong: #2a4053;
+  --shadow-md: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+  --serif: 'Lora', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --bg-gradient: linear-gradient(180deg, #0a0f14 0%, #101820 100%);
+  --bg-alt-gradient: linear-gradient(135deg, #101820 0%, #131c26 100%);
+  --btn-gradient: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  --btn-gradient-hover: linear-gradient(135deg, #0ea5e9, #0284c7);
+  --avatar-gradient: linear-gradient(135deg, #164e63, #0e7490);
+  --avatar-text: #7dd3fc;
+  --progress-gradient: linear-gradient(90deg, #38bdf8, #7dd3fc);
+}
+
+/* ============================================================
+   APPLYING THEME VARIABLES
+   ============================================================ */
+
+body {
+  background: var(--bg-gradient) !important;
+  background-attachment: fixed !important;
+  color: var(--text);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Section alt background */
+section[style*="background:var(--bg-alt)"],
+section[style*="background: var(--bg-alt)"] {
+  background: var(--bg-alt-gradient) !important;
+  transition: background 0.4s ease;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--btn-gradient) !important;
+  color: #ffffff !important;
+  border: none !important;
+  transition: all 0.35s cubic-bezier(.22,1,.36,1);
+}
+
+.btn-primary:hover {
+  background: var(--btn-gradient-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Card hover — themed glow */
+.card:hover,
+.module:hover,
+.cert-card:hover,
+.topic:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Avatar */
+.hero-avatar {
+  background: var(--avatar-gradient) !important;
+  color: var(--avatar-text) !important;
+  transition: transform 0.5s cubic-bezier(.22,1,.36,1), background 0.4s ease;
+}
+
+/* Progress bars */
+.progress-fill,
+.progress-fill-big {
+  background: var(--progress-gradient) !important;
+  transition: width 1.2s cubic-bezier(.22,1,.36,1), background 0.4s ease;
+}
+
+/* Scroll progress */
+.scroll-progress {
+  background: var(--progress-gradient) !important;
+}
+
+/* Scroll top button */
+.scroll-top {
+  background: var(--btn-gradient) !important;
+  color: #ffffff !important;
+}
+
+/* Icons and accents */
+.section-head .num,
+.card-icon,
+.detail-content ul li::before,
+.card-foot i,
+.hero-meta i {
+  color: var(--accent);
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-dark);
+}
+
+/* Nav */
+.nav-links a.active,
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a::after {
+  background: var(--accent);
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+/* Section heads */
+.section-head {
+  border-bottom-color: var(--border);
+}
+
+/* Card icon hover */
+.card:hover .card-icon,
+.module:hover .card-icon {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* Form focus */
+input:focus,
+textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* Top bar */
+.top-bar {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(12px);
+}
+
+[data-theme="dark"] .top-bar {
+  background: rgba(10, 15, 20, 0.75) !important;
+}
+
+/* Tags */
+.tag {
+  background: var(--bg-alt);
+  border-color: var(--border);
+  color: var(--text-soft);
+  transition: all 0.3s ease;
+}
+
+/* Badges */
+.project-badge,
+.cert-badge,
+.status-badge {
+  background: color-mix(in srgb, var(--accent) 10%, transparent) !important;
+  color: var(--accent-dark) !important;
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent) !important;
+}
+
+[data-theme="dark"] .project-badge,
+[data-theme="dark"] .cert-badge,
+[data-theme="dark"] .status-badge {
+  color: var(--accent-soft) !important;
+}
+
+/* Empty slots */
+.empty-slot {
+  background: var(--bg-alt) !important;
+  border-color: var(--accent-soft) !important;
+}
+
+/* Image frames */
+.image-frame {
+  border-color: var(--border);
+}
+
+/* Card icon background */
+.card-icon {
+  background: var(--bg-alt);
+  border-color: var(--border);
+}
+
+/* Footer */
+footer {
+  border-top-color: var(--border);
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--bg-alt) 50%, transparent));
+}
+
+/* ============================================================
+   THEME SWITCHER BUTTON
+   ============================================================ */
+
+.theme-switcher {
+  position: relative;
+  margin-left: 0.5rem;
+}
+
+.theme-switcher-btn {
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--text-soft);
+  height: 38px;
+  padding: 0 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.theme-switcher-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--bg-alt);
+}
+
+.theme-switcher-btn i.fa-palette {
+  font-size: 0.85rem;
+}
+
+.theme-switcher-btn .arrow {
+  font-size: 0.6rem;
+  transition: transform 0.3s ease;
+}
+
+.theme-switcher.open .theme-switcher-btn .arrow {
+  transform: rotate(180deg);
+}
+
+.theme-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  box-shadow: var(--shadow-lg);
+  padding: 0.5rem;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.3s cubic-bezier(.22,1,.36,1);
+  z-index: 1200;
+}
+
+.theme-switcher.open .theme-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text-soft);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.theme-option:hover {
+  background: var(--bg-alt);
+  color: var(--text);
+}
+
+.theme-option.active {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.theme-option .swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+.theme-option .swatch.ocean { background: linear-gradient(135deg, #0369a1, #38bdf8); }
+.theme-option .swatch.forest { background: linear-gradient(135deg, #166534, #4ade80); }
+.theme-option .swatch.rose { background: linear-gradient(135deg, #be185d, #fb7185); }
+.theme-option .swatch.dark { background: linear-gradient(135deg, #0a0f14, #38bdf8); }
+
+.theme-option .check {
+  margin-left: auto;
+  opacity: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+  transition: opacity 0.2s ease;
+}
+
+.theme-option.active .check {
+  opacity: 1;
+}
+
+/* Mobile theme switcher adjust */
+@media (max-width: 860px) {
+  .theme-switcher-btn span.label { display: none; }
+  .theme-switcher-btn { padding: 0 0.7rem; }
+}
