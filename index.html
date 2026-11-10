@@ -152,9 +152,44 @@ footer a:hover{opacity:.7}
   <section id="about">
     <div class="container">
       <div class="section-head fade-left"><span class="num">01</span><h2>About</h2></div>
-      <p class="fade-up" style="font-family:var(--serif);font-size:clamp(1.15rem,2vw,1.4rem);line-height:1.75;color:var(--text-soft);max-width:780px;">
-        I'm <strong style="color:var(--text);">Abinraj</strong>, an <em style="color:var(--accent);">Information Systems</em> student at Riga Nordic University in Latvia. I build practical digital solutions — from web applications to IoT prototypes — and I'm currently sharpening my full-stack skills through <em style="color:var(--accent);">The Odin Project</em>. I believe the best way to learn is to build, break, and rebuild.
-      </p>
+      
+      <div class="fade-up" style="font-size:1.05rem;line-height:1.8;color:var(--text-soft);max-width:900px;">
+        <p style="margin-bottom: 1.5rem; font-family:var(--serif); font-size: 1.2rem; color: var(--text);">
+          I am a dedicated and curious IT student with a passion for technology, problem-solving, and continuous learning. I enjoy exploring areas like programming, software development, and emerging technologies such as artificial intelligence. With a strong foundation in IT concepts and hands-on project experience, I aim to apply my knowledge in real-world situations while constantly expanding my skill set. I am a team player, adaptable, and eager to contribute to innovative tech solutions that make a positive impact.
+        </p>
+
+        <h3 style="font-family:var(--serif); font-size:1.5rem; color:var(--text); margin-top:2rem; margin-bottom:1rem;">Education</h3>
+        <p style="margin-bottom: 0.5rem;">
+          <strong>Bachelors in Information System</strong> <br>
+          Riga Nordic University · Riga, Latvia <br>
+          <em>June 2024 – Present</em> | EQF Level 8
+        </p>
+
+        <h3 style="font-family:var(--serif); font-size:1.5rem; color:var(--text); margin-top:2rem; margin-bottom:1rem;">Technical Skills</h3>
+        <div class="tags" style="margin-bottom: 1.5rem;">
+          <span class="tag">Python</span>
+          <span class="tag">C++</span>
+          <span class="tag">Java</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Deep Learning</span>
+          <span class="tag">Data Analysis</span>
+          <span class="tag">Data Visualization</span>
+          <span class="tag">Microsoft Office</span>
+        </div>
+
+        <h3 style="font-family:var(--serif); font-size:1.5rem; color:var(--text); margin-top:2rem; margin-bottom:1rem;">Languages</h3>
+        <ul style="list-style:none; padding:0; margin-bottom: 1.5rem;">
+          <li style="margin-bottom: 0.5rem;"><strong>Malayalam:</strong> Mother tongue</li>
+          <li><strong>English:</strong> Proficient (C2 level)</li>
+        </ul>
+
+        <h3 style="font-family:var(--serif); font-size:1.5rem; color:var(--text); margin-top:2rem; margin-bottom:1rem;">Hobbies & Interests</h3>
+        <p style="margin-bottom: 1.5rem;">
+          In my free time, I enjoy reading about space science, exploring new web technologies, and playing sports. I am a District Volleyball player and was the District 100m running champion (2016-17).
+        </p>
+      </div>
+
     </div>
   </section>
 
@@ -225,6 +260,7 @@ footer a:hover{opacity:.7}
             <li><a href="https://github.com/Abinraj2728/Abinraj2728" target="_blank" style="display:inline-flex;align-items:center;gap:.8rem;color:var(--text-soft);text-decoration:none;"><i class="fab fa-github" style="width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;background:var(--bg-alt);border:1px solid var(--border);border-radius:4px;color:var(--accent);"></i> github.com/Abinraj2728</a></li>
             <li><a href="https://www.linkedin.com/in/abinraj-chovullakandy-3a50091b7" target="_blank" style="display:inline-flex;align-items:center;gap:.8rem;color:var(--text-soft);text-decoration:none;"><i class="fab fa-linkedin-in" style="width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;background:var(--bg-alt);border:1px solid var(--border);border-radius:4px;color:var(--accent);"></i> LinkedIn Profile</a></li>
             <li><span style="display:inline-flex;align-items:center;gap:.8rem;color:var(--text-soft);"><i class="fas fa-map-marker-alt" style="width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;background:var(--bg-alt);border:1px solid var(--border);border-radius:4px;color:var(--accent);"></i> Riga, Latvia</span></li>
+            <li><a href="mailto:abinrajabi2728@gmail.com" style="display:inline-flex;align-items:center;gap:.8rem;color:var(--text-soft);text-decoration:none;"><i class="fas fa-envelope" style="width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;background:var(--bg-alt);border:1px solid var(--border);border-radius:4px;color:var(--accent);"></i> abinrajabi2728@gmail.com</a></li>
           </ul>
         </div>
         <div class="fade-right" style="background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:2rem;">
@@ -285,16 +321,4 @@ document.querySelectorAll('.reveal, .fade-in, .fade-up, .fade-left, .fade-right,
     btn.addEventListener('click', function(e) { e.stopPropagation(); switcher.classList.toggle('open'); });
     document.addEventListener('click', function(e) { if (!switcher.contains(e.target)) switcher.classList.remove('open'); });
     document.querySelectorAll('.theme-option').forEach(opt => {
-      opt.addEventListener('click', function() {
-        const theme = this.dataset.themeSet;
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('portfolio-theme', theme);
-        updateActive();
-        switcher.classList.remove('open');
-      });
-    });
-  });
-})();
-</script>
-</body>
-</html>
+      opt.addEventListener('click',
