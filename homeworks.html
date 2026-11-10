@@ -43,7 +43,7 @@ section{padding:6rem 0;position:relative}
 .back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:2rem;transition:color .3s,gap .3s}
 .back-link:hover{color:var(--accent);gap:.8rem}
 
-/* GRID & CARDS */
+/* GRID & CARDS FOR HOMEWORK LIST */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;margin-top:2rem}
 .card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:2rem 1.8rem;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s cubic-bezier(.22,1,.36,1),border-color .3s;text-decoration:none;color:inherit}
 .card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--accent),transparent);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.22,1,.36,1)}
@@ -53,13 +53,11 @@ section{padding:6rem 0;position:relative}
 .card:hover .card-icon{background:var(--accent);color:#fff;transform:rotate(-6deg) scale(1.08)}
 .card h3{font-family:var(--serif);font-size:1.4rem;font-weight:600;line-height:1.3;margin-bottom:.7rem;color:var(--text)}
 .card p{font-size:.94rem;line-height:1.7;color:var(--text-soft);flex-grow:1;margin-bottom:1.3rem}
+.card-foot{display:flex;flex-wrap:wrap;gap:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.82rem;color:var(--text-muted)}
+.card-foot span{display:inline-flex;align-items:center;gap:.4rem}
+.card-foot i{color:var(--accent)}
 .card-arrow{position:absolute;bottom:1.5rem;right:1.8rem;color:var(--accent);font-size:.9rem;opacity:0;transform:translateX(-8px);transition:all .4s cubic-bezier(.22,1,.36,1)}
 .card:hover .card-arrow{opacity:1;transform:translateX(0)}
-
-.empty-slot{background:var(--bg-alt);border:2px dashed var(--border-strong);border-radius:12px;padding:3rem 2rem;text-align:center;margin:2rem 0;grid-column:1 / -1;}
-.empty-slot .slot-icon{font-size:2.5rem;color:var(--accent-soft);margin-bottom:1rem;animation:float 4s ease-in-out infinite}
-.empty-slot h3{font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--text);margin-bottom:.6rem}
-.empty-slot p{color:var(--text-muted);font-size:.9rem;max-width:500px;margin:0 auto;line-height:1.6}
 
 footer{border-top:1px solid var(--border);padding:2.5rem 0;text-align:center;font-size:.85rem;color:var(--text-muted)}
 footer a{color:var(--accent);text-decoration:none}
@@ -110,22 +108,89 @@ footer a:hover{opacity:.7}
       <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to home</a>
       <div class="page-eyebrow">University Work</div>
       <h1>Home <em>Works</em></h1>
-      <p>Assignments, essays, and take-home projects completed during my Information Systems degree.</p>
+      <p>Click on any task below to view the full details, code, and submission links.</p>
     </div>
   </section>
 
   <section style="padding-top:0;">
     <div class="container">
+      
       <div class="grid stagger">
         
-        <!-- ADD YOUR HOMEWORKS HERE -->
-        <div class="empty-slot">
-          <div class="slot-icon"><i class="fas fa-plus-circle"></i></div>
-          <h3>Homeworks Coming Soon</h3>
-          <p>I am currently organizing my assignments and homework projects. Check back soon to see my coursework.</p>
-        </div>
+        <!-- Homework 1 -->
+        <a href="homeworks/task-16-09.html" class="card">
+          <div class="card-icon"><i class="fas fa-code"></i></div>
+          <h3>HTML Basics</h3>
+          <p>Created an HTML page with 10 tags (with my name, details, and explanation of each tag).</p>
+          <div class="card-foot">
+            <span><i class="far fa-calendar-alt"></i> 16.09.2026</span>
+            <span><i class="fas fa-arrow-right"></i> View Task</span>
+          </div>
+          <i class="fas fa-arrow-right card-arrow"></i>
+        </a>
+
+        <!-- Homework 2 -->
+        <a href="homeworks/task-30-09.html" class="card">
+          <div class="card-icon"><i class="fas fa-file-code"></i></div>
+          <h3>Webpage with only HTML Tags</h3>
+          <p>Prepared a webpage using only HTML tags. Included H1, H2, paragraphs, UL/OL lists for education, and an "Interesting Topic" section.</p>
+          <div class="card-foot">
+            <span><i class="far fa-calendar-alt"></i> 30.09.2026</span>
+            <span><i class="fas fa-arrow-right"></i> View Task</span>
+          </div>
+          <i class="fas fa-arrow-right card-arrow"></i>
+        </a>
+
+        <!-- Homework 3 -->
+        <a href="homeworks/task-07-10.html" class="card">
+          <div class="card-icon"><i class="fas fa-book"></i></div>
+          <h3>MDN HTML Reference Page</h3>
+          <p>Created an HTML page that includes all tags from the MDN Web Docs HTML Reference, along with my own explanation for each tag.</p>
+          <div class="card-foot">
+            <span><i class="far fa-calendar-alt"></i> 07.10.2026</span>
+            <span><i class="fas fa-arrow-right"></i> View Task</span>
+          </div>
+          <i class="fas fa-arrow-right card-arrow"></i>
+        </a>
+
+        <!-- Homework 4 -->
+        <a href="homeworks/task-14-10.html" class="card">
+          <div class="card-icon"><i class="fas fa-file-powerpoint"></i></div>
+          <h3>Certifications & Presentation</h3>
+          <p>Merged past certification PPTs into one, created and published this profile page, and prepared a screen recording presentation.</p>
+          <div class="card-foot">
+            <span><i class="far fa-calendar-alt"></i> 14.10.2026</span>
+            <span><i class="fas fa-arrow-right"></i> View Task</span>
+          </div>
+          <i class="fas fa-arrow-right card-arrow"></i>
+        </a>
+
+        <!-- Homework 5 -->
+        <a href="homeworks/task-21-10.html" class="card">
+          <div class="card-icon"><i class="fab fa-js"></i></div>
+          <h3>Odin Project JavaScript Course</h3>
+          <p>Prepared presentation with all assignments and tasks from the Odin Project JavaScript Course (Objects, Tic Tac Toe).</p>
+          <div class="card-foot">
+            <span><i class="far fa-calendar-alt"></i> 21.10.2026</span>
+            <span><i class="fas fa-arrow-right"></i> View Task</span>
+          </div>
+          <i class="fas fa-arrow-right card-arrow"></i>
+        </a>
+
+        <!-- Homework 6 -->
+        <a href="homeworks/task-28-10.html" class="card">
+          <div class="card-icon"><i class="fas fa-video"></i></div>
+          <h3>JavaScript Course Recording</h3>
+          <p>Uploaded all JavaScript Course projects to GitHub and prepared a screen recording with voiceover.</p>
+          <div class="card-foot">
+            <span><i class="far fa-calendar-alt"></i> 28.10.2026</span>
+            <span><i class="fas fa-arrow-right"></i> View Task</span>
+          </div>
+          <i class="fas fa-arrow-right card-arrow"></i>
+        </a>
 
       </div>
+
     </div>
   </section>
 
@@ -172,4 +237,19 @@ document.querySelectorAll('.reveal, .fade-in, .fade-up, .fade-left, .fade-right,
       });
     }
     updateActive();
-    btn.addEventListener('click', function(e) { e.stopProp
+    btn.addEventListener('click', function(e) { e.stopPropagation(); switcher.classList.toggle('open'); });
+    document.addEventListener('click', function(e) { if (!switcher.contains(e.target)) switcher.classList.remove('open'); });
+    document.querySelectorAll('.theme-option').forEach(opt => {
+      opt.addEventListener('click', function() {
+        const theme = this.dataset.themeSet;
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('portfolio-theme', theme);
+        updateActive();
+        switcher.classList.remove('open');
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
