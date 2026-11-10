@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Odin Project · Abinraj Chovullakandy</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="theme.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f3ee;--bg-alt:#efece4;--card-bg:#fff;--text:#1a1a1a;--text-soft:#52504a;--text-muted:#8a877e;--accent:#8b6f47;--accent-soft:#c9a97a;--border:#e2ddd2;--border-strong:#cfc7b7;--shadow-md:0 10px 30px -10px rgba(60,50,30,.12);--shadow-lg:0 24px 60px -20px rgba(60,50,30,.18);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+::selection{background:var(--accent);color:#fff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes drawLine{from{width:0}to{width:60px}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05);opacity:.9}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem}
+section{padding:6rem 0;position:relative}
+.top-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(245,243,238,.85);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+.top-bar.scrolled{border-bottom-color:var(--border)}
+.top-bar-inner{max-width:1100px;margin:0 auto;padding:.9rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
+.brand{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--text);text-decoration:none;white-space:nowrap}
+.brand:hover{color:var(--accent)}
+.brand span{color:var(--accent)}
+.nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center}
+.nav-links a{color:var(--text-soft);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;position:relative;padding:.3rem 0;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width .35s cubic-bezier(.22,1,.36,1)}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-soft));width:0%;z-index:1001;transition:width .1s linear}
+.page-hero{padding:10rem 0 4rem;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-30%;right:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,122,.12),transparent 70%);animation:float 8s ease-in-out infinite;pointer-events:none}
+.page-hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(139,111,71,.08),transparent 70%);animation:float 10s ease-in-out infinite reverse;pointer-events:none}
+.page-hero-inner{position:relative;z-index:1}
+.page-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem}
+.page-eyebrow::before{content:'';display:inline-block;width:0;height:1px;background:var(--accent);animation:drawLine 1.2s ease .4s forwards}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:500;line-height:1.1;color:var(--text);margin-bottom:1rem;animation:fadeUp .9s ease .2s both}
+.page-hero h1 em{font-style:italic;color:var(--accent);font-weight:400}
+.page-hero p{font-size:1.05rem;color:var(--text-soft);max-width:620px;margin:0 auto;font-weight:300;animation:fadeUp .9s ease .4s both}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:2rem;transition:color .3s,gap .3s}
+.back-link:hover{color:var(--accent);gap:.8rem}
+.detail-section{padding:5rem 0;scroll-margin-top:80px}
+.detail-section+.detail-section{border-top:1px solid var(--border)}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.detail-content h2{font-family:var(--serif);font-size:1.9rem;font-weight:500;margin-bottom:1.2rem;color:var(--text)}
+.detail-content h3{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin:2rem 0 .8rem;color:var(--text)}
+.detail-content p{color:var(--text-soft);margin-bottom:1rem;font-size:.98rem;line-height:1.75}
+.detail-content ul{list-style:none;margin-bottom:1.5rem}
+.detail-content ul li{color:var(--text-soft);padding-left:1.6rem;position:relative;margin-bottom:.6rem;font-size:.95rem;line-height:1.7}
+.detail-content ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:500}
+.status-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;background:rgba(201,169,122,.12);color:var(--accent-dark);border:1px solid rgba(201,169,122,.4);border-radius:100px;margin-bottom:1.2rem}
+[data-theme="dark"] .status-badge{color:var(--accent-soft)}
+.module-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-top:1.5rem}
+.module{padding:1.4rem 1.5rem;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;transition:all .4s cubic-bezier(.22,1,.36,1);text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden}
+.module::after{content:'\f35d';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:1.2rem;right:1.2rem;font-size:.75rem;color:var(--accent);opacity:0;transform:translate(-4px,4px);transition:all .4s cubic-bezier(.22,1,.36,1)}
+.module:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.module:hover::after{opacity:1;transform:translate(0,0)}
+.module .num-badge{display:inline-block;font-family:var(--serif);font-size:.75rem;font-weight:600;letter-spacing:.15em;color:var(--accent);margin-bottom:.5rem;text-transform:uppercase}
+.module h4{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:.35rem;line-height:1.35;padding-right:1.5rem}
+.module p{font-size:.85rem;color:var(--text-muted);line-height:1.6;margin:0}
+.module.presentation{background:linear-gradient(135deg,var(--card-bg) 0%,#faf7f0 100%);border-color:var(--accent-soft)}
+.module.presentation::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--accent),var(--accent-soft))}
+.module.presentation .num-badge{color:var(--accent)}
+.module.presentation .presentation-tag{display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .6rem;background:rgba(201,169,122,.15);color:var(--accent-dark);border-radius:100px;margin-left:.4rem}
+[data-theme="dark"] .module.presentation .presentation-tag{color:var(--accent-soft)}
+.tip-box{background:var(--bg-alt);border-left:3px solid var(--accent);border-radius:8px;padding:1.2rem 1.5rem;margin-top:2rem;font-size:.9rem;color:var(--text-soft);line-height:1.7}
+.tip-box i{color:var(--accent);margin-right:.5rem}
+footer{border-top:1px solid var(--border);padding:2.5rem 0;text-align:center;font-size:.85rem;color:var(--text-muted)}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{opacity:.7}
+.scroll-top{position:fixed;right:1.5rem;bottom:1.5rem;width:46px;height:46px;background:var(--text);color:var(--bg);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.95rem;opacity:0;pointer-events:none;transform:translateY(20px);transition:all .4s cubic-bezier(.22,1,.36,1);z-index:999;box-shadow:var(--shadow-md)}
+.scroll-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.scroll-top:hover{transform:translateY(-4px) scale(1.05)}
+@media(max-width:860px){.nav-links{display:none}.detail-grid{grid-template-columns:1fr;gap:2rem}section{padding:4rem 0}.page-hero{padding:7rem 0 3rem}}
+@media(max-width:480px){.container{padding:0 1.2rem}.top-bar-inner{padding:.8rem 1.2rem}.brand{font-size:1.2rem}}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="top-bar" id="topBar">
+  <div class="top-bar-inner">
+    <a href="index.html" class="brand">Abinraj <span>·</span> C</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="odin.html" class="active">Odin</a></li>
+        <li><a href="class-activities.html">Activities</a></li>
+        <li><a href="homeworks.html">Homeworks</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="new-certification.html">New Certs</a></li>
+      </ul>
+    </nav>
+    <div class="theme-switcher" id="themeSwitcher">
+      <button class="theme-switcher-btn" id="themeSwitcherBtn" aria-label="Change theme">
+        <i class="fas fa-palette"></i><span class="label">Theme</span><i class="fas fa-chevron-down arrow"></i>
+      </button>
+      <div class="theme-dropdown">
+        <button class="theme-option" data-theme-set="ocean"><span class="swatch ocean"></span> Ocean Blue <i class="fas fa-check check"></i></button>
+        <button class="theme-option" data-theme-set="forest"><span class="swatch forest"></span> Forest Green <i class="fas fa-check check"></i></button>
+        <button class="theme-option" data-theme-set="rose"><span class="swatch rose"></span> Rose <i class="fas fa-check check"></i></button>
+        <button class="theme-option" data-theme-set="dark"><span class="swatch dark"></span> Dark <i class="fas fa-check check"></i></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to home</a>
+      <div class="page-eyebrow">Currently Learning · Full Stack JavaScript</div>
+      <h1>The Odin <em>Project</em></h1>
+      <p>A free, open-source full-stack web development curriculum. Building real projects, one lesson at a time.</p>
+    </div>
+  </section>
+
+  <section class="detail-section">
+    <div class="container">
+      <div class="detail-grid">
+        <div class="detail-content fade-left">
+          <div class="status-badge"><i class="fas fa-circle" style="font-size:.5rem;"></i> Currently In Progress</div>
+          <h2>What is The Odin Project?</h2>
+          <p>The Odin Project is a free, open-source curriculum that teaches full-stack web development through hands-on projects. Rather than watching videos, you build real applications while following the curriculum.</p>
+          <p>I chose The Odin Project because it emphasizes practical skills. Every concept comes with a project that forces me to apply what I've learned.</p>
+
+          <h3>Why It Works For Me</h3>
+          <ul>
+            <li>Portfolio-ready projects — every lesson produces a real app</li>
+            <li>Industry-relevant — teaches what actual developers use</li>
+            <li>Community-driven — active Discord and open-source</li>
+            <li>Free forever — no paywalls</li>
+          </ul>
+        </div>
+
+        <div class="fade-right">
+          <div class="module-list stagger" style="margin-top:0;">
+            <a href="odin/foundations.html" class="module presentation">
+              <span class="num-badge">Track 01 <span class="presentation-tag"><i class="fas fa-file-powerpoint"></i> Presentation</span></span>
+              <h4>Foundations</h4>
+              <p>My presentation on HTML, CSS, Flexbox, and JavaScript basics — click to view slides</p>
+            </a>
+            <a href="https://www.theodinproject.com/paths/full-stack-javascript" target="_blank" rel="noopener" class="module">
+              <span class="num-badge">Track 02</span>
+              <h4>Full Stack JavaScript</h4>
+              <p>Advanced JS, React, Node.js, Express, databases</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-section" style="background:var(--bg-alt);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:2rem;" class="fade-up">
+        <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:500;color:var(--text);margin-bottom:.6rem;">Curriculum Modules</h2>
+        <p style="color:var(--text-soft);font-size:.95rem;max-width:520px;margin:0 auto;">Click any card to open it. Cards marked <strong style="color:var(--accent);">📊 Presentation</strong> open my own study presentations.</p>
+      </div>
+
+      <div class="module-list stagger">
+
+        <a href="odin/foundations.html" class="module presentation">
+          <span class="num-badge">Foundations <span class="presentation-tag"><i class="fas fa-file-powerpoint"></i> Presentation</span></span>
+          <h4>Foundations</h4>
+          <p>My presentation on HTML, CSS, Flexbox, and JS basics</p>
+        </a>
+
+        <a href="odin/intermediate-html-css.html" class="module presentation">
+          <span class="num-badge">Intermediate <span class="presentation-tag"><i class="fas fa-file-powerpoint"></i> Presentation</span></span>
+          <h4>Intermediate HTML &amp; CSS</h4>
+          <p>My presentation on SVG, tables, forms, grid, positioning — click to view slides</p>
+        </a>
+
+        <!-- NEW ADVANCED HTML & CSS CARD ADDED HERE -->
+        <a href="odin/advanced-html-css.html" class="module presentation">
+          <span class="num-badge">Advanced <span class="presentation-tag"><i class="fas fa-file-powerpoint"></i> Presentation</span></span>
+          <h4>Advanced HTML &amp; CSS</h4>
+          <p>My presentation and video on Advanced CSS, animations, accessibility, and responsive design</p>
+        </a>
+
+        <a href="odin/javascript-course.html" class="module presentation">
+          <span class="num-badge">JavaScript <span class="presentation-tag"><i class="fas fa-file-powerpoint"></i> Presentation</span></span>
+          <h4>JavaScript</h4>
+          <p>My detailed presentation on objects, async/await, APIs, testing, and data structures — click to view slides</p>
+        </a>
+
+        <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/react-js" target="_blank" rel="noopener" class="module">
+          <span class="num-badge">React</span>
+          <h4>React JS</h4>
+          <p>Components, hooks, state management, routing</p>
+        </a>
+
+        <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/nodejs" target="_blank" rel="noopener" class="module">
+          <span class="num-badge">Backend</span>
+          <h4>Node.js</h4>
+          <p>Express, APIs, authentication, middleware</p>
+        </a>
+
+        <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/databases" target="_blank" rel="noopener" class="module">
+          <span class="num-badge">Databases</span>
+          <h4>Databases</h4>
+          <p>SQL, PostgreSQL, MongoDB, ORMs, data modeling</p>
+        </a>
+
+        <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/nodejs/lessons/project-odin-book" target="_blank" rel="noopener" class="module">
+          <span class="num-badge">Capstone</span>
+          <h4>Odin Book</h4>
+          <p>Final project — a full social network built from scratch</p>
+        </a>
+
+        <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/getting-hired" target="_blank" rel="noopener" class="module">
+          <span class="num-badge">Career</span>
+          <h4>Getting Hired</h4>
+          <p>Portfolio, resume, interview prep, job search strategy</p>
+        </a>
+
+      </div>
+
+      <div class="tip-box fade-up" style="margin-top:2.5rem;">
+        <i class="fas fa-info-circle"></i>
+        Cards with <strong>📊 Presentation</strong> open my personal study presentations. All others open the official The Odin Project curriculum page in a new tab.
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-section" style="text-align:center;">
+    <div class="container">
+      <p class="fade-up" style="font-family:var(--serif);font-size:1.4rem;color:var(--text-soft);font-style:italic;margin-bottom:1.5rem;max-width:600px;margin-left:auto;margin-right:auto;">
+        "The best way to learn to code is to build things."
+      </p>
+      <a href="https://www.theodinproject.com/" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;align-items:center;gap:.7rem;padding:.95rem 1.8rem;background:var(--text);color:var(--bg);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;border-radius:4px;">
+        <i class="fas fa-external-link-alt"></i>
+        <span>Visit The Odin Project</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Abinraj Chovullakandy · Riga, Latvia · <a href="https://github.com/Abinraj2728/Abinraj2728" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/in/abinraj-chovullakandy-3a50091b7" target="_blank">LinkedIn</a></p>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+const scrollProgress = document.getElementById('scrollProgress');
+const topBar = document.getElementById('topBar');
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  scrollProgress.style.width = scrolled + '%';
+  if (window.scrollY > 50) { topBar.classList.add('scrolled'); scrollTopBtn.classList.add('visible'); }
+  else { topBar.classList.remove('scrolled'); scrollTopBtn.classList.remove('visible'); }
+});
+scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { 
+    if (entry.isIntersecting) entry.target.classList.add('visible'); 
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal, .fade-in, .fade-up, .fade-left, .fade-right, .scale-in, .section-reveal, .stagger').forEach(el => observer.observe(el));
+</script>
+
+<script>
+(function() {
+  const saved = localStorage.getItem('portfolio-theme') || 'ocean';
+  document.documentElement.setAttribute('data-theme', saved);
+  document.addEventListener('DOMContentLoaded', function() {
+    const switcher = document.getElementById('themeSwitcher');
+    const btn = document.getElementById('themeSwitcherBtn');
+    if (!switcher || !btn) return;
+    function updateActive() {
+      const current = document.documentElement.getAttribute('data-theme') || 'ocean';
+      document.querySelectorAll('.theme-option').forEach(opt => {
+        opt.classList.toggle('active', opt.dataset.themeSet === current);
+      });
+    }
+    updateActive();
+    btn.addEventListener('click', function(e) { e.stopPropagation(); switcher.classList.toggle('open'); });
+    document.addEventListener('click', function(e) { if (!switcher.contains(e.target)) switcher.classList.remove('open'); });
+    document.querySelectorAll('.theme-option').forEach(opt => {
+      opt.addEventListener('click', function() {
+        const theme = this.dataset.themeSet;
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('portfolio-theme', theme);
+        updateActive();
+        switcher.classList.remove('open');
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
