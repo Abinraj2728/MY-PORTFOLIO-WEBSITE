@@ -320,4 +320,17 @@ document.querySelectorAll('.reveal, .fade-in, .fade-up, .fade-left, .fade-right,
     updateActive();
     btn.addEventListener('click', function(e) { e.stopPropagation(); switcher.classList.toggle('open'); });
     document.addEventListener('click', function(e) { if (!switcher.contains(e.target)) switcher.classList.remove('open'); });
-    document
+    document.querySelectorAll('.theme-option').forEach(opt => {
+      opt.addEventListener('click', function() {
+        const theme = this.dataset.themeSet;
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('portfolio-theme', theme);
+        updateActive();
+        switcher.classList.remove('open');
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
