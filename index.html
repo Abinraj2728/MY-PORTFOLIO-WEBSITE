@@ -320,5 +320,4 @@ document.querySelectorAll('.reveal, .fade-in, .fade-up, .fade-left, .fade-right,
     updateActive();
     btn.addEventListener('click', function(e) { e.stopPropagation(); switcher.classList.toggle('open'); });
     document.addEventListener('click', function(e) { if (!switcher.contains(e.target)) switcher.classList.remove('open'); });
-    document.querySelectorAll('.theme-option').forEach(opt => {
-      opt.addEventListener('click',
+    document
