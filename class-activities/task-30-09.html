@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Tags Task · 30.09.2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../theme.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f5f3ee;--bg-alt:#efece4;--card-bg:#fff;--text:#1a1a1a;--text-soft:#52504a;--text-muted:#8a877e;--accent:#8b6f47;--accent-soft:#c9a97a;--border:#e2ddd2;--border-strong:#cfc7b7;--shadow-md:0 10px 30px -10px rgba(60,50,30,.12);--shadow-lg:0 24px 60px -20px rgba(60,50,30,.18);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+::selection{background:var(--accent);color:#fff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes drawLine{from{width:0}to{width:60px}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem}
+section{padding:6rem 0;position:relative}
+.top-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(245,243,238,.85);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+.top-bar.scrolled{border-bottom-color:var(--border)}
+.top-bar-inner{max-width:1100px;margin:0 auto;padding:.9rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
+.brand{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--text);text-decoration:none;white-space:nowrap}
+.brand:hover{color:var(--accent)}
+.brand span{color:var(--accent)}
+.nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center}
+.nav-links a{color:var(--text-soft);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;position:relative;padding:.3rem 0;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width .35s cubic-bezier(.22,1,.36,1)}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-soft));width:0%;z-index:1001;transition:width .1s linear}
+.page-hero{padding:10rem 0 4rem;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-30%;right:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,122,.12),transparent 70%);animation:float 8s ease-in-out infinite;pointer-events:none}
+.page-hero-inner{position:relative;z-index:1}
+.page-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem}
+.page-eyebrow::before{content:'';display:inline-block;width:0;height:1px;background:var(--accent);animation:drawLine 1.2s ease .4s forwards}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:500;line-height:1.1;color:var(--text);margin-bottom:1rem;animation:fadeUp .9s ease .2s both}
+.page-hero h1 em{font-style:italic;color:var(--accent);font-weight:400}
+.page-hero p{font-size:1.05rem;color:var(--text-soft);max-width:620px;margin:0 auto;font-weight:300;animation:fadeUp .9s ease .4s both}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:2rem;transition:color .3s,gap .3s}
+.back-link:hover{color:var(--accent);gap:.8rem}
+
+.split-view { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; margin-top: 2rem; }
+.code-panel { background: #1e1e1e; border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow-lg); overflow-x: auto; color: #d4d4d4; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; line-height: 1.5; }
+.code-panel pre { margin: 0; white-space: pre-wrap; }
+
+/* Output Panel Styles */
+.output-panel { background: #ffffff; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-lg); color: #000; }
+.output-panel h1, .output-panel h2, .output-panel h3, .output-panel p, .output-panel li { font-family: var(--sans); }
+.output-panel h1 { font-size: 2rem; margin-bottom: 1rem; }
+.output-panel h2 { font-size: 1.5rem; margin-top: 1.5rem; margin-bottom: 1rem; }
+.output-panel p { font-size: 1rem; margin-bottom: 1rem; }
+.output-panel ul, .output-panel ol { margin-left: 2rem; margin-bottom: 1rem; }
+
+footer{border-top:1px solid var(--border);padding:2.5rem 0;text-align:center;font-size:.85rem;color:var(--text-muted)}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{opacity:.7}
+.scroll-top{position:fixed;right:1.5rem;bottom:1.5rem;width:46px;height:46px;background:var(--text);color:var(--bg);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.95rem;opacity:0;pointer-events:none;transform:translateY(20px);transition:all .4s cubic-bezier(.22,1,.36,1);z-index:999;box-shadow:var(--shadow-md)}
+.scroll-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.scroll-top:hover{transform:translateY(-4px) scale(1.05)}
+@media(max-width:860px){.nav-links{display:none}section{padding:4rem 0}.page-hero{padding:7rem 0 3rem}.split-view{grid-template-columns:1fr}}
+@media(max-width:480px){.container{padding:0 1.2rem}.top-bar-inner{padding:.8rem 1.2rem}.brand{font-size:1.2rem}}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="top-bar" id="topBar">
+  <div class="top-bar-inner">
+    <a href="../index.html" class="brand">Abinraj <span>·</span> C</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../odin.html">Odin</a></li>
+        <li><a href="../class-activities.html" class="active">Activities</a></li>
+        <li><a href="../homeworks.html">Homeworks</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../certifications.html">Certifications</a></li>
+        <li><a href="../new-certification.html">New Certs</a></li>
+      </ul>
+    </nav>
+    <div class="theme-switcher" id="themeSwitcher">
+      <button class="theme-switcher-btn" id="themeSwitcherBtn" aria-label="Change theme">
+        <i class="fas fa-palette"></i><span class="label">Theme</span><i class="fas fa-chevron-down arrow"></i>
+      </button>
+      <div class="theme-dropdown">
+        <button class="theme-option" data-theme-set="ocean"><span class="swatch ocean"></span> Ocean Blue <i class="fas fa-check check"></i></button>
+        <button class="theme-option" data-theme-set="forest"><span class="swatch forest"></span> Forest Green <i class="fas fa-check check"></i></button>
+        <button class="theme-option" data-theme-set="rose"><span class="swatch rose"></span> Rose <i class="fas fa-check check"></i></button>
+        <button class="theme-option" data-theme-set="dark"><span class="swatch dark"></span> Dark <i class="fas fa-check check"></i></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <a href="../class-activities.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Activities</a>
+      <div class="page-eyebrow">Class Activity · 30.09.2026</div>
+      <h1>Webpage with HTML <em>Tags</em></h1>
+      <p>Prepared a webpage using only HTML tags, including lists and a custom-colored "Interesting Topic" section.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      
+      <div class="split-view fade-up">
+        
+        <!-- LEFT SIDE: THE CODE -->
+        <div class="code-panel">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Abinraj Chovullakandy - Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;Abinraj Chovullakandy&lt;/h1&gt;
+
+    &lt;h2&gt;About Me&lt;/h2&gt;
+    &lt;p&gt;
+        My name is Abinraj Chovullakandy, and I am a junior web developer based in Riga, Latvia.
+        I have a strong interest in front-end development and enjoy creating clean, simple web pages using HTML and CSS.
+        My objective is to continue improving my coding skills and to work on projects that help people access information easily.
+        I am currently learning more about responsive design and JavaScript to build better user experiences.
+        In my free time, I enjoy reading about space science and exploring new web technologies.
+    &lt;/p&gt;
+
+    &lt;h2&gt;Education&lt;/h2&gt;
+
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Higher Secondary Degree&lt;/strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Physics – 92 marks
+                    &lt;ul&gt;&lt;li&gt;Focused on mechanics and electromagnetism.&lt;/li&gt;&lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;Mathematics – 88 marks
+                    &lt;ul&gt;&lt;li&gt;Studied calculus and statistics.&lt;/li&gt;&lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;Chemistry – 85 marks
+                    &lt;ul&gt;&lt;li&gt;Laboratory work in organic reactions.&lt;/li&gt;&lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;Computer Science – 94 marks
+                    &lt;ul&gt;&lt;li&gt;Introduction to programming with Python.&lt;/li&gt;&lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;ol&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Degree: B.Sc. in Computer Science&lt;/strong&gt;
+            &lt;ol&gt;
+                &lt;li&gt;1st Year
+                    &lt;ul&gt;&lt;li&gt;Subject: Programming Fundamentals – 89 marks
+                        &lt;ul&gt;&lt;li&gt;Learned basic coding and problem-solving.&lt;/li&gt;&lt;/ul&gt;
+                    &lt;/li&gt;&lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;2nd Year
+                    &lt;ul&gt;&lt;li&gt;Subject: Web Development – 91 marks
+                        &lt;ul&gt;&lt;li&gt;Studied HTML, CSS, and basic JavaScript.&lt;/li&gt;&lt;/ul&gt;
+                    &lt;/li&gt;&lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;3rd Year
+                    &lt;ul&gt;&lt;li&gt;Subject: Database Systems – 87 marks
+                        &lt;ul&gt;&lt;li&gt;Explored SQL and data management.&lt;/li&gt;&lt;/ul&gt;
+                    &lt;/li&gt;&lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;div style="background-color: #1a2a44; color: #e8f0fe; padding: 20px; margin-top: 30px; border-radius: 12px;"&gt;
+
+        &lt;h1 style="color: #ffd966;"&gt;James Webb Space Telescope: Surprising Discoveries&lt;/h1&gt;
+
+        &lt;p style="color: #e8f0fe;"&gt;
+            The James Webb Space Telescope (JWST) has revealed unexpected findings since it began science operations.
+            One major surprise is a population of compact, bright red galaxies called "Little Red Dots." These objects
+            appeared around 600 million years after the Big Bang and then rapidly declined in number less than a billion
+            years later. Astronomers are still investigating what powers them—possibly dense star clusters
+            or growing black holes. Webb also found galaxies that formed far earlier and were brighter than models
+            predicted, challenging assumptions about how quickly the early universe assembled structure.
+        &lt;/p&gt;
+
+        &lt;h2 style="color: #9fc5ff;"&gt;Why This Matters&lt;/h2&gt;
+
+        &lt;p style="color: #e8f0fe;"&gt;
+            Beyond early galaxies, Webb has studied exoplanet atmospheres with unprecedented clarity, detecting molecules
+            like carbon dioxide and sulfur dioxide. It has also provided independent data on the "Hubble
+            Tension"—the disagreement between different measurements of the universe's expansion rate—showing that the
+            discrepancy is unlikely to be a simple measurement error. These observations are reshaping our
+            understanding of cosmic dawn, planetary habitability, and the fundamental parameters of the universe.
+        &lt;/p&gt;
+
+        &lt;div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 15px 0;"&gt;
+            &lt;img src="https://science.nasa.gov/wp-content/uploads/2023/06/webb-first-deep-field.jpg" alt="Webb Deep Field" style="width:150px; height:150px; object-fit:cover; border-radius:8px; border:2px solid #ffd966;"&gt;
+            &lt;img src="https://science.nasa.gov/wp-content/uploads/2023/06/webb-carina-nebula.jpg" alt="Carina Nebula" style="width:150px; height:150px; object-fit:cover; border-radius:8px; border:2px solid #ffd966;"&gt;
+            &lt;img src="https://science.nasa.gov/wp-content/uploads/2023/06/webb-southern-ring-nebula.jpg" alt="Southern Ring Nebula" style="width:150px; height:150px; object-fit:cover; border-radius:8px; border:2px solid #ffd966;"&gt;
+            &lt;img src="https://science.nasa.gov/wp-content/uploads/2023/06/webb-stephan-quintet.jpg" alt="Stephan's Quintet" style="width:150px; height:150px; object-fit:cover; border-radius:8px; border:2px solid #ffd966;"&gt;
+            &lt;img src="https://science.nasa.gov/wp-content/uploads/2023/06/webb-exoplanet-spectrum.jpg" alt="Exoplanet Spectrum" style="width:150px; height:150px; object-fit:cover; border-radius:8px; border:2px solid #ffd966;"&gt;
+        &lt;/div&gt;
+
+        &lt;p style="color: #e8f0fe;"&gt;
+            &lt;a href="https://science.nasa.gov/missions/webb/3-years-of-science-10-cosmic-surprises-from-nasas-webb-telescope/" target="_blank" style="color: #ffb347; font-weight: bold;"&gt;
+                Read the full NASA article: 10 Cosmic Surprises from the James Webb Telescope →
+            &lt;/a&gt;
+        &lt;/p&gt;
+
+    &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- RIGHT SIDE: THE OUTPUT -->
+        <div class="output-panel">
+          <h1>Abinraj Chovullakandy</h1>
+
+          <h2>About Me</h2>
+          <p>
+              My name is Abinraj Chovullakandy, and I am a junior web developer based in Riga, Latvia.
+              I have a strong interest in front-end development and enjoy creating clean, simple web pages using HTML and CSS.
+              My objective is to continue improving my coding skills and to work on projects that help people access information easily.
+              I am currently learning more about responsive design and JavaScript to build better user experiences.
+              In my free time, I enjoy reading about space science and exploring new web technologies.
+          </p>
+
+          <h2>Education</h2>
+
+          <ul>
+              <li>
+                  <strong>Higher Secondary Degree</strong>
+                  <ul>
+                      <li>Physics – 92 marks
+                          <ul><li>Focused on mechanics and electromagnetism.</li></ul>
+                      </li>
+                      <li>Mathematics – 88 marks
+                          <ul><li>Studied calculus and statistics.</li></ul>
+                      </li>
+                      <li>Chemistry – 85 marks
+                          <ul><li>Laboratory work in organic reactions.</li></ul>
+                      </li>
+                      <li>Computer Science – 94 marks
+                          <ul><li>Introduction to programming with Python.</li></ul>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+
+          <ol>
+              <li>
+                  <strong>Degree: B.Sc. in Computer Science</strong>
+                  <ol>
+                      <li>1st Year
+                          <ul><li>Subject: Programming Fundamentals – 89 marks
+                              <ul><li>Learned basic coding and problem-solving.</li></ul>
+                          </li></ul>
+                      </li>
+                      <li>2nd Year
+                          <ul><li>Subject: Web Development – 91 marks
+                              <ul><li>Studied HTML, CSS, and basic JavaScript.</li></ul>
+                          </li></ul>
+                      </li>
+                      <li>3rd Year
+                          <ul><li>Subject: Database Systems – 87 marks
+                              <ul><li>Explored SQL and data management.</li></ul>
+                          </li></ul>
+                      </li>
+                  </ol>
+              </li>
+          </ol>
+
+          <div style="background-color: #1a2a44; color: #e8f0fe; padding: 20px; margin-top: 30px; border-radius: 12px;">
+
+              <h1 style="color: #ffd966;">James Webb Space Telescope: Surprising Discoveries</h1>
+
+              <p style="color: #e8f0fe;">
+                  The James Webb Space Telescope (JWST) has revealed unexpected findings since it began science operations.
+                  One major surprise is a population of compact, bright red galaxies called "Little Red Dots." These objects
+                  appeared around 600 million years after the Big Bang and then rapidly declined in number less than a billion
+                  years later. Astronomers are still investigating what powers them—possibly dense star clusters
+                  or growing black holes. Webb also found galaxies that formed far earlier and were brighter than models
+                  predicted, challenging assumptions about how quickly the early universe assembled structure.
+              </p>
+
+              <h2 style="color: #9fc5ff;">Why This Matters</h2>
+
+              <p style="color: #e8f0fe;">
+                  Beyond early galaxies, Webb has studied exoplanet atmospheres with unprecedented clarity, detecting molecules
+                  like carbon dioxide and sulfur dioxide. It has also provided independent data on the "Hubble
+                  Tension"—the disagreement between different measurements of the universe's expansion rate—showing that the
+                  discrepancy is unlikely to be a simple measurement error. These observations are reshaping our
+                  understanding of cosmic dawn, planetary habitability, and the fundamental parameters of the universe.
+              </p>
+
+              <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 15px 0;">
+                  <img src="https://science.nasa.gov/wp-content/uploads/2023/06/webb-first-deep-field.jpg" alt="Webb Deep Field" style="width:150px; height:150px; object-fit:cover; border-radius:8px; border:2px solid #ffd966;">
+                  <img src="https://science.nasa.gov/wp-content/uploads/2023/06/webb-carina-nebula.jpg" alt="Carina Nebula" style="width:150px; height:150px; object-fit:cover; border-radius:8px; border:2px solid #ffd966;">
+                  <img src="https://science.nasa.gov/wp-content/uploads/2023/06/webb-southern-ring-nebula.jpg" alt="Southern Ring Nebula" style="width:150px; height:150px; object-fit:cover; border-radius:8px; border:2px solid #ffd966;">
+                  <img src="https://science.nasa.gov/wp-content/uploads/2023/06/webb-stephan-quintet.jpg" alt="Stephan's Quintet" style="width:150px; height:150px; object-fit:cover; border-radius:8px; border:2px solid #ffd966;">
+                  <img src="https://science.nasa.gov/wp-content/uploads/2023/06/webb-exoplanet-spectrum.jpg" alt="Exoplanet Spectrum" style="width:150px; height:150px; object-fit:cover; border-radius:8px; border:2px solid #ffd966;">
+              </div>
+
+              <p style="color: #e8f0fe;">
+                  <a href="https://science.nasa.gov/missions/webb/3-years-of-science-10-cosmic-surprises-from-nasas-webb-telescope/" target="_blank" style="color: #ffb347; font-weight: bold;">
+                      Read the full NASA article: 10 Cosmic Surprises from the James Webb Telescope →
+                  </a>
+              </p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Abinraj Chovullakandy · Riga, Latvia · <a href="https://github.com/Abinraj2728/Abinraj2728" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/in/abinraj-chovullakandy-3a50091b7" target="_blank">LinkedIn</a></p>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+const scrollProgress = document.getElementById('scrollProgress');
+const topBar = document.getElementById('topBar');
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  scrollProgress.style.width = scrolled + '%';
+  if (window.scrollY > 50) { topBar.classList.add('scrolled'); scrollTopBtn.classList.add('visible'); }
+  else { topBar.classList.remove('scrolled'); scrollTopBtn.classList.remove('visible'); }
+});
+scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { 
+    if (entry.isIntersecting) entry.target.classList.add('visible'); 
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal, .fade-in, .fade-up, .fade-left, .fade-right, .scale-in, .section-reveal, .stagger').forEach(el => observer.observe(el));
+</script>
+
+<script>
+(function() {
+  const saved = localStorage.getItem('portfolio-theme') || 'ocean';
+  document.documentElement.setAttribute('data-theme', saved);
+  document.addEventListener('DOMContentLoaded', function() {
+    const switcher = document.getElementById('themeSwitcher');
+    const btn = document.getElementById('themeSwitcherBtn');
+    if (!switcher || !btn) return;
+    function updateActive() {
+      const current = document.documentElement.getAttribute('data-theme') || 'ocean';
+      document.querySelectorAll('.theme-option').forEach(opt => {
+        opt.classList.toggle('active', opt.dataset.themeSet === current);
+      });
+    }
+    updateActive();
+    btn.addEventListener('click', function(e) { e.stopPropagation(); switcher.classList.toggle('open'); });
+    document.addEventListener('click', function(e) { if (!switcher.contains(e.target)) switcher.classList.remove('open'); });
+    document.querySelectorAll('.theme-option').forEach(opt => {
+      opt.addEventListener('click', function() {
+        const theme = this.dataset.themeSet;
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('portfolio-theme', theme);
+        updateActive();
+        switcher.classList.remove('open');
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
