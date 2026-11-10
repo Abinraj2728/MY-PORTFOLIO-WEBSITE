@@ -52,6 +52,11 @@ section{padding:6rem 0;position:relative}
 .pdf-viewer iframe{width:100%;height:80vh;border:none;display:block;background:var(--bg-alt)}
 .pdf-viewer .fallback{padding:4rem 2rem;text-align:center;color:var(--text-muted)}
 .pdf-viewer .fallback i{font-size:3rem;color:var(--accent);display:block;margin-bottom:1rem}
+
+/* VIDEO PLAYER STYLES */
+.video-wrapper{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg);margin:0 auto;max-width:1000px}
+.video-wrapper video{width:100%;max-height:80vh;display:block;background:#000;border-radius:12px}
+
 .topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-top:2rem}
 .topic{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:1.5rem 1.4rem;transition:all .4s ease}
 .topic:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow-md)}
@@ -81,10 +86,11 @@ footer a:hover{opacity:.7}
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../odin.html" class="active">Odin</a></li>
+        <li><a href="../class-activities.html">Activities</a></li>
+        <li><a href="../homeworks.html">Homeworks</a></li>
         <li><a href="../projects.html">Projects</a></li>
         <li><a href="../certifications.html">Certifications</a></li>
         <li><a href="../new-certification.html">New Certs</a></li>
-        <li><a href="../index.html#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="theme-switcher" id="themeSwitcher">
@@ -106,12 +112,13 @@ footer a:hover{opacity:.7}
   <section class="page-hero">
     <div class="container page-hero-inner">
       <a href="../odin.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Odin Project</a>
-      <div class="page-eyebrow">Odin Project · Presentation</div>
+      <div class="page-eyebrow">Odin Project · Presentation & Video</div>
       <h1>Intermediate HTML &amp; <em>CSS</em></h1>
       <p>A practical walkthrough of the curriculum — SVGs &amp; Tables, Advanced CSS, Forms &amp; Validation, and CSS Grid.</p>
     </div>
   </section>
 
+  <!-- DOWNLOAD BUTTONS -->
   <section style="padding-top:0;">
     <div class="container">
       <div class="action-row fade-up">
@@ -121,6 +128,7 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
+  <!-- PDF VIEWER -->
   <section style="padding-top:0;">
     <div class="container">
       <div class="pdf-viewer fade-up">
@@ -135,6 +143,22 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
+  <!-- NEW VIDEO SECTION ADDED HERE -->
+  <section style="padding-top:2rem;">
+    <div class="container">
+      <div class="section-head fade-left">
+        <h2>Intermediate HTML & CSS Video</h2>
+      </div>
+      <div class="video-wrapper fade-up">
+        <video controls>
+          <source src="intermediate-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPIC CARDS -->
   <section style="background:var(--bg-alt);">
     <div class="container">
       <div class="section-head fade-left">
@@ -149,6 +173,7 @@ footer a:hover{opacity:.7}
     </div>
   </section>
 
+  <!-- KEY TAKEAWAYS -->
   <section>
     <div class="container">
       <div class="section-head fade-left"><h2>Key Takeaways</h2></div>
