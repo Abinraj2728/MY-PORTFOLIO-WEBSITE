@@ -65,6 +65,8 @@ section{padding:6rem 0;position:relative}
 .btn-presentation:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
 .btn-download{background:transparent;color:var(--text);border-color:var(--border-strong)}
 .btn-download:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.btn-live { background: var(--accent); color: #fff; }
+.btn-live:hover { background: var(--accent-dark); color: #fff; transform: translateY(-2px); }
 .presentation-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.5rem 0;}
 footer{border-top:1px solid var(--border);padding:2.5rem 0;text-align:center;font-size:.85rem;color:var(--text-muted)}
 footer a{color:var(--accent);text-decoration:none}
@@ -87,10 +89,11 @@ footer a:hover{opacity:.7}
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="odin.html">Odin</a></li>
+        <li><a href="class-activities.html">Activities</a></li>
+        <li><a href="homeworks.html">Homeworks</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="certifications.html">Certifications</a></li>
         <li><a href="new-certification.html">New Certs</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="theme-switcher" id="themeSwitcher">
@@ -153,10 +156,10 @@ footer a:hover{opacity:.7}
             <li>Building complete IoT workflows from sensor to actuator</li>
           </ul>
 
-          <a href="https://github.com/Abinraj2728/robotic-project" target="_blank" rel="noopener" class="btn btn-presentation" style="margin-top:1rem;">
-            <i class="fab fa-github"></i>
-            <span>View on GitHub</span>
-          </a>
+          <div class="presentation-actions">
+            <a href="https://abinraj2728.github.io/robotic-project/" target="_blank" class="btn btn-live"><i class="fas fa-external-link-alt"></i> View Live Demo</a>
+            <a href="https://github.com/Abinraj2728/robotic-project" target="_blank" class="btn btn-presentation"><i class="fab fa-github"></i> View on GitHub</a>
+          </div>
         </div>
 
         <div class="fade-right">
